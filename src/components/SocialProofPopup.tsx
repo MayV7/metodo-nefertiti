@@ -3,15 +3,15 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Crown, CheckCircle2 } from "lucide-react";
 
 const buyers = [
-  { name: "Juliana M.", city: "São Paulo, SP", time: "há 2 minutos" },
-  { name: "Carolina R.", city: "Belo Horizonte, MG", time: "há 4 minutos" },
-  { name: "Patrícia L.", city: "Rio de Janeiro, RJ", time: "há 6 minutos" },
-  { name: "Fernanda K.", city: "Curitiba, PR", time: "há 8 minutos" },
-  { name: "Mariana T.", city: "Recife, PE", time: "há 11 minutos" },
-  { name: "Beatriz S.", city: "Porto Alegre, RS", time: "há 13 minutos" },
-  { name: "Renata A.", city: "Salvador, BA", time: "há 16 minutos" },
-  { name: "Camila N.", city: "Brasília, DF", time: "há 19 minutos" },
-  { name: "Vanessa O.", city: "Fortaleza, CE", time: "há 21 minutos" },
+  { name: "Larissa B.", city: "São Paulo, SP", time: "há 2 minutos" },
+  { name: "Tatiane F.", city: "Goiânia, GO", time: "há 4 minutos" },
+  { name: "Aline P.", city: "Rio de Janeiro, RJ", time: "há 6 minutos" },
+  { name: "Débora C.", city: "Florianópolis, SC", time: "há 8 minutos" },
+  { name: "Sabrina V.", city: "São Paulo, SP", time: "há 11 minutos" },
+  { name: "Helena G.", city: "Manaus, AM", time: "há 13 minutos" },
+  { name: "Priscila D.", city: "Campinas, SP", time: "há 16 minutos" },
+  { name: "Letícia M.", city: "Natal, RN", time: "há 19 minutos" },
+  { name: "Gabriela H.", city: "Vitória, ES", time: "há 21 minutos" },
 ];
 
 export function SocialProofPopup() {
