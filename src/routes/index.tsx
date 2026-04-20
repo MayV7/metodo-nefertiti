@@ -142,16 +142,16 @@ function Hero() {
 /* -------------------- PAIN -------------------- */
 function Pain() {
   const tried = [
-    "Fingiu que estava bem nas redes sociais (mas chorava no banho, em segredo).",
-    "Saiu com outros homens para tentar esquecer (e se sentiu mais vazia).",
-    "Seguiu todos os conselhos das amigas (que só te confundiram mais).",
+    "Fingiu que estava bem pessoalmente e nas redes sociais (mas chorava no banho, em segredo, onde ninguém podia ver sua alma sangrar).",
+    "Saiu com outros homens para tentar esquecer (mas só se sentiu mais vazia, comparando cada um deles a ele).",
+    "Seguiu todos os conselhos das amigas (que só te confundiram mais, pois elas não entendem a profundidade da sua dor).",
   ];
   const feels = [
-    "Acorda no meio da madrugada com o coração apertado pensando nele.",
-    "Verifica compulsivamente as redes sociais buscando sinais dele — ou dela.",
-    "Se pergunta 'o que ela tem que eu não tenho?' até a autoestima ruir.",
-    "Sente que perdeu sua capacidade de atrair e está em frangalhos.",
-    "Se fechou para o amor, com medo de sofrer novamente.",
+    "Acorda no meio da madrugada, com o coração apertado, pensando nele — e ele ainda assombra seus sonhos, roubando seu sono e sua energia.",
+    "Verifica compulsivamente as redes sociais, buscando qualquer sinal dele, ou pior, dela — sentindo uma pontada de ciúmes a cada nova foto.",
+    "Se ele já estiver com outra, a pergunta 'o que ela tem que eu não tenho?' te consome, minando sua autoconfiança.",
+    "Sente que perdeu sua capacidade de atrair e sua autoestima está em frangalhos, acreditando que nunca mais será desejada.",
+    "Se fechou para o amor, com medo de sofrer novamente, e teme nunca mais ser desejada como antes.",
   ];
   return (
     <section className="py-20 md:py-28 bg-muted relative">
