@@ -851,7 +851,7 @@ function Decision() {
               A escolha é sua. Mas lembre-se: <strong className="text-rose-gold-deep">apenas 12 vagas restantes</strong> e este preço especial <strong>nunca mais</strong> será oferecido.
             </p>
             <div className="mt-8">
-              <CTAButton size="xl">Quero minha vaga agora</CTAButton>
+              <CTAButton size="xl">Entrar agora para o Método Nefertiti</CTAButton>
             </div>
           </div>
         </Reveal>
@@ -979,7 +979,7 @@ function FAQ() {
 
         <Reveal delay={0.3}>
           <div className="text-center mt-12">
-            <CTAButton size="xl">Quero minha vaga agora</CTAButton>
+            <CTAButton size="xl">Entrar agora para o Método Nefertiti</CTAButton>
           </div>
         </Reveal>
       </div>
@@ -1040,7 +1040,7 @@ function Scarcity() {
 
         <Reveal delay={0.3}>
           <div className="text-center mt-10">
-            <CTAButton size="xl">✨ Clique aqui e garanta sua vaga agora</CTAButton>
+            <CTAButton size="xl">Entrar agora para o Método Nefertiti</CTAButton>
           </div>
         </Reveal>
       </div>
