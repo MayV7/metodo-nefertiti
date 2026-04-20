@@ -2,12 +2,16 @@ import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import {
   Crown, Heart, Sparkles, ShieldCheck, Star, CheckCircle2, XCircle,
-  Award, Brain, Flame, Gem, Zap, Smartphone, Monitor, Tablet, Lock,
-  CreditCard, Smartphone as Pix, ChevronRight, Quote, Gift,
+  Brain, Flame, Gem, Zap, Smartphone, Monitor, Tablet, Lock,
+  CreditCard, Smartphone as Pix, ChevronRight, Quote, Gift, HelpCircle,
 } from "lucide-react";
+import {
+  Accordion, AccordionContent, AccordionItem, AccordionTrigger,
+} from "@/components/ui/accordion";
 import { Header } from "@/components/Header";
 import { TopCountdown } from "@/components/TopCountdown";
 import { SocialProofPopup } from "@/components/SocialProofPopup";
+import { StickyBottomBar } from "@/components/StickyBottomBar";
 import { CTAButton } from "@/components/CTAButton";
 import { Reveal } from "@/components/Reveal";
 import { Countdown } from "@/components/Countdown";
@@ -19,6 +23,11 @@ import tFernanda from "@/assets/t-fernanda.jpg";
 import tClaudia from "@/assets/t-claudia.jpg";
 import tAna from "@/assets/t-ana.jpg";
 import tRegina from "@/assets/t-regina.jpg";
+import pMariaC from "@/assets/p-mariac.jpg";
+import pMarianaK from "@/assets/p-marianak.jpg";
+import pPatricia from "@/assets/p-patricia.jpg";
+import pSuzana from "@/assets/p-suzana.jpg";
+import pVanessa from "@/assets/p-vanessa.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -43,23 +52,27 @@ export const Route = createFileRoute("/")({
 
 function LandingPage() {
   return (
-    <div id="top" className="min-h-screen bg-background overflow-x-hidden">
+    <div id="top" className="min-h-screen bg-background overflow-x-hidden pb-20 md:pb-24">
       <TopCountdown hours={12} />
       <Header />
       <SocialProofPopup />
+      <StickyBottomBar />
 
       <Hero />
       <Pain />
       <FirstResults />
-      <MarinaStory />
       <Discovery />
-      <Triggers />
       <Method />
       <Modules />
-      <MoreProof />
       <Devices />
+      <Triggers />
       <Bonuses />
       <Offer />
+      <MoreProof />
+      <Decision />
+      <Guarantee />
+      <FAQ />
+      <MarinaStory />
       <Objections />
       <Footer />
     </div>
@@ -190,7 +203,7 @@ function Pain() {
             <p className="text-lg text-foreground max-w-2xl mx-auto mb-8">
               Se você assentiu para pelo menos 3 delas, você não está sozinha. E, mais importante: <strong>você está no lugar certo</strong>.
             </p>
-            <CTAButton size="xl">Entrar para o Método Nefertiti</CTAButton>
+            <CTAButton size="xl">Entrar para o <span className="font-display italic">Método Nefertiti</span></CTAButton>
           </div>
         </Reveal>
       </div>
@@ -410,7 +423,7 @@ function Method() {
       <div className="container mx-auto px-4 max-w-6xl">
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
           <Reveal y={40}>
-            <div className="relative order-1 lg:order-1">
+            <div className="relative">
               <div className="absolute -inset-6 bg-rose-gold-gradient opacity-25 blur-3xl rounded-full" />
               <img
                 src={mockup}
@@ -418,10 +431,6 @@ function Method() {
                 loading="lazy"
                 className="relative w-full max-w-lg mx-auto h-auto object-contain drop-shadow-2xl float-soft"
               />
-              <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 md:translate-x-0 md:-bottom-4 md:-right-4 md:left-auto bg-card border border-rose-gold/30 rounded-2xl px-4 py-3 shadow-card-soft flex items-center gap-2">
-                <Star className="h-5 w-5 text-rose-gold-deep" fill="currentColor" />
-                <span className="font-heading font-bold text-sm whitespace-nowrap">4.9 / 5 — 3.847 alunas</span>
-              </div>
             </div>
           </Reveal>
           <div className="text-center lg:text-left">
@@ -506,14 +515,14 @@ function Triggers() {
   );
 }
 
-/* -------------------- MORE PROOF -------------------- */
+/* -------------------- MORE PROOF (with photos) -------------------- */
 function MoreProof() {
   const list = [
-    { name: "Maria Clara", age: 28, text: "Em 11 dias meu ex voltou pedindo outra chance. Mas agora EU é que não sei se quero ele de volta…" },
-    { name: "Mariana K.", age: 38, text: "Ele bloqueou todo mundo menos eu. Agora me liga às 2 da manhã dizendo que errou…" },
-    { name: "Patrícia L.", age: 50, text: "Aos 50, em 3 semanas tinha 2 homens me cortejando. Estou nas nuvens!" },
-    { name: "Suzana S.", age: 52, text: "Depois de 5 anos num relacionamento tóxico, em menos de um mês conheci um homem incrível." },
-    { name: "Vanessa L.", age: 41, text: "Hoje estou solteira, feliz e com uma fila de pretendentes de alto valor. A liberdade é indescritível." },
+    { name: "Maria Clara", age: 28, photo: pMariaC, text: "Em 11 dias meu ex voltou pedindo outra chance. Mas agora EU é que não sei se quero ele de volta…" },
+    { name: "Mariana K.", age: 38, photo: pMarianaK, text: "Ele bloqueou todo mundo menos eu. Agora me liga às 2 da manhã dizendo que errou…" },
+    { name: "Patrícia L.", age: 50, photo: pPatricia, text: "Aos 50, em 3 semanas tinha 2 homens me cortejando. Estou nas nuvens!" },
+    { name: "Suzana S.", age: 52, photo: pSuzana, text: "Depois de 5 anos num relacionamento tóxico, em menos de um mês conheci um homem incrível." },
+    { name: "Vanessa L.", age: 41, photo: pVanessa, text: "Hoje estou solteira, feliz e com uma fila de pretendentes de alto valor. A liberdade é indescritível." },
   ];
   return (
     <section className="py-20 md:py-28 bg-muted">
@@ -522,16 +531,25 @@ function MoreProof() {
           <h2 className="font-display text-3xl md:text-5xl font-bold text-center text-foreground leading-tight">
             Não acredite em mim. <span className="text-rose-gold-gradient">Acredite nelas.</span>
           </h2>
+          <p className="mt-4 text-center text-muted-foreground max-w-2xl mx-auto">
+            Mulheres reais, histórias reais — alunas que reescreveram seus destinos com o <span className="font-display italic">Método Nefertiti</span>.
+          </p>
         </Reveal>
-        <div className="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {list.map((t, i) => (
             <Reveal key={t.name} delay={i * 0.08}>
-              <div className="bg-card rounded-2xl p-6 shadow-card-soft border border-rose-gold/10 h-full">
-                <div className="flex items-center gap-1 text-rose-gold-deep mb-3">
-                  {[...Array(5)].map((_, k) => <Star key={k} className="h-4 w-4" fill="currentColor" />)}
+              <div className="bg-card rounded-3xl p-6 shadow-elegant border border-rose-gold/15 h-full flex flex-col">
+                <div className="flex items-center gap-4 mb-4">
+                  <img src={t.photo} alt={t.name} loading="lazy" width={64} height={64} className="h-16 w-16 rounded-full object-cover border-2 border-rose-gold/40 shrink-0" />
+                  <div>
+                    <p className="font-heading font-bold text-foreground leading-tight">{t.name}</p>
+                    <p className="text-xs text-muted-foreground">{t.age} anos</p>
+                    <div className="flex items-center gap-0.5 text-rose-gold-deep mt-1">
+                      {[...Array(5)].map((_, k) => <Star key={k} className="h-3.5 w-3.5" fill="currentColor" />)}
+                    </div>
+                  </div>
                 </div>
-                <p className="text-foreground leading-relaxed italic">"{t.text}"</p>
-                <p className="mt-4 font-heading font-bold text-foreground">{t.name}, <span className="text-muted-foreground font-normal">{t.age}</span></p>
+                <p className="text-foreground leading-relaxed italic flex-1">"{t.text}"</p>
               </div>
             </Reveal>
           ))}
@@ -628,8 +646,11 @@ function Devices() {
     <section className="py-12 md:py-16 bg-background">
       <div className="container mx-auto px-4 text-center">
         <Reveal>
-          <p className="font-heading font-semibold text-foreground">Sua transformação acessível em qualquer lugar</p>
-          <div className="mt-4 flex items-center justify-center gap-6 md:gap-10 text-rose-gold-deep">
+          <p className="font-heading font-semibold text-foreground text-lg md:text-xl">
+            Sua transformação acessível em qualquer lugar
+          </p>
+          <p className="mt-2 text-sm text-muted-foreground">a qualquer hora, em qualquer dispositivo</p>
+          <div className="mt-5 flex items-center justify-center gap-6 md:gap-10 text-rose-gold-deep">
             <div className="flex items-center gap-2"><Smartphone className="h-5 w-5" /><span className="text-sm font-heading">Celular</span></div>
             <div className="flex items-center gap-2"><Monitor className="h-5 w-5" /><span className="text-sm font-heading">Computador</span></div>
             <div className="flex items-center gap-2"><Tablet className="h-5 w-5" /><span className="text-sm font-heading">Tablet</span></div>
@@ -727,11 +748,11 @@ function Offer() {
 
             <div className="mt-10 text-center">
               <p className="font-heading text-foreground/70 line-through text-lg">De R$ 997,00</p>
-              <p className="mt-2 font-heading text-sm uppercase tracking-widest text-rose-gold-deep">por apenas 12x de</p>
+              <p className="mt-2 font-heading text-sm uppercase tracking-widest text-rose-gold-deep">por apenas</p>
               <p className="font-display font-bold text-foreground text-5xl md:text-7xl mt-2">
-                R$ 14<span className="text-3xl md:text-4xl">,90</span>
+                R$ 147<span className="text-3xl md:text-4xl">,00</span>
               </p>
-              <p className="mt-2 text-muted-foreground">ou <strong className="text-foreground">R$ 147,00</strong> à vista</p>
+              <p className="mt-2 text-muted-foreground">à vista no PIX • ou <strong className="text-foreground">12x sem juros</strong> no cartão</p>
 
               <div className="mt-8">
                 <CTAButton size="xl">Garantir minha vaga agora</CTAButton>
@@ -760,6 +781,197 @@ function Offer() {
   );
 }
 
+/* -------------------- DECISION -------------------- */
+function Decision() {
+  return (
+    <section className="py-20 md:py-28 bg-background">
+      <div className="container mx-auto px-4 max-w-5xl">
+        <Reveal>
+          <div className="text-center">
+            <p className="font-heading font-bold text-rose-gold-deep uppercase tracking-widest text-sm">Querida</p>
+            <h2 className="mt-3 font-display text-3xl md:text-5xl font-bold text-foreground leading-tight">
+              Chegou <span className="text-rose-gold-gradient">sua hora</span>
+            </h2>
+            <p className="mt-5 text-lg text-muted-foreground max-w-2xl mx-auto">
+              Você tem duas opções agora:
+            </p>
+          </div>
+        </Reveal>
+
+        <div className="mt-12 grid md:grid-cols-2 gap-6">
+          <Reveal delay={0.1}>
+            <div className="bg-muted rounded-3xl p-7 md:p-9 border border-border h-full relative overflow-hidden">
+              <div className="absolute top-5 right-5 text-6xl font-display font-bold text-foreground/5">01</div>
+              <p className="font-heading font-bold text-muted-foreground uppercase tracking-widest text-xs">Opção 1</p>
+              <h3 className="mt-2 font-display text-2xl md:text-3xl font-bold text-foreground/70">Feche esta página</h3>
+              <p className="mt-4 text-foreground/70 leading-relaxed text-[15px]">
+                Continue vivendo a mesma dor, a mesma insegurança, a mesma sensação de que "nunca mais vai ser a mesma" — e ainda fique com aquele arrependimento por não ter entrado para o <span className="font-display italic">Método Nefertiti</span>.
+              </p>
+              <p className="mt-4 text-foreground/70 leading-relaxed text-[15px]">
+                Continue vendo outras mulheres conquistarem os homens que você deseja. Continue se sentindo invisível, rejeitada, sem valor — e ainda somado a tudo isso, um coração partido e uma ferida que não cicatriza. 😪
+              </p>
+            </div>
+          </Reveal>
+
+          <Reveal delay={0.2}>
+            <div className="bg-rose-soft-gradient rounded-3xl p-7 md:p-9 border-2 border-rose-gold/40 shadow-elegant h-full relative overflow-hidden">
+              <div className="absolute top-5 right-5 text-6xl font-display font-bold text-rose-gold/15">02</div>
+              <p className="font-heading font-bold text-rose-gold-deep uppercase tracking-widest text-xs">Opção 2</p>
+              <h3 className="mt-2 font-display text-2xl md:text-3xl font-bold text-foreground">
+                Decida que <span className="text-rose-gold-gradient">hoje</span> sua vida muda 👸
+              </h3>
+              <p className="mt-4 text-foreground leading-relaxed text-[15px]">
+                Porque <strong>VOCÊ MERECE</strong>. Que você nunca mais vai aceitar migalhas emocionais de homem nenhum. Que você vai se tornar a mulher que tem opções de alto valor e se sente estimada e valorizada.
+              </p>
+              <p className="mt-4 text-foreground leading-relaxed text-[15px]">
+                Que <strong>você é quem escolhe</strong> e é desejada — não só pelo seu corpo, dinheiro ou beleza, mas por sua feminilidade e poder de atração magnética que deixa os homens hipnotizados, loucos para te decifrar.
+              </p>
+            </div>
+          </Reveal>
+        </div>
+
+        <Reveal delay={0.3}>
+          <div className="mt-12 text-center">
+            <p className="text-lg text-foreground max-w-2xl mx-auto">
+              A escolha é sua. Mas lembre-se: <strong className="text-rose-gold-deep">apenas 12 vagas restantes</strong> e este preço especial <strong>nunca mais</strong> será oferecido.
+            </p>
+            <div className="mt-8">
+              <CTAButton size="xl">Quero minha vaga agora</CTAButton>
+            </div>
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
+/* -------------------- GUARANTEE -------------------- */
+function Guarantee() {
+  const items = [
+    {
+      title: "Resultados ou dinheiro de volta",
+      text: "Se em 7 dias você não se sentir pelo menos 10x mais confiante e poderosa, devolvemos cada centavo. Sem perguntas, sem burocracia.",
+    },
+    {
+      title: "Satisfação total",
+      text: "Se por qualquer motivo você não ficar 100% satisfeita com o conteúdo, tem 7 dias para pedir reembolso total.",
+    },
+    {
+      title: "Suporte VIP",
+      text: "Acesso direto comigo e com minha equipe por 21 dias. Suas perguntas serão respondidas em até 48 horas.",
+    },
+  ];
+  return (
+    <section className="py-20 md:py-28 bg-graphite-gradient text-pearl relative overflow-hidden">
+      <div className="absolute inset-0 opacity-15" style={{ backgroundImage: "radial-gradient(circle at 50% 50%, oklch(0.7 0.105 33 / 0.6), transparent 60%)" }} />
+      <div className="container mx-auto px-4 max-w-5xl relative">
+        <Reveal>
+          <div className="text-center mb-12">
+            <div className="inline-flex h-20 w-20 rounded-full bg-rose-gold-gradient items-center justify-center shadow-glow mb-5">
+              <ShieldCheck className="h-10 w-10 text-pearl" strokeWidth={2.2} />
+            </div>
+            <p className="font-heading font-bold text-rose-gold tracking-widest uppercase text-sm">🛡️ Tripla garantia blindada</p>
+            <h2 className="mt-3 font-display text-3xl md:text-5xl font-bold leading-tight">
+              Você literalmente <span className="text-rose-gold-gradient">não tem nada a perder</span>
+            </h2>
+          </div>
+        </Reveal>
+
+        <div className="grid md:grid-cols-3 gap-5">
+          {items.map((g, i) => (
+            <Reveal key={g.title} delay={i * 0.1}>
+              <div className="bg-card/10 backdrop-blur-md border border-rose-gold/30 rounded-3xl p-7 h-full">
+                <div className="flex items-center gap-3 mb-3">
+                  <span className="font-display text-3xl font-bold text-rose-gold-gradient">#{i + 1}</span>
+                  <CheckCircle2 className="h-6 w-6 text-rose-gold" />
+                </div>
+                <h3 className="font-display text-xl font-bold text-pearl">{g.title}</h3>
+                <p className="mt-3 text-pearl/85 text-sm leading-relaxed">{g.text}</p>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+
+        <Reveal delay={0.3}>
+          <p className="mt-10 text-center text-pearl/95 max-w-2xl mx-auto leading-relaxed">
+            Ou você se transforma, ou seu dinheiro volta integralmente. <span className="text-rose-gold-gradient font-bold">💕</span>
+          </p>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
+/* -------------------- FAQ -------------------- */
+function FAQ() {
+  const faqs = [
+    {
+      q: "Como acesso o material após a compra?",
+      a: "Imediatamente após a confirmação do pagamento, você receberá um e-mail com seus dados de acesso à área de membros. O acesso é instantâneo!",
+    },
+    {
+      q: "Qual é a garantia oferecida?",
+      a: "Oferecemos uma Tripla Garantia Blindada: 1) Resultados ou dinheiro de volta em 7 dias; 2) Satisfação total — 7 dias para avaliar o conteúdo; 3) Suporte VIP — acesso direto à equipe por 21 dias.",
+    },
+    {
+      q: "Este método é para mim?",
+      a: "Se você é uma mulher de 20 a 65 anos que passou por um término doloroso e quer recuperar seu poder de atração, este método foi feito especificamente para você.",
+    },
+    {
+      q: "Que tipo de suporte está incluído?",
+      a: "Suporte VIP direto com Marina e equipe por 21 dias. Suas perguntas serão respondidas em até 48 horas.",
+    },
+    {
+      q: "Em quanto tempo vejo os primeiros resultados?",
+      a: "Os primeiros sinais de transformação podem aparecer em 48 a 72 horas, com resultados completos relatados em 21 dias, aplicando exatamente como ensinado no Método Nefertiti.",
+    },
+    {
+      q: "Como posso pagar?",
+      a: "Aceitamos cartão de crédito com parcelamento em até 12x ou à vista via PIX. Os detalhes completos estão na página de pagamento.",
+    },
+  ];
+  return (
+    <section className="py-20 md:py-28 bg-muted">
+      <div className="container mx-auto px-4 max-w-3xl">
+        <Reveal>
+          <div className="text-center mb-12">
+            <div className="inline-flex h-16 w-16 rounded-full bg-rose-gold-gradient items-center justify-center shadow-glow mb-4">
+              <HelpCircle className="h-8 w-8 text-pearl" strokeWidth={2.2} />
+            </div>
+            <h2 className="font-display text-3xl md:text-5xl font-bold text-foreground leading-tight">
+              Perguntas <span className="text-rose-gold-gradient">frequentes</span>
+            </h2>
+          </div>
+        </Reveal>
+
+        <Reveal delay={0.15}>
+          <Accordion type="single" collapsible className="bg-card rounded-3xl border border-rose-gold/20 shadow-card-soft px-5 md:px-8">
+            {faqs.map((f, i) => (
+              <AccordionItem key={f.q} value={`item-${i}`} className="border-rose-gold/15 last:border-b-0">
+                <AccordionTrigger className="text-left font-heading font-semibold text-foreground text-base md:text-lg py-5 hover:no-underline">
+                  <span className="flex items-start gap-3">
+                    <span className="text-rose-gold-deep">❓</span>
+                    {f.q}
+                  </span>
+                </AccordionTrigger>
+                <AccordionContent className="text-foreground/80 leading-relaxed text-[15px] pl-8">
+                  {f.a}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </Reveal>
+
+        <Reveal delay={0.3}>
+          <div className="text-center mt-12">
+            <CTAButton size="xl">Quero minha vaga agora</CTAButton>
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
 /* -------------------- OBJECTIONS -------------------- */
 function Objections() {
   const items = [
@@ -773,7 +985,7 @@ function Objections() {
     },
   ];
   return (
-    <section className="py-20 md:py-28 bg-muted">
+    <section className="py-20 md:py-28 bg-rose-soft-gradient">
       <div className="container mx-auto px-4 max-w-4xl">
         <Reveal>
           <h2 className="font-display text-3xl md:text-5xl font-bold text-center text-foreground leading-tight">
@@ -826,7 +1038,7 @@ function Footer() {
         <p className="mt-10 text-xs text-pearl/55 text-center max-w-3xl mx-auto leading-relaxed">
           Este produto é um material digital informativo. Os resultados podem variar de pessoa para pessoa e dependem do comprometimento individual com o método. Não garantimos resultados específicos. Este site não é afiliado ao Facebook, Instagram ou qualquer outra plataforma. Pagamento processado com criptografia de dados.
         </p>
-        <p className="mt-6 text-center text-xs text-pearl/40">© {new Date().getFullYear()} Método Nefertiti. Todos os direitos reservados.</p>
+        <p className="mt-6 text-center text-xs text-pearl/40">© {new Date().getFullYear()} <span className="font-display italic">Método Nefertiti</span>. Todos os direitos reservados.</p>
       </div>
     </footer>
   );

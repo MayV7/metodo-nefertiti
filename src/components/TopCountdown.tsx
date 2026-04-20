@@ -6,25 +6,26 @@ function pad(n: number) {
 }
 
 export function TopCountdown({ hours = 12 }: { hours?: number }) {
-  const [end] = useState(() => {
-    if (typeof window !== "undefined") {
-      const stored = window.localStorage.getItem("nefertiti_top_countdown_end");
-      if (stored) {
-        const v = parseInt(stored, 10);
-        if (!Number.isNaN(v) && v > Date.now()) return v;
-      }
-      const v = Date.now() + hours * 60 * 60 * 1000;
-      window.localStorage.setItem("nefertiti_top_countdown_end", String(v));
-      return v;
-    }
-    return Date.now() + hours * 60 * 60 * 1000;
-  });
-  const [now, setNow] = useState(Date.now());
+  const [end, setEnd] = useState<number | null>(null);
+  const [now, setNow] = useState(0);
+
   useEffect(() => {
+    const stored = window.localStorage.getItem("nefertiti_top_countdown_end");
+    let target: number;
+    if (stored) {
+      const v = parseInt(stored, 10);
+      target = !Number.isNaN(v) && v > Date.now() ? v : Date.now() + hours * 3_600_000;
+    } else {
+      target = Date.now() + hours * 3_600_000;
+    }
+    window.localStorage.setItem("nefertiti_top_countdown_end", String(target));
+    setEnd(target);
+    setNow(Date.now());
     const id = setInterval(() => setNow(Date.now()), 1000);
     return () => clearInterval(id);
-  }, []);
-  const diff = Math.max(0, end - now);
+  }, [hours]);
+
+  const diff = end ? Math.max(0, end - now) : hours * 3_600_000;
   const h = Math.floor(diff / 3_600_000);
   const m = Math.floor((diff % 3_600_000) / 60_000);
   const s = Math.floor((diff % 60_000) / 1000);
@@ -34,7 +35,10 @@ export function TopCountdown({ hours = 12 }: { hours?: number }) {
       <div className="flex items-center gap-2 text-xs md:text-sm">
         <Clock className="h-4 w-4 text-rose-gold" />
         <span className="opacity-90">A oferta termina em</span>
-        <span className="flex items-center gap-1 font-display font-bold text-rose-gold-gradient text-base md:text-lg tabular-nums">
+        <span
+          className="flex items-center gap-1 font-display font-bold text-rose-gold-gradient text-base md:text-lg tabular-nums"
+          suppressHydrationWarning
+        >
           <span>{pad(h)}</span>:<span>{pad(m)}</span>:<span>{pad(s)}</span>
         </span>
       </div>
