@@ -681,10 +681,10 @@ function Devices() {
     <section className="py-12 md:py-16 bg-background">
       <div className="container mx-auto px-4 text-center">
         <Reveal>
-          <p className="font-heading font-semibold text-foreground text-lg md:text-xl">
-            Sua transformação acessível em qualquer lugar
+          <p className="font-heading font-semibold text-foreground text-lg md:text-2xl">
+            <span className="font-display italic">Método Nefertiti</span> — Sua transformação acessível em qualquer lugar, a qualquer hora
           </p>
-          <p className="mt-2 text-sm text-muted-foreground">a qualquer hora, em qualquer dispositivo</p>
+          <p className="mt-2 text-sm text-muted-foreground">📱 Celular • 💻 Computador • 📲 Tablet</p>
           <div className="mt-5 flex items-center justify-center gap-6 md:gap-10 text-rose-gold-deep">
             <div className="flex items-center gap-2"><Smartphone className="h-5 w-5" /><span className="text-sm font-heading">Celular</span></div>
             <div className="flex items-center gap-2"><Monitor className="h-5 w-5" /><span className="text-sm font-heading">Computador</span></div>
