@@ -97,35 +97,34 @@ function Hero() {
           <Reveal delay={0.2}>
             <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.15] text-foreground">
               <span className="font-display italic font-semibold text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-rose-gold-gradient block leading-tight mb-3">Método Nefertiti</span>
-              O segredo das <span className="text-rose-gold-gradient">3.847 mulheres</span> que transformaram a dor da rejeição em magnetismo irresistível
+              O segredo das <span className="text-rose-gold-gradient">3.847 mulheres</span> que transformaram a dor da rejeição em um magnetismo irresistível que faz homens de alto valor <span className="text-rose-gold-gradient">QUEREREM VOCÊ</span> — mesmo que você se sinta "invisível" agora.
             </h1>
           </Reveal>
           <Reveal delay={0.28}>
-            <div className="mt-5 flex justify-center">
-              <span className="inline-flex items-center gap-2 bg-graphite-gradient text-pearl px-5 py-2.5 rounded-full font-heading text-sm md:text-base uppercase tracking-[0.2em] border border-rose-gold/60 shadow-glow">
-                <Sparkles className="h-4 w-4 text-rose-gold" /> <span className="text-rose-gold-gradient font-bold">Validado por Harvard</span>
-              </span>
-            </div>
+            <p className="mt-5 text-xs md:text-sm text-muted-foreground italic max-w-xl mx-auto">
+              <Sparkles className="inline h-3.5 w-3.5 text-rose-gold-deep mr-1" />
+              Validado por Harvard
+            </p>
           </Reveal>
           <Reveal delay={0.35}>
             <p className="mt-5 text-base md:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              O <strong className="text-foreground">único sistema de reversão psicológica</strong> que faz ex-parceiros se arrependerem e homens de alto valor te perseguirem — mesmo que você se sinta invisível agora.
+              Descubra o <strong className="text-foreground">único sistema de reversão psicológica validado por Harvard</strong> que faz ex-parceiros se arrependerem de terem te perdido e homens de alto valor te perseguirem.
             </p>
           </Reveal>
           <Reveal delay={0.5}>
             <div className="mt-8 flex flex-col items-center gap-3">
-              <CTAButton size="xl">Desperte sua Rainha Interior</CTAButton>
-              <p className="text-xs text-muted-foreground italic">
-                Clique e garanta seu acesso imediato. Vagas limitadas.
+              <CTAButton size="xl">👑 Quero meu acesso agora</CTAButton>
+              <p className="text-xs text-muted-foreground italic max-w-md">
+                Clique e garanta seu acesso imediato. Esta é a sua última chance. Vagas limitadas!
               </p>
             </div>
           </Reveal>
           <Reveal delay={0.65}>
             <ul className="mt-10 grid sm:grid-cols-3 gap-3 text-left max-w-2xl mx-auto">
               {[
-                "Acesso imediato e vitalício",
-                "Garantia incondicional 7 dias",
-                "+3.847 mulheres transformadas",
+                "Acesso Imediato e Vitalício — sua transformação começa hoje",
+                "Garantia Incondicional de 7 Dias — seu risco é ZERO",
+                "+3.847 Mulheres Transformadas — junte-se ao exército de rainhas",
               ].map((t) => (
                 <li key={t} className="flex items-start gap-2 text-sm font-medium text-foreground">
                   <CheckCircle2 className="h-5 w-5 text-rose-gold-deep shrink-0 mt-0.5" />
