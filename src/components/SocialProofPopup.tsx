@@ -58,7 +58,7 @@ export function SocialProofPopup() {
                 <CheckCircle2 className="h-4 w-4 text-rose-gold-deep" />
               </p>
               <p className="text-xs text-muted-foreground truncate">
-                garantiu sua vaga • {b.city}
+                comprou agora • {b.city}
               </p>
               <p className="text-[11px] text-rose-gold-deep font-medium mt-0.5">{b.time}</p>
             </div>
