@@ -1095,8 +1095,9 @@ function Objections() {
     <section className="py-20 md:py-28 bg-rose-soft-gradient">
       <div className="container mx-auto px-4 max-w-4xl">
         <Reveal>
-          <h2 className="font-display text-3xl md:text-5xl font-bold text-center text-foreground leading-tight">
-            "Marina, mas e se…" <span className="text-rose-gold-gradient block mt-2">A mente da rainha tem respostas.</span>
+          <p className="text-center font-heading font-bold text-rose-gold-deep uppercase tracking-widest text-sm">Quebra de objeções finais</p>
+          <h2 className="mt-3 font-display text-3xl md:text-5xl font-bold text-center text-foreground leading-tight">
+            "Marina, mas e se…" <span className="text-rose-gold-gradient block mt-2">A mente da rainha não tem dúvidas. Ela tem respostas.</span>
           </h2>
         </Reveal>
         <div className="mt-12 space-y-5">
