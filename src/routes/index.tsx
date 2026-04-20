@@ -101,9 +101,11 @@ function Hero() {
             </h1>
           </Reveal>
           <Reveal delay={0.28}>
-            <p className="mt-3 text-[11px] md:text-xs uppercase tracking-[0.18em] font-heading text-rose-gold-deep flex items-center justify-center gap-1.5">
-              <Sparkles className="h-3 w-3" /> Validado por Harvard
-            </p>
+            <div className="mt-5 flex justify-center">
+              <span className="inline-flex items-center gap-2 bg-graphite-gradient text-pearl px-5 py-2.5 rounded-full font-heading text-sm md:text-base uppercase tracking-[0.2em] border border-rose-gold/60 shadow-glow">
+                <Sparkles className="h-4 w-4 text-rose-gold" /> <span className="text-rose-gold-gradient font-bold">Validado por Harvard</span>
+              </span>
+            </div>
           </Reveal>
           <Reveal delay={0.35}>
             <p className="mt-5 text-base md:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
@@ -759,14 +761,16 @@ function Offer() {
 
             <div className="mt-10 text-center">
               <p className="font-heading text-foreground/70 line-through text-lg">De R$ 997,00</p>
-              <p className="mt-2 font-heading text-sm uppercase tracking-widest text-rose-gold-deep">por apenas</p>
-              <p className="font-display font-bold text-foreground text-5xl md:text-7xl mt-2">
-                R$ 147<span className="text-3xl md:text-4xl">,00</span>
+              <p className="mt-2 font-heading text-sm uppercase tracking-widest text-rose-gold-deep">12x sem juros de</p>
+              <p className="font-display font-bold text-foreground text-5xl md:text-7xl mt-2 leading-none">
+                12x <span className="text-rose-gold-gradient">R$ 14<span className="text-3xl md:text-4xl">,70</span></span>
               </p>
-              <p className="mt-2 text-muted-foreground">à vista no PIX • ou <strong className="text-foreground">12x sem juros</strong> no cartão</p>
+              <p className="mt-3 text-base md:text-lg text-muted-foreground">
+                ou <strong className="text-foreground">R$ 147,00</strong> à vista no PIX
+              </p>
 
               <div className="mt-8">
-                <CTAButton size="xl">Garantir minha vaga agora</CTAButton>
+                <CTAButton size="xl">Entrar agora para o Método Nefertiti</CTAButton>
               </div>
 
               <div className="mt-6 flex flex-wrap items-center justify-center gap-4 text-sm text-muted-foreground">
@@ -847,7 +851,7 @@ function Decision() {
               A escolha é sua. Mas lembre-se: <strong className="text-rose-gold-deep">apenas 12 vagas restantes</strong> e este preço especial <strong>nunca mais</strong> será oferecido.
             </p>
             <div className="mt-8">
-              <CTAButton size="xl">Quero minha vaga agora</CTAButton>
+              <CTAButton size="xl">Entrar agora para o Método Nefertiti</CTAButton>
             </div>
           </div>
         </Reveal>
@@ -975,7 +979,7 @@ function FAQ() {
 
         <Reveal delay={0.3}>
           <div className="text-center mt-12">
-            <CTAButton size="xl">Quero minha vaga agora</CTAButton>
+            <CTAButton size="xl">Entrar agora para o Método Nefertiti</CTAButton>
           </div>
         </Reveal>
       </div>
@@ -1036,7 +1040,7 @@ function Scarcity() {
 
         <Reveal delay={0.3}>
           <div className="text-center mt-10">
-            <CTAButton size="xl">✨ Clique aqui e garanta sua vaga agora</CTAButton>
+            <CTAButton size="xl">Entrar agora para o Método Nefertiti</CTAButton>
           </div>
         </Reveal>
       </div>
