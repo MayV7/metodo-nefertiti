@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import {
   Crown, Heart, Sparkles, ShieldCheck, Star, CheckCircle2, XCircle,
   Award, Brain, Flame, Gem, Zap, Smartphone, Monitor, Tablet, Lock,
-  CreditCard, Smartphone as Pix, ChevronRight, Quote,
+  CreditCard, Smartphone as Pix, ChevronRight, Quote, Gift,
 } from "lucide-react";
 import { Header } from "@/components/Header";
 import { TopCountdown } from "@/components/TopCountdown";
@@ -15,6 +15,10 @@ import logo from "@/assets/logo-nefertiti.png";
 import mockup from "@/assets/mockup-nefertiti.png";
 import marina from "@/assets/marina.jpg";
 import sophia from "@/assets/sophia.jpg";
+import tFernanda from "@/assets/t-fernanda.jpg";
+import tClaudia from "@/assets/t-claudia.jpg";
+import tAna from "@/assets/t-ana.jpg";
+import tRegina from "@/assets/t-regina.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -49,10 +53,10 @@ function LandingPage() {
       <FirstResults />
       <MarinaStory />
       <Discovery />
-      <Method />
       <Triggers />
-      <MoreProof />
+      <Method />
       <Modules />
+      <MoreProof />
       <Devices />
       <Bonuses />
       <Offer />
