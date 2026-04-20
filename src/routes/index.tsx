@@ -601,11 +601,22 @@ function Modules() {
     <section className="py-20 md:py-28 bg-rose-soft-gradient">
       <div className="container mx-auto px-4 max-w-6xl">
         <Reveal>
-          <div className="text-center mb-14">
-            <p className="font-heading font-bold text-rose-gold-deep tracking-widest uppercase text-sm">Sua rota para a realeza</p>
+          <div className="text-center mb-10">
+            <p className="font-heading font-bold text-rose-gold-deep tracking-widest uppercase text-sm">O que você vai receber</p>
             <h2 className="mt-3 font-display text-3xl md:text-5xl font-bold text-foreground leading-tight">
-              O mapa da sua <span className="text-rose-gold-gradient">transformação</span> em 21 dias
+              3 módulos para sua <span className="text-rose-gold-gradient">transformação</span> em 21 dias
             </h2>
+          </div>
+        </Reveal>
+        <Reveal y={40}>
+          <div className="relative max-w-md mx-auto mb-14">
+            <div className="absolute -inset-6 bg-rose-gold-gradient opacity-25 blur-3xl rounded-full" />
+            <img
+              src={mockup}
+              alt="Método Nefertiti — acesso em celular, tablet e computador"
+              loading="lazy"
+              className="relative w-full h-auto object-contain drop-shadow-2xl float-soft"
+            />
           </div>
         </Reveal>
         <div className="grid md:grid-cols-3 gap-6">
