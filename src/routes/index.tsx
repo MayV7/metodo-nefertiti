@@ -62,17 +62,18 @@ function LandingPage() {
       <Pain />
       <FirstResults />
       <Discovery />
+      <Triggers />
       <Method />
       <Modules />
-      <Devices />
-      <Triggers />
       <Bonuses />
+      <Devices />
       <Offer />
       <MoreProof />
       <Decision />
       <Guarantee />
       <FAQ />
       <MarinaStory />
+      <Scarcity />
       <Objections />
       <Footer />
     </div>
@@ -93,19 +94,19 @@ function Hero() {
         </Reveal>
 
         <div className="max-w-3xl mx-auto text-center">
-          <Reveal delay={0.1}>
-            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-card/70 backdrop-blur border border-rose-gold/30 text-xs md:text-sm font-heading font-semibold text-rose-gold-deep uppercase tracking-wider mb-6">
-              <Sparkles className="h-4 w-4" /> Validado por Harvard
-            </span>
-          </Reveal>
           <Reveal delay={0.2}>
             <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.15] text-foreground">
               <span className="font-display italic font-semibold text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-rose-gold-gradient block leading-tight mb-3">Método Nefertiti</span>
               O segredo das <span className="text-rose-gold-gradient">3.847 mulheres</span> que transformaram a dor da rejeição em magnetismo irresistível
             </h1>
           </Reveal>
+          <Reveal delay={0.28}>
+            <p className="mt-3 text-[11px] md:text-xs uppercase tracking-[0.18em] font-heading text-rose-gold-deep flex items-center justify-center gap-1.5">
+              <Sparkles className="h-3 w-3" /> Validado por Harvard
+            </p>
+          </Reveal>
           <Reveal delay={0.35}>
-            <p className="mt-6 text-base md:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+            <p className="mt-5 text-base md:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
               O <strong className="text-foreground">único sistema de reversão psicológica</strong> que faz ex-parceiros se arrependerem e homens de alto valor te perseguirem — mesmo que você se sinta invisível agora.
             </p>
           </Reveal>
@@ -435,7 +436,6 @@ function Method() {
           </Reveal>
           <div className="text-center lg:text-left">
             <Reveal>
-              <img src={logo} alt="Método Nefertiti" loading="lazy" className="h-14 md:h-20 w-auto mx-auto lg:mx-0 mb-6" />
               <h2 className="font-display text-3xl md:text-5xl font-bold text-foreground leading-tight">
                 Apresentando o <span className="font-display italic font-semibold text-4xl md:text-6xl text-rose-gold-gradient block leading-tight mt-2">Método Nefertiti</span>
               </h2>
@@ -602,11 +602,22 @@ function Modules() {
     <section className="py-20 md:py-28 bg-rose-soft-gradient">
       <div className="container mx-auto px-4 max-w-6xl">
         <Reveal>
-          <div className="text-center mb-14">
-            <p className="font-heading font-bold text-rose-gold-deep tracking-widest uppercase text-sm">Sua rota para a realeza</p>
+          <div className="text-center mb-10">
+            <p className="font-heading font-bold text-rose-gold-deep tracking-widest uppercase text-sm">O que você vai receber</p>
             <h2 className="mt-3 font-display text-3xl md:text-5xl font-bold text-foreground leading-tight">
-              O mapa da sua <span className="text-rose-gold-gradient">transformação</span> em 21 dias
+              3 módulos para sua <span className="text-rose-gold-gradient">transformação</span> em 21 dias
             </h2>
+          </div>
+        </Reveal>
+        <Reveal y={40}>
+          <div className="relative max-w-md mx-auto mb-14">
+            <div className="absolute -inset-6 bg-rose-gold-gradient opacity-25 blur-3xl rounded-full" />
+            <img
+              src={mockup}
+              alt="Método Nefertiti — acesso em celular, tablet e computador"
+              loading="lazy"
+              className="relative w-full h-auto object-contain drop-shadow-2xl float-soft"
+            />
           </div>
         </Reveal>
         <div className="grid md:grid-cols-3 gap-6">
@@ -965,6 +976,67 @@ function FAQ() {
         <Reveal delay={0.3}>
           <div className="text-center mt-12">
             <CTAButton size="xl">Quero minha vaga agora</CTAButton>
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
+/* -------------------- SCARCITY -------------------- */
+function Scarcity() {
+  return (
+    <section className="py-20 md:py-28 bg-graphite-gradient text-pearl relative overflow-hidden">
+      <div className="absolute inset-0 opacity-25 pointer-events-none" style={{ backgroundImage: "radial-gradient(circle at 50% 30%, oklch(0.7 0.105 33 / 0.7), transparent 60%)" }} />
+      <div className="container mx-auto px-4 max-w-4xl relative">
+        <Reveal>
+          <div className="text-center mb-10">
+            <span className="inline-flex items-center gap-2 bg-rose-gold-gradient text-pearl px-4 py-2 rounded-full font-heading text-xs md:text-sm uppercase tracking-widest shadow-glow cta-pulse">
+              ⚠️ Escassez e urgência
+            </span>
+            <h2 className="mt-5 font-display text-3xl md:text-5xl font-bold leading-tight">
+              A decisão que define seu futuro — <span className="text-rose-gold-gradient">não perca seu trono</span>
+            </h2>
+          </div>
+        </Reveal>
+
+        <Reveal delay={0.1}>
+          <div className="grid sm:grid-cols-2 gap-4 mb-10">
+            <div className="bg-card/10 backdrop-blur-md border border-rose-gold/40 rounded-2xl p-6 text-center shadow-glow">
+              <p className="font-heading uppercase tracking-widest text-rose-gold text-xs">Vagas restantes</p>
+              <p className="font-display text-5xl md:text-6xl font-bold text-rose-gold-gradient mt-2 cta-pulse">12</p>
+              <p className="text-pearl/70 text-xs mt-1">de 25 disponíveis</p>
+            </div>
+            <div className="bg-card/10 backdrop-blur-md border border-rose-gold/40 rounded-2xl p-6 text-center shadow-glow">
+              <p className="font-heading uppercase tracking-widest text-rose-gold text-xs">Tempo restante</p>
+              <div className="mt-2"><Countdown minutes={47} /></div>
+            </div>
+          </div>
+        </Reveal>
+
+        <Reveal delay={0.2}>
+          <div className="bg-card/10 backdrop-blur-md border border-rose-gold/30 rounded-3xl p-7 md:p-10 space-y-5 text-pearl/90 leading-relaxed">
+            <p className="font-display text-xl md:text-2xl text-rose-gold-gradient">
+              ⚠️ Vagas limitadas: apenas 25 mulheres terão acesso a esta oportunidade única e irrepetível!
+            </p>
+            <p>
+              <strong className="text-pearl">Por que esta oferta é tão exclusiva e limitada?</strong> Simples: quero garantir que cada mulher tenha resultados excepcionais e um suporte personalizado de rainha. Nos últimos 12 meses, sempre que abro mais de 100 vagas, o suporte fica sobrecarregado e algumas alunas podem não conseguir a atenção que merecem. Eu não comprometo a sua transformação.
+            </p>
+            <p className="font-display italic text-lg md:text-xl text-pearl border-l-4 border-rose-gold pl-5">
+              Prefiro transformar 25 vidas COMPLETAMENTE do que ajudar 100 pela metade.
+            </p>
+            <p>
+              Além disso, este preço especial foi autorizado pela minha equipe apenas para <strong className="text-rose-gold-gradient">este lançamento exclusivo</strong>. A partir da próxima turma, o investimento volta para <span className="line-through">R$ 997,00</span>. Esta é a sua única chance de acessar o <span className="font-display italic">Método Nefertiti</span> por este valor.
+            </p>
+            <p className="bg-rose-gold/15 border border-rose-gold/40 rounded-2xl p-5 text-pearl">
+              ⏳ <strong className="text-rose-gold-gradient">Atenção:</strong> restam apenas 12 vagas neste lote exclusivo! O tempo está se esgotando. Depois disso, terei que abrir lista de espera — e sinceramente, sem data ainda. Não deixe para depois o poder que você pode ter hoje.
+            </p>
+          </div>
+        </Reveal>
+
+        <Reveal delay={0.3}>
+          <div className="text-center mt-10">
+            <CTAButton size="xl">✨ Clique aqui e garanta sua vaga agora</CTAButton>
           </div>
         </Reveal>
       </div>

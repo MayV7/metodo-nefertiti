@@ -38,16 +38,20 @@ export function SocialProofPopup() {
   const b = buyers[idx];
 
   return (
-    <div className="fixed bottom-4 left-4 z-50 max-w-[92vw] sm:max-w-sm pointer-events-none">
+    <div className="fixed bottom-20 sm:bottom-24 left-3 sm:left-4 z-50 max-w-[92vw] sm:max-w-sm pointer-events-none">
       <AnimatePresence mode="wait">
         {visible && (
           <motion.div
             key={idx}
             initial={{ opacity: 0, y: 30, scale: 0.9 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
+            animate={{ opacity: 1, y: 0, scale: 1, boxShadow: [
+              "0 0 0 0 rgba(212,165,116,0.0), 0 10px 30px -10px rgba(0,0,0,0.4)",
+              "0 0 24px 6px rgba(212,165,116,0.55), 0 10px 30px -10px rgba(0,0,0,0.4)",
+              "0 0 0 0 rgba(212,165,116,0.0), 0 10px 30px -10px rgba(0,0,0,0.4)",
+            ] }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
-            transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-            className="pointer-events-auto bg-card/95 backdrop-blur-xl border border-rose-gold/30 shadow-elegant rounded-2xl p-4 flex items-center gap-3"
+            transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1], boxShadow: { duration: 2.4, repeat: Infinity, ease: "easeInOut" } }}
+            className="pointer-events-auto bg-card/95 backdrop-blur-xl border border-rose-gold/50 rounded-2xl p-4 flex items-center gap-3"
           >
             <div className="h-12 w-12 rounded-full bg-rose-gold-gradient flex items-center justify-center shrink-0 shadow-glow">
               <Crown className="h-6 w-6 text-pearl" strokeWidth={2.2} />
