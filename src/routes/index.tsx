@@ -431,10 +431,10 @@ function Discovery() {
 /* -------------------- METHOD INTRO -------------------- */
 function Method() {
   const items = [
-    "Funciona dos 20 aos 65 anos — a psicologia humana é universal",
-    "Independente de há quanto tempo foi o término",
-    "Mesmo se ele já estiver com outra",
-    "Mesmo se você se sente 'sem esperança'",
+    "Sua idade — funciona MUITO bem dos 20 aos 65 anos (a psicologia humana é universal)",
+    "Há quanto tempo foi o término — a dor pode ser revertida a qualquer momento",
+    "Se ele já está com outra — o magnetismo que você vai desenvolver é incomparável",
+    "Se você se sente 'sem esperança' — este método é sua última e definitiva esperança",
   ];
   return (
     <section className="py-20 md:py-28 bg-rose-soft-gradient">
