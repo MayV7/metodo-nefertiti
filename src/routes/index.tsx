@@ -158,12 +158,12 @@ function Pain() {
       <div className="container mx-auto px-4 max-w-4xl">
         <Reveal>
           <h2 className="font-display text-3xl md:text-5xl font-bold text-center text-foreground leading-tight">
-            A ferida aberta — onde a alma chora e o mundo não vê
+            A Ferida Aberta: <span className="text-rose-gold-gradient">onde a alma chora</span> e o mundo não vê
           </h2>
         </Reveal>
         <Reveal delay={0.15}>
           <p className="mt-6 text-lg text-muted-foreground text-center max-w-2xl mx-auto">
-            Se a dor da rejeição parece uma ferida que nunca cicatriza, e a cada amanhecer a ausência dele é um peso insuportável no peito… eu sei <em className="text-foreground font-semibold not-italic">exatamente</em> como você se sente.
+            Se você já sentiu o chão sumir sob seus pés após um término… se a dor da rejeição parece uma ferida que nunca cicatriza… se a cada amanhecer a ausência dele é um peso insuportável no peito… eu sei <em className="text-foreground font-semibold not-italic">exatamente</em> como você se sente. Você está aqui porque algo dentro de você QUEBROU quando ele disse aquelas palavras. Elas não apenas terminaram um relacionamento — estilhaçaram sua autoestima.
           </p>
         </Reveal>
 
