@@ -249,11 +249,14 @@ function FirstResults() {
         <Reveal>
           <div className="text-center mb-12">
             <p className="font-heading font-bold text-rose-gold-deep tracking-widest uppercase text-sm">
-              ⭐⭐⭐⭐⭐ Resultados reais
+              ⭐⭐⭐⭐⭐ Resultados Reais
             </p>
             <h2 className="mt-3 font-display text-3xl md:text-5xl font-bold text-foreground">
-              O exército de rainhas que já <span className="text-rose-gold-gradient">despertaram</span>
+              O Que Nossas Alunas <span className="text-rose-gold-gradient">Estão Dizendo</span>
             </h2>
+            <p className="mt-4 text-muted-foreground max-w-2xl mx-auto">
+              Já são mais de <strong className="text-foreground">3.847 transformações documentadas</strong> que comprovam: o <span className="font-display italic">Método Nefertiti</span> funciona. Não é teoria; é realidade palpável.
+            </p>
           </div>
         </Reveal>
 
