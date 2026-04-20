@@ -352,9 +352,9 @@ function MarinaStory() {
 /* -------------------- DISCOVERY -------------------- */
 function Discovery() {
   const milestones = [
-    { day: "7 dias", text: "Um homem na academia me parou: 'preciso saber qual é o seu segredo, estou hipnotizado.'" },
-    { day: "14 dias", text: "3 convites para jantar. Meu ex mandou mensagem perguntando 'como eu estava'." },
-    { day: "21 dias", text: "5 homens me cortejando simultaneamente. Me sentia poderosa pela primeira vez em anos." },
+    { day: "7 dias", text: "Um homem na academia do meu prédio me parou e disse: 'UAU! Preciso saber qual é o seu segredo, pois não paro mais de olhar pra você… estou hipnotizado!' E pediu meu WhatsApp." },
+    { day: "14 dias", text: "Recebi 3 convites para jantar. Meu ex mandou mensagem perguntando 'como eu estava'. Amigas começaram a perguntar que BRUXARIA eu estava fazendo. 🤣 A verdade? Não era bruxaria — era CIÊNCIA." },
+    { day: "21 dias", text: "Tinha 5 homens me cortejando simultaneamente. Me sentia PODEROSA pela primeira vez em anos. Finalmente senti o oposto de migalhas emocionais — eu havia me tornado a Rainha da minha própria vida." },
   ];
   return (
     <section className="py-20 md:py-28 bg-graphite-gradient text-pearl relative overflow-hidden">
@@ -362,12 +362,15 @@ function Discovery() {
       <div className="container mx-auto px-4 max-w-6xl relative">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <Reveal>
-            <p className="font-heading font-bold text-rose-gold tracking-widest uppercase text-sm">A grande descoberta</p>
+            <p className="font-heading font-bold text-rose-gold tracking-widest uppercase text-sm">A Grande Descoberta</p>
             <h2 className="mt-2 font-display text-3xl md:text-5xl font-bold leading-tight">
               O <span className="text-rose-gold-gradient">"Efeito Inversão Psicológica"</span> — sua arma secreta
             </h2>
             <p className="mt-6 text-pearl/85 leading-relaxed">
-              Estudos de Harvard provam: homens relatam <strong className="text-rose-gold-gradient">347% mais atração</strong> por mulheres que demonstram "disponibilidade seletiva" — presentes, mas não necessitadas. Não é joguinho. É valor intrínseco.
+              Dra. Sophia me mostrou estudos da Universidade de Harvard que provavam: homens relatam <strong className="text-rose-gold-gradient">347% mais atração</strong> por mulheres que demonstram "disponibilidade seletiva" — estar presente, mas não necessitada. Não é sobre joguinhos; é sobre <strong>valor intrínseco</strong>.
+            </p>
+            <p className="mt-4 text-pearl/85 leading-relaxed">
+              E o que aconteceu depois que Marina aplicou esse conhecimento? A transformação foi <strong className="text-rose-gold-gradient">IMEDIATA e IRREVERSÍVEL</strong>:
             </p>
             <div className="mt-8 grid grid-cols-3 gap-3 items-end h-40">
               {[35, 60, 100].map((h, i) => (
