@@ -502,10 +502,13 @@ function Triggers() {
       <div className="container mx-auto px-4 max-w-6xl">
         <Reveal>
           <div className="text-center mb-14">
-            <p className="font-heading font-bold text-rose-gold tracking-widest uppercase text-sm">O código secreto</p>
+            <p className="font-heading font-bold text-rose-gold tracking-widest uppercase text-sm">O código secreto da atração</p>
             <h2 className="mt-3 font-display text-3xl md:text-5xl font-bold leading-tight">
-              Os <span className="text-rose-gold-gradient">3 gatilhos neurológicos</span> que fazem homens te perseguirem
+              Os <span className="text-rose-gold-gradient">3 Gatilhos Neurológicos</span> que fazem homens te perseguirem (no bom sentido)
             </h2>
+            <p className="mt-4 text-pearl/80 max-w-2xl mx-auto text-sm md:text-base">
+              Estes não são truques baratos. São princípios da neurociência e da psicologia comportamental que ativam o centro de prazer e recompensa no cérebro masculino — tornando você uma obsessão saudável.
+            </p>
           </div>
         </Reveal>
         <div className="grid md:grid-cols-3 gap-6">
