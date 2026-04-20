@@ -208,22 +208,22 @@ function FirstResults() {
   ];
   const testimonials = [
     {
-      name: "Fernanda M.", age: 36, role: "Publicitária",
+      name: "Fernanda M.", age: 36, role: "Publicitária", photo: tFernanda,
       text: "Em apenas 10 dias aplicando o Método Nefertiti, meu ex (que havia me bloqueado há 3 meses) apareceu na porta da minha casa com flores. Hoje estou com alguém 10x melhor!",
       highlight: "Desenvolveu poder de escolha total.",
     },
     {
-      name: "Claudia R.", age: 49, role: "Dentista",
+      name: "Claudia R.", age: 49, role: "Dentista", photo: tClaudia,
       text: "Aos 49 anos e após 3 filhos, eu pensava que jamais seria desejada. Hoje estou noiva de um empresário de 41 anos que me trata como a mulher mais especial do mundo.",
       highlight: "Idade não importa. O amor verdadeiro floresce em qualquer fase.",
     },
     {
-      name: "Ana Carolina", age: 28, role: "Arquiteta",
+      name: "Ana Carolina", age: 28, role: "Arquiteta", photo: tAna,
       text: "Em 2 semanas tinha 3 homens de alto valor interessados em mim. Pela primeira vez na vida EU é que estava escolhendo. Não precisava mais implorar por atenção.",
       highlight: "Ela se tornou a caçadora, não a caça.",
     },
     {
-      name: "Regina T.", age: 56, role: "Professora",
+      name: "Regina T.", age: 56, role: "Professora", photo: tRegina,
       text: "Achava que minha idade era um problema. MENTIRA! Hoje namoro um homem 12 anos mais novo. Nunca fui tão feliz — viajamos, namoramos… só agradeço!",
       highlight: "Maturidade como superpoder.",
     },
@@ -257,11 +257,20 @@ function FirstResults() {
           {testimonials.map((t, i) => (
             <Reveal key={t.name} delay={i * 0.08}>
               <div className="bg-card rounded-3xl p-6 md:p-8 shadow-elegant border border-rose-gold/15 h-full flex flex-col">
-                <Quote className="h-8 w-8 text-rose-gold-deep mb-3 opacity-70" />
+                <div className="flex items-center gap-4 mb-4">
+                  <img src={t.photo} alt={t.name} loading="lazy" width={64} height={64} className="h-16 w-16 rounded-full object-cover border-2 border-rose-gold/40 shadow-card-soft shrink-0" />
+                  <div>
+                    <p className="font-heading font-bold text-foreground leading-tight">{t.name}</p>
+                    <p className="text-xs text-muted-foreground">{t.age} anos • {t.role}</p>
+                    <div className="flex items-center gap-0.5 text-rose-gold-deep mt-1">
+                      {[...Array(5)].map((_, k) => <Star key={k} className="h-3.5 w-3.5" fill="currentColor" />)}
+                    </div>
+                  </div>
+                </div>
+                <Quote className="h-6 w-6 text-rose-gold-deep mb-2 opacity-60" />
                 <p className="text-foreground leading-relaxed flex-1 italic">"{t.text}"</p>
                 <div className="mt-5 pt-5 border-t border-border">
-                  <p className="font-heading font-bold text-foreground">{t.name} <span className="text-muted-foreground font-normal">• {t.age} anos • {t.role}</span></p>
-                  <p className="mt-2 text-sm text-rose-gold-deep font-medium flex items-start gap-2">
+                  <p className="text-sm text-rose-gold-deep font-medium flex items-start gap-2">
                     <Sparkles className="h-4 w-4 shrink-0 mt-0.5" /> {t.highlight}
                   </p>
                 </div>
