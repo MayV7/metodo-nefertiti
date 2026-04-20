@@ -624,10 +624,13 @@ function Modules() {
       <div className="container mx-auto px-4 max-w-6xl">
         <Reveal>
           <div className="text-center mb-10">
-            <p className="font-heading font-bold text-rose-gold-deep tracking-widest uppercase text-sm">O que você vai receber</p>
+            <p className="font-heading font-bold text-rose-gold-deep tracking-widest uppercase text-sm">O Que Você Vai Receber Dentro do Método Nefertiti</p>
             <h2 className="mt-3 font-display text-3xl md:text-5xl font-bold text-foreground leading-tight">
-              3 módulos para sua <span className="text-rose-gold-gradient">transformação</span> em 21 dias
+              Um programa de <span className="text-rose-gold-gradient">21 dias</span>, em 3 módulos poderosos
             </h2>
+            <p className="mt-4 text-muted-foreground max-w-2xl mx-auto">
+              Desenhado para reativar seu poder feminino e transformar sua vida amorosa de forma <strong className="text-foreground">permanente</strong>.
+            </p>
           </div>
         </Reveal>
         <Reveal y={40}>
