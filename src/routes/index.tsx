@@ -1084,11 +1084,11 @@ function Objections() {
   const items = [
     {
       q: "E se isso não funcionar comigo porque meu caso é diferente?",
-      a: "Todas as minhas alunas pensavam que eram 'caso perdido'. O Método Nefertiti não é sobre seu passado, é sobre seu futuro magnético. Ele atua nos princípios universais da psicologia comportamental.",
+      a: "Querida, TODAS as minhas alunas pensavam que eram 'caso perdido'. A Carolina, a Fernanda, a Patrícia, a Suzana, a Carla… cada uma tinha uma história única de dor e rejeição. Mas o Método Nefertiti não é sobre o seu passado; é sobre o seu futuro magnético. Ele funciona porque atua nos princípios universais da psicologia comportamental e da neurociência, independentemente do seu passado. Sua singularidade é sua força — e o método irá lapidá-la.",
     },
     {
       q: "E se eu não gostar ou não vir resultados?",
-      a: "Sua satisfação é minha missão. Por isso, garantia incondicional de 7 dias. Sem perguntas. Seu risco é zero, minha promessa é tudo.",
+      a: "Sua satisfação é minha MISSÃO. Por isso ofereço uma Garantia Incondicional de 7 Dias. Se por qualquer motivo você não se sentir 100% satisfeita com o Método Nefertiti, basta enviar um e-mail e eu devolverei cada centavo do seu investimento, sem perguntas. Seu risco é ZERO. Minha promessa é TUDO.",
     },
   ];
   return (
