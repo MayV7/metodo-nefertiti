@@ -665,7 +665,9 @@ function Bonuses() {
                 <div className="absolute -top-3 -right-3 bg-rose-gold-gradient text-pearl font-heading font-bold text-xs px-3 py-1.5 rounded-full shadow-glow">
                   BÔNUS #{i + 1}
                 </div>
-                <Award className="h-10 w-10 text-rose-gold mb-4" />
+                <div className="h-14 w-14 rounded-2xl bg-rose-gold-gradient flex items-center justify-center shadow-glow mb-4">
+                  <Gift className="h-7 w-7 text-pearl" strokeWidth={2.2} />
+                </div>
                 <h3 className="font-display text-xl font-bold text-pearl">{b.title}</h3>
                 <ul className="mt-4 space-y-2">
                   {b.items.map((it) => (
@@ -684,9 +686,13 @@ function Bonuses() {
         </div>
         <Reveal delay={0.3}>
           <div className="mt-12 text-center bg-rose-gold-gradient rounded-3xl p-8 shadow-glow max-w-2xl mx-auto">
+            <div className="flex justify-center mb-3">
+              <Gift className="h-10 w-10 text-pearl" strokeWidth={2.2} />
+            </div>
             <p className="font-heading uppercase tracking-widest text-pearl/90 text-sm">Valor total dos bônus</p>
-            <p className="font-display text-4xl md:text-5xl font-bold text-pearl mt-2">R$ 1.461,00</p>
-            <p className="mt-2 text-pearl/95 font-heading">Seu presente HOJE — incluso gratuitamente.</p>
+            <p className="font-display text-3xl md:text-4xl font-bold text-pearl/70 mt-2 line-through decoration-pearl/80 decoration-[3px]">R$ 1.461,00</p>
+            <p className="font-display text-4xl md:text-5xl font-bold text-pearl mt-3">GRÁTIS hoje</p>
+            <p className="mt-2 text-pearl/95 font-heading">Seu presente — incluso gratuitamente na sua compra.</p>
           </div>
         </Reveal>
       </div>
@@ -721,11 +727,11 @@ function Offer() {
 
             <div className="mt-10 text-center">
               <p className="font-heading text-foreground/70 line-through text-lg">De R$ 997,00</p>
-              <p className="mt-2 font-heading text-sm uppercase tracking-widest text-rose-gold-deep">por apenas</p>
+              <p className="mt-2 font-heading text-sm uppercase tracking-widest text-rose-gold-deep">por apenas 12x de</p>
               <p className="font-display font-bold text-foreground text-5xl md:text-7xl mt-2">
-                12<span className="text-3xl md:text-4xl">x</span> R$ 19<span className="text-3xl md:text-4xl">,70</span>
+                R$ 14<span className="text-3xl md:text-4xl">,90</span>
               </p>
-              <p className="mt-2 text-muted-foreground">ou R$ 197,00 à vista</p>
+              <p className="mt-2 text-muted-foreground">ou <strong className="text-foreground">R$ 147,00</strong> à vista</p>
 
               <div className="mt-8">
                 <CTAButton size="xl">Garantir minha vaga agora</CTAButton>
@@ -803,8 +809,7 @@ function Footer() {
     <footer className="bg-graphite-gradient text-pearl py-14">
       <div className="container mx-auto px-4 max-w-5xl">
         <div className="text-center">
-          <img src={logo} alt="Método Nefertiti" className="h-12 w-auto mx-auto mb-4" />
-          <p className="font-script text-2xl text-rose-gold-gradient">Sua coroa te espera</p>
+          <img src={logo} alt="Método Nefertiti" loading="lazy" className="h-14 w-auto mx-auto" />
         </div>
         <div className="mt-10 flex flex-wrap justify-center gap-6 text-sm text-pearl/80 font-heading">
           <a href="#" className="hover:text-rose-gold transition">Termos de Uso</a>
