@@ -22,7 +22,7 @@ export function Header() {
           <img
             src={logo}
             alt="Método Nefertiti"
-            className="h-10 md:h-14 w-auto object-contain"
+            className="h-8 md:h-12 w-auto object-contain"
           />
         </a>
         <CTAButton size="lg" className="hidden md:inline-flex !px-6 !py-3 !text-sm">

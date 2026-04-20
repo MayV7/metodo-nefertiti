@@ -71,7 +71,7 @@ function Hero() {
       <div className="container mx-auto px-4 relative">
         <Reveal>
           <div className="flex justify-center mb-6">
-            <img src={logo} alt="Método Nefertiti" className="h-20 md:h-28 w-auto float-soft" />
+            <img src={logo} alt="Método Nefertiti" className="h-16 md:h-24 w-auto float-soft" />
           </div>
         </Reveal>
 
@@ -413,7 +413,7 @@ function Method() {
     <section className="py-20 md:py-28 bg-rose-soft-gradient">
       <div className="container mx-auto px-4 max-w-5xl text-center">
         <Reveal>
-          <img src={logo} alt="Método Nefertiti" className="h-24 md:h-32 w-auto mx-auto mb-6" />
+          <img src={logo} alt="Método Nefertiti" className="h-16 md:h-24 w-auto mx-auto mb-6" />
           <h2 className="font-display text-3xl md:text-5xl font-bold text-foreground leading-tight">
             Apresentando o <span className="font-script text-5xl md:text-7xl text-rose-gold-gradient block leading-none mt-2">Método Nefertiti</span>
           </h2>
@@ -788,7 +788,7 @@ function Footer() {
     <footer className="bg-graphite-gradient text-pearl py-14">
       <div className="container mx-auto px-4 max-w-5xl">
         <div className="text-center">
-          <img src={logo} alt="Método Nefertiti" className="h-16 w-auto mx-auto mb-4" />
+          <img src={logo} alt="Método Nefertiti" className="h-12 w-auto mx-auto mb-4" />
           <p className="font-script text-2xl text-rose-gold-gradient">Sua coroa te espera</p>
         </div>
         <div className="mt-10 flex flex-wrap justify-center gap-6 text-sm text-pearl/80 font-heading">
