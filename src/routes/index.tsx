@@ -407,25 +407,44 @@ function Method() {
   ];
   return (
     <section className="py-20 md:py-28 bg-rose-soft-gradient">
-      <div className="container mx-auto px-4 max-w-5xl text-center">
-        <Reveal>
-          <img src={logo} alt="Método Nefertiti" className="h-16 md:h-24 w-auto mx-auto mb-6" />
-          <h2 className="font-display text-3xl md:text-5xl font-bold text-foreground leading-tight">
-            Apresentando o <span className="font-script text-5xl md:text-7xl text-rose-gold-gradient block leading-none mt-2">Método Nefertiti</span>
-          </h2>
-          <p className="mt-6 text-lg md:text-xl text-foreground/80 max-w-3xl mx-auto leading-relaxed">
-            O primeiro sistema de reversão psicológica que transforma rejeição em <strong>magnetismo irresistível</strong> — sem joguinhos, apenas pura persuasão e magnetismo natural.
-          </p>
-        </Reveal>
-        <div className="mt-10 grid sm:grid-cols-2 gap-4 max-w-3xl mx-auto text-left">
-          {items.map((t, i) => (
-            <Reveal key={t} delay={i * 0.07}>
-              <div className="bg-card/80 backdrop-blur rounded-2xl p-5 flex items-start gap-3 border border-rose-gold/20 shadow-card-soft">
-                <CheckCircle2 className="h-6 w-6 text-rose-gold-deep shrink-0 mt-0.5" />
-                <span className="text-foreground font-medium">{t}</span>
+      <div className="container mx-auto px-4 max-w-6xl">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+          <Reveal y={40}>
+            <div className="relative order-1 lg:order-1">
+              <div className="absolute -inset-6 bg-rose-gold-gradient opacity-25 blur-3xl rounded-full" />
+              <img
+                src={mockup}
+                alt="Método Nefertiti — acesso em celular, tablet e computador"
+                loading="lazy"
+                className="relative w-full max-w-lg mx-auto h-auto object-contain drop-shadow-2xl float-soft"
+              />
+              <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 md:translate-x-0 md:-bottom-4 md:-right-4 md:left-auto bg-card border border-rose-gold/30 rounded-2xl px-4 py-3 shadow-card-soft flex items-center gap-2">
+                <Star className="h-5 w-5 text-rose-gold-deep" fill="currentColor" />
+                <span className="font-heading font-bold text-sm whitespace-nowrap">4.9 / 5 — 3.847 alunas</span>
               </div>
+            </div>
+          </Reveal>
+          <div className="text-center lg:text-left">
+            <Reveal>
+              <img src={logo} alt="Método Nefertiti" loading="lazy" className="h-14 md:h-20 w-auto mx-auto lg:mx-0 mb-6" />
+              <h2 className="font-display text-3xl md:text-5xl font-bold text-foreground leading-tight">
+                Apresentando o <span className="font-display italic font-semibold text-4xl md:text-6xl text-rose-gold-gradient block leading-tight mt-2">Método Nefertiti</span>
+              </h2>
+              <p className="mt-6 text-lg md:text-xl text-foreground/80 leading-relaxed">
+                O primeiro sistema de reversão psicológica que transforma rejeição em <strong>magnetismo irresistível</strong> — sem joguinhos, apenas pura persuasão e magnetismo natural.
+              </p>
             </Reveal>
-          ))}
+            <div className="mt-8 grid sm:grid-cols-2 gap-3 text-left">
+              {items.map((t, i) => (
+                <Reveal key={t} delay={i * 0.07}>
+                  <div className="bg-card/80 backdrop-blur rounded-2xl p-4 flex items-start gap-3 border border-rose-gold/20 shadow-card-soft h-full">
+                    <CheckCircle2 className="h-5 w-5 text-rose-gold-deep shrink-0 mt-0.5" />
+                    <span className="text-foreground font-medium text-sm">{t}</span>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>
