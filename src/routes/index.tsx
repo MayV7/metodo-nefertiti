@@ -453,11 +453,12 @@ function Method() {
           </Reveal>
           <div className="text-center lg:text-left">
             <Reveal>
-              <h2 className="font-display text-3xl md:text-5xl font-bold text-foreground leading-tight">
-                Apresentando o <span className="font-display italic font-semibold text-4xl md:text-6xl text-rose-gold-gradient block leading-tight mt-2">Método Nefertiti</span>
+              <p className="font-heading font-bold text-rose-gold-deep tracking-widest uppercase text-sm">Apresentando a vocês</p>
+              <h2 className="mt-2 font-display text-3xl md:text-5xl font-bold text-foreground leading-tight">
+                <span className="font-display italic font-semibold text-4xl md:text-6xl text-rose-gold-gradient block leading-tight mt-2">Método Nefertiti</span>
               </h2>
               <p className="mt-6 text-lg md:text-xl text-foreground/80 leading-relaxed">
-                O primeiro sistema de reversão psicológica que transforma rejeição em <strong>magnetismo irresistível</strong> — sem joguinhos, apenas pura persuasão e magnetismo natural.
+                O primeiro sistema de reversão psicológica que transforma rejeição em <strong>magnetismo irresistível</strong> — validado por quem realmente entende da mente masculina. Você para de ser a "rejeitada" e se torna a Rainha Desejada, de forma 100% autêntica. Sem joguinhos. Apenas pura persuasão e magnetismo natural.
               </p>
             </Reveal>
             <div className="mt-8 grid sm:grid-cols-2 gap-3 text-left">
