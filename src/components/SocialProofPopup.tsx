@@ -19,7 +19,7 @@ export function SocialProofPopup() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    const start = setTimeout(() => setVisible(true), 4000);
+    const start = setTimeout(() => setVisible(true), 6000);
     return () => clearTimeout(start);
   }, []);
 
@@ -30,8 +30,8 @@ export function SocialProofPopup() {
       setTimeout(() => {
         setIdx((i) => (i + 1) % buyers.length);
         setVisible(true);
-      }, 500);
-    }, 7000);
+      }, 800);
+    }, 10000);
     return () => clearInterval(id);
   }, [visible]);
 

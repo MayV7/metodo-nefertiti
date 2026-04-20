@@ -97,35 +97,34 @@ function Hero() {
           <Reveal delay={0.2}>
             <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.15] text-foreground">
               <span className="font-display italic font-semibold text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-rose-gold-gradient block leading-tight mb-3">Método Nefertiti</span>
-              O segredo das <span className="text-rose-gold-gradient">3.847 mulheres</span> que transformaram a dor da rejeição em magnetismo irresistível
+              O segredo das <span className="text-rose-gold-gradient">3.847 mulheres</span> que transformaram a dor da rejeição em um magnetismo irresistível que faz homens de alto valor <span className="text-rose-gold-gradient">QUEREREM VOCÊ</span> — mesmo que você se sinta "invisível" agora.
             </h1>
           </Reveal>
           <Reveal delay={0.28}>
-            <div className="mt-5 flex justify-center">
-              <span className="inline-flex items-center gap-2 bg-graphite-gradient text-pearl px-5 py-2.5 rounded-full font-heading text-sm md:text-base uppercase tracking-[0.2em] border border-rose-gold/60 shadow-glow">
-                <Sparkles className="h-4 w-4 text-rose-gold" /> <span className="text-rose-gold-gradient font-bold">Validado por Harvard</span>
-              </span>
-            </div>
+            <p className="mt-5 text-xs md:text-sm text-muted-foreground italic max-w-xl mx-auto">
+              <Sparkles className="inline h-3.5 w-3.5 text-rose-gold-deep mr-1" />
+              Validado por Harvard
+            </p>
           </Reveal>
           <Reveal delay={0.35}>
             <p className="mt-5 text-base md:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              O <strong className="text-foreground">único sistema de reversão psicológica</strong> que faz ex-parceiros se arrependerem e homens de alto valor te perseguirem — mesmo que você se sinta invisível agora.
+              Descubra o <strong className="text-foreground">único sistema de reversão psicológica validado por Harvard</strong> que faz ex-parceiros se arrependerem de terem te perdido e homens de alto valor te perseguirem.
             </p>
           </Reveal>
           <Reveal delay={0.5}>
             <div className="mt-8 flex flex-col items-center gap-3">
-              <CTAButton size="xl">Desperte sua Rainha Interior</CTAButton>
-              <p className="text-xs text-muted-foreground italic">
-                Clique e garanta seu acesso imediato. Vagas limitadas.
+              <CTAButton size="xl">👑 Quero meu acesso agora</CTAButton>
+              <p className="text-xs text-muted-foreground italic max-w-md">
+                Clique e garanta seu acesso imediato. Esta é a sua última chance. Vagas limitadas!
               </p>
             </div>
           </Reveal>
           <Reveal delay={0.65}>
             <ul className="mt-10 grid sm:grid-cols-3 gap-3 text-left max-w-2xl mx-auto">
               {[
-                "Acesso imediato e vitalício",
-                "Garantia incondicional 7 dias",
-                "+3.847 mulheres transformadas",
+                "Acesso Imediato e Vitalício — sua transformação começa hoje",
+                "Garantia Incondicional de 7 Dias — seu risco é ZERO",
+                "+3.847 Mulheres Transformadas — junte-se ao exército de rainhas",
               ].map((t) => (
                 <li key={t} className="flex items-start gap-2 text-sm font-medium text-foreground">
                   <CheckCircle2 className="h-5 w-5 text-rose-gold-deep shrink-0 mt-0.5" />
@@ -143,28 +142,28 @@ function Hero() {
 /* -------------------- PAIN -------------------- */
 function Pain() {
   const tried = [
-    "Fingiu que estava bem nas redes sociais (mas chorava no banho, em segredo).",
-    "Saiu com outros homens para tentar esquecer (e se sentiu mais vazia).",
-    "Seguiu todos os conselhos das amigas (que só te confundiram mais).",
+    "Fingiu que estava bem pessoalmente e nas redes sociais (mas chorava no banho, em segredo, onde ninguém podia ver sua alma sangrar).",
+    "Saiu com outros homens para tentar esquecer (mas só se sentiu mais vazia, comparando cada um deles a ele).",
+    "Seguiu todos os conselhos das amigas (que só te confundiram mais, pois elas não entendem a profundidade da sua dor).",
   ];
   const feels = [
-    "Acorda no meio da madrugada com o coração apertado pensando nele.",
-    "Verifica compulsivamente as redes sociais buscando sinais dele — ou dela.",
-    "Se pergunta 'o que ela tem que eu não tenho?' até a autoestima ruir.",
-    "Sente que perdeu sua capacidade de atrair e está em frangalhos.",
-    "Se fechou para o amor, com medo de sofrer novamente.",
+    "Acorda no meio da madrugada, com o coração apertado, pensando nele — e ele ainda assombra seus sonhos, roubando seu sono e sua energia.",
+    "Verifica compulsivamente as redes sociais, buscando qualquer sinal dele, ou pior, dela — sentindo uma pontada de ciúmes a cada nova foto.",
+    "Se ele já estiver com outra, a pergunta 'o que ela tem que eu não tenho?' te consome, minando sua autoconfiança.",
+    "Sente que perdeu sua capacidade de atrair e sua autoestima está em frangalhos, acreditando que nunca mais será desejada.",
+    "Se fechou para o amor, com medo de sofrer novamente, e teme nunca mais ser desejada como antes.",
   ];
   return (
     <section className="py-20 md:py-28 bg-muted relative">
       <div className="container mx-auto px-4 max-w-4xl">
         <Reveal>
           <h2 className="font-display text-3xl md:text-5xl font-bold text-center text-foreground leading-tight">
-            A ferida aberta — onde a alma chora e o mundo não vê
+            A Ferida Aberta: <span className="text-rose-gold-gradient">onde a alma chora</span> e o mundo não vê
           </h2>
         </Reveal>
         <Reveal delay={0.15}>
           <p className="mt-6 text-lg text-muted-foreground text-center max-w-2xl mx-auto">
-            Se a dor da rejeição parece uma ferida que nunca cicatriza, e a cada amanhecer a ausência dele é um peso insuportável no peito… eu sei <em className="text-foreground font-semibold not-italic">exatamente</em> como você se sente.
+            Se você já sentiu o chão sumir sob seus pés após um término… se a dor da rejeição parece uma ferida que nunca cicatriza… se a cada amanhecer a ausência dele é um peso insuportável no peito… eu sei <em className="text-foreground font-semibold not-italic">exatamente</em> como você se sente. Você está aqui porque algo dentro de você QUEBROU quando ele disse aquelas palavras. Elas não apenas terminaram um relacionamento — estilhaçaram sua autoestima.
           </p>
         </Reveal>
 
@@ -204,9 +203,9 @@ function Pain() {
         <Reveal delay={0.4}>
           <div className="mt-12 text-center">
             <p className="text-lg text-foreground max-w-2xl mx-auto mb-8">
-              Se você assentiu para pelo menos 3 delas, você não está sozinha. E, mais importante: <strong>você está no lugar certo</strong>.
+              Se você assentiu para pelo menos 3 dessas afirmações, você não está sozinha. E, mais importante: <strong>você está no lugar CERTO!</strong> O que vou compartilhar com você nas próximas linhas não vai apenas mudar a forma como você se vê, mas como o mundo inteiro — e principalmente os homens — te veem.
             </p>
-            <CTAButton size="xl">Entrar para o <span className="font-display italic">Método Nefertiti</span></CTAButton>
+            <CTAButton size="xl">✨ Clique aqui para entrar para o <span className="font-display italic">Método Nefertiti</span></CTAButton>
           </div>
         </Reveal>
       </div>
@@ -250,11 +249,14 @@ function FirstResults() {
         <Reveal>
           <div className="text-center mb-12">
             <p className="font-heading font-bold text-rose-gold-deep tracking-widest uppercase text-sm">
-              ⭐⭐⭐⭐⭐ Resultados reais
+              ⭐⭐⭐⭐⭐ Resultados Reais
             </p>
             <h2 className="mt-3 font-display text-3xl md:text-5xl font-bold text-foreground">
-              O exército de rainhas que já <span className="text-rose-gold-gradient">despertaram</span>
+              O Que Nossas Alunas <span className="text-rose-gold-gradient">Estão Dizendo</span>
             </h2>
+            <p className="mt-4 text-muted-foreground max-w-2xl mx-auto">
+              Já são mais de <strong className="text-foreground">3.847 transformações documentadas</strong> que comprovam: o <span className="font-display italic">Método Nefertiti</span> funciona. Não é teoria; é realidade palpável.
+            </p>
           </div>
         </Reveal>
 
@@ -321,22 +323,28 @@ function MarinaStory() {
             <Reveal>
               <p className="font-heading font-bold text-rose-gold-deep uppercase tracking-widest text-sm">Vamos às apresentações</p>
               <h2 className="mt-2 font-display text-3xl md:text-5xl font-bold text-foreground leading-tight">
-                Meu nome é <span className="text-rose-gold-gradient">Marina</span>, e eu era você alguns anos atrás.
+                Meu nome é <span className="text-rose-gold-gradient">Marina</span> e eu era você alguns anos atrás…
               </h2>
             </Reveal>
             <Reveal delay={0.15}>
               <div className="mt-6 space-y-4 text-foreground/90 leading-relaxed">
                 <p>
-                  Em outubro de 2022, eu estava exatamente onde você está agora. Deitada no chão do banheiro, às 3h da manhã, chorando porque tinha visto uma foto dele com outra mulher.
+                  Em outubro de 2022, eu estava exatamente onde você está agora. Deitada no chão do banheiro, às 3h da manhã, chorando compulsivamente porque tinha visto uma foto dele com outra mulher no Instagram.
                 </p>
                 <p>
-                  <strong>6 anos de relacionamento. Jogados fora.</strong> Eu, que sempre fui a namorada perfeita. Cuidava dele, cozinhava, estava sempre disponível. E mesmo assim, ele me trocou.
+                  <strong>6 anos de relacionamento. JOGADOS FORA, do nada.</strong> Eu, que sempre fui a namorada perfeita. Cuidava dele, cozinhava, estava sempre disponível para o que ele precisasse… fazia tudo para vê-lo feliz. E mesmo assim, ele me trocou. A dor era insuportável, a humilhação, paralisante.
                 </p>
                 <p>
-                  Por 6 meses fui uma sombra: perdi 8kg, evitava sair de casa, me sentia invisível. Até que numa viagem sozinha conheci a Dra. Sophia Miendez — psicóloga comportamental que estudou por 25 anos os padrões das mulheres mais magneticamente irresistíveis da história.
+                  Pelos próximos 6 meses, me transformei numa sombra: perdi 8kg (não de forma saudável), evitava sair de casa para não ver outros casais, me sentia <strong>INVISÍVEL</strong> para qualquer homem interessante. Chegava a ter ataques de pânico quando via que ele havia visualizado meu status — uma falsa esperança que só prolongava meu sofrimento.
+                </p>
+                <p>
+                  Sofri TANTO… Mas então, durante uma viagem pela primeira vez SOZINHA, conheci a <strong>Dra. Sophia Miendez</strong> — psicóloga comportamental renomada, especializada em dinâmicas de atração, que havia estudado por mais de <strong>25 anos</strong> os padrões das mulheres mais magneticamente irresistíveis da história. Nefertiti, a Rainha do Egito, por exemplo.
                 </p>
                 <p className="font-display italic text-xl text-rose-gold-deep border-l-4 border-rose-gold pl-5">
-                  "Marina, você acredita que Nefertiti chorava no banheiro quando foi rejeitada? Ela fazia o oposto. E muito provavelmente, fez ELE chorar."
+                  "Marina, você realmente acredita que Nefertiti chorava no banheiro quando foi rejeitada? Ela fazia o OPOSTO disso. Sua presença deixava os homens loucos para decifrá-la."
+                </p>
+                <p>
+                  Dra. Sophia me ajudou a refinar todo seu conhecimento e implementamos vários testes de campo antes de nascer o <span className="font-display italic">Método Nefertiti</span>. Deu tão certo que hoje já ajudamos <strong className="text-rose-gold-deep">+3.847 mulheres</strong> a superarem um término doloroso, recuperarem a autoestima e darem a volta por cima — tornando-se genuíno magnetismo irresistível para homens de alto valor.
                 </p>
               </div>
             </Reveal>
@@ -350,9 +358,9 @@ function MarinaStory() {
 /* -------------------- DISCOVERY -------------------- */
 function Discovery() {
   const milestones = [
-    { day: "7 dias", text: "Um homem na academia me parou: 'preciso saber qual é o seu segredo, estou hipnotizado.'" },
-    { day: "14 dias", text: "3 convites para jantar. Meu ex mandou mensagem perguntando 'como eu estava'." },
-    { day: "21 dias", text: "5 homens me cortejando simultaneamente. Me sentia poderosa pela primeira vez em anos." },
+    { day: "7 dias", text: "Um homem na academia do meu prédio me parou e disse: 'UAU! Preciso saber qual é o seu segredo, pois não paro mais de olhar pra você… estou hipnotizado!' E pediu meu WhatsApp." },
+    { day: "14 dias", text: "Recebi 3 convites para jantar. Meu ex mandou mensagem perguntando 'como eu estava'. Amigas começaram a perguntar que BRUXARIA eu estava fazendo. 🤣 A verdade? Não era bruxaria — era CIÊNCIA." },
+    { day: "21 dias", text: "Tinha 5 homens me cortejando simultaneamente. Me sentia PODEROSA pela primeira vez em anos. Finalmente senti o oposto de migalhas emocionais — eu havia me tornado a Rainha da minha própria vida." },
   ];
   return (
     <section className="py-20 md:py-28 bg-graphite-gradient text-pearl relative overflow-hidden">
@@ -360,12 +368,15 @@ function Discovery() {
       <div className="container mx-auto px-4 max-w-6xl relative">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <Reveal>
-            <p className="font-heading font-bold text-rose-gold tracking-widest uppercase text-sm">A grande descoberta</p>
+            <p className="font-heading font-bold text-rose-gold tracking-widest uppercase text-sm">A Grande Descoberta</p>
             <h2 className="mt-2 font-display text-3xl md:text-5xl font-bold leading-tight">
               O <span className="text-rose-gold-gradient">"Efeito Inversão Psicológica"</span> — sua arma secreta
             </h2>
             <p className="mt-6 text-pearl/85 leading-relaxed">
-              Estudos de Harvard provam: homens relatam <strong className="text-rose-gold-gradient">347% mais atração</strong> por mulheres que demonstram "disponibilidade seletiva" — presentes, mas não necessitadas. Não é joguinho. É valor intrínseco.
+              Dra. Sophia me mostrou estudos da Universidade de Harvard que provavam: homens relatam <strong className="text-rose-gold-gradient">347% mais atração</strong> por mulheres que demonstram "disponibilidade seletiva" — estar presente, mas não necessitada. Não é sobre joguinhos; é sobre <strong>valor intrínseco</strong>.
+            </p>
+            <p className="mt-4 text-pearl/85 leading-relaxed">
+              E o que aconteceu depois que Marina aplicou esse conhecimento? A transformação foi <strong className="text-rose-gold-gradient">IMEDIATA e IRREVERSÍVEL</strong>:
             </p>
             <div className="mt-8 grid grid-cols-3 gap-3 items-end h-40">
               {[35, 60, 100].map((h, i) => (
@@ -408,6 +419,16 @@ function Discovery() {
             </Reveal>
           </div>
         </div>
+        <Reveal delay={0.5}>
+          <div className="mt-12 text-center max-w-3xl mx-auto">
+            <p className="text-pearl/90 leading-relaxed">
+              Hoje, <strong className="text-rose-gold-gradient">+4 anos depois</strong>, já ajudei +3.847 mulheres a fazerem a mesma transformação e ressignificarem suas vidas amorosas. Elas não apenas superaram o término — elas <strong>DOMINARAM</strong> a arte da atração. E agora é <span className="text-rose-gold-gradient font-bold">SUA vez</span>. Não amanhã. Não depois. <strong>AGORA</strong>.
+            </p>
+            <div className="mt-8">
+              <CTAButton size="xl">👑 Desperte sua Rainha Interior agora</CTAButton>
+            </div>
+          </div>
+        </Reveal>
       </div>
     </section>
   );
@@ -416,10 +437,10 @@ function Discovery() {
 /* -------------------- METHOD INTRO -------------------- */
 function Method() {
   const items = [
-    "Funciona dos 20 aos 65 anos — a psicologia humana é universal",
-    "Independente de há quanto tempo foi o término",
-    "Mesmo se ele já estiver com outra",
-    "Mesmo se você se sente 'sem esperança'",
+    "Sua idade — funciona MUITO bem dos 20 aos 65 anos (a psicologia humana é universal)",
+    "Há quanto tempo foi o término — a dor pode ser revertida a qualquer momento",
+    "Se ele já está com outra — o magnetismo que você vai desenvolver é incomparável",
+    "Se você se sente 'sem esperança' — este método é sua última e definitiva esperança",
   ];
   return (
     <section className="py-20 md:py-28 bg-rose-soft-gradient">
@@ -438,11 +459,12 @@ function Method() {
           </Reveal>
           <div className="text-center lg:text-left">
             <Reveal>
-              <h2 className="font-display text-3xl md:text-5xl font-bold text-foreground leading-tight">
-                Apresentando o <span className="font-display italic font-semibold text-4xl md:text-6xl text-rose-gold-gradient block leading-tight mt-2">Método Nefertiti</span>
+              <p className="font-heading font-bold text-rose-gold-deep tracking-widest uppercase text-sm">Apresentando a vocês</p>
+              <h2 className="mt-2 font-display text-3xl md:text-5xl font-bold text-foreground leading-tight">
+                <span className="font-display italic font-semibold text-4xl md:text-6xl text-rose-gold-gradient block leading-tight mt-2">Método Nefertiti</span>
               </h2>
               <p className="mt-6 text-lg md:text-xl text-foreground/80 leading-relaxed">
-                O primeiro sistema de reversão psicológica que transforma rejeição em <strong>magnetismo irresistível</strong> — sem joguinhos, apenas pura persuasão e magnetismo natural.
+                O primeiro sistema de reversão psicológica que transforma rejeição em <strong>magnetismo irresistível</strong> — validado por quem realmente entende da mente masculina. Você para de ser a "rejeitada" e se torna a Rainha Desejada, de forma 100% autêntica. Sem joguinhos. Apenas pura persuasão e magnetismo natural.
               </p>
             </Reveal>
             <div className="mt-8 grid sm:grid-cols-2 gap-3 text-left">
@@ -486,10 +508,13 @@ function Triggers() {
       <div className="container mx-auto px-4 max-w-6xl">
         <Reveal>
           <div className="text-center mb-14">
-            <p className="font-heading font-bold text-rose-gold tracking-widest uppercase text-sm">O código secreto</p>
+            <p className="font-heading font-bold text-rose-gold tracking-widest uppercase text-sm">O código secreto da atração</p>
             <h2 className="mt-3 font-display text-3xl md:text-5xl font-bold leading-tight">
-              Os <span className="text-rose-gold-gradient">3 gatilhos neurológicos</span> que fazem homens te perseguirem
+              Os <span className="text-rose-gold-gradient">3 Gatilhos Neurológicos</span> que fazem homens te perseguirem (no bom sentido)
             </h2>
+            <p className="mt-4 text-pearl/80 max-w-2xl mx-auto text-sm md:text-base">
+              Estes não são truques baratos. São princípios da neurociência e da psicologia comportamental que ativam o centro de prazer e recompensa no cérebro masculino — tornando você uma obsessão saudável.
+            </p>
           </div>
         </Reveal>
         <div className="grid md:grid-cols-3 gap-6">
@@ -605,10 +630,13 @@ function Modules() {
       <div className="container mx-auto px-4 max-w-6xl">
         <Reveal>
           <div className="text-center mb-10">
-            <p className="font-heading font-bold text-rose-gold-deep tracking-widest uppercase text-sm">O que você vai receber</p>
+            <p className="font-heading font-bold text-rose-gold-deep tracking-widest uppercase text-sm">O Que Você Vai Receber Dentro do Método Nefertiti</p>
             <h2 className="mt-3 font-display text-3xl md:text-5xl font-bold text-foreground leading-tight">
-              3 módulos para sua <span className="text-rose-gold-gradient">transformação</span> em 21 dias
+              Um programa de <span className="text-rose-gold-gradient">21 dias</span>, em 3 módulos poderosos
             </h2>
+            <p className="mt-4 text-muted-foreground max-w-2xl mx-auto">
+              Desenhado para reativar seu poder feminino e transformar sua vida amorosa de forma <strong className="text-foreground">permanente</strong>.
+            </p>
           </div>
         </Reveal>
         <Reveal y={40}>
@@ -659,10 +687,10 @@ function Devices() {
     <section className="py-12 md:py-16 bg-background">
       <div className="container mx-auto px-4 text-center">
         <Reveal>
-          <p className="font-heading font-semibold text-foreground text-lg md:text-xl">
-            Sua transformação acessível em qualquer lugar
+          <p className="font-heading font-semibold text-foreground text-lg md:text-2xl">
+            <span className="font-display italic">Método Nefertiti</span> — Sua transformação acessível em qualquer lugar, a qualquer hora
           </p>
-          <p className="mt-2 text-sm text-muted-foreground">a qualquer hora, em qualquer dispositivo</p>
+          <p className="mt-2 text-sm text-muted-foreground">📱 Celular • 💻 Computador • 📲 Tablet</p>
           <div className="mt-5 flex items-center justify-center gap-6 md:gap-10 text-rose-gold-deep">
             <div className="flex items-center gap-2"><Smartphone className="h-5 w-5" /><span className="text-sm font-heading">Celular</span></div>
             <div className="flex items-center gap-2"><Monitor className="h-5 w-5" /><span className="text-sm font-heading">Computador</span></div>
@@ -686,10 +714,13 @@ function Bonuses() {
       <div className="container mx-auto px-4 max-w-6xl">
         <Reveal>
           <div className="text-center mb-12">
-            <p className="font-heading font-bold text-rose-gold tracking-widest uppercase text-sm">Oferta por tempo limitado</p>
+            <p className="font-heading font-bold text-rose-gold tracking-widest uppercase text-sm">🎁 Empilhamento de valor que quebra a banca</p>
             <h2 className="mt-3 font-display text-3xl md:text-5xl font-bold leading-tight">
-              <span className="text-rose-gold-gradient">Bônus exclusivos</span> — somente para as primeiras 25
+              <span className="text-rose-gold-gradient">Bônus Exclusivos</span> — seu caminho acelerado para o magnetismo
             </h2>
+            <p className="mt-4 text-pearl/80 max-w-2xl mx-auto">
+              Um presente de valor incalculável — incluso gratuitamente na sua compra hoje.
+            </p>
           </div>
         </Reveal>
         <div className="grid md:grid-cols-3 gap-6">
@@ -1053,19 +1084,20 @@ function Objections() {
   const items = [
     {
       q: "E se isso não funcionar comigo porque meu caso é diferente?",
-      a: "Todas as minhas alunas pensavam que eram 'caso perdido'. O Método Nefertiti não é sobre seu passado, é sobre seu futuro magnético. Ele atua nos princípios universais da psicologia comportamental.",
+      a: "Querida, TODAS as minhas alunas pensavam que eram 'caso perdido'. A Carolina, a Fernanda, a Patrícia, a Suzana, a Carla… cada uma tinha uma história única de dor e rejeição. Mas o Método Nefertiti não é sobre o seu passado; é sobre o seu futuro magnético. Ele funciona porque atua nos princípios universais da psicologia comportamental e da neurociência, independentemente do seu passado. Sua singularidade é sua força — e o método irá lapidá-la.",
     },
     {
       q: "E se eu não gostar ou não vir resultados?",
-      a: "Sua satisfação é minha missão. Por isso, garantia incondicional de 7 dias. Sem perguntas. Seu risco é zero, minha promessa é tudo.",
+      a: "Sua satisfação é minha MISSÃO. Por isso ofereço uma Garantia Incondicional de 7 Dias. Se por qualquer motivo você não se sentir 100% satisfeita com o Método Nefertiti, basta enviar um e-mail e eu devolverei cada centavo do seu investimento, sem perguntas. Seu risco é ZERO. Minha promessa é TUDO.",
     },
   ];
   return (
     <section className="py-20 md:py-28 bg-rose-soft-gradient">
       <div className="container mx-auto px-4 max-w-4xl">
         <Reveal>
-          <h2 className="font-display text-3xl md:text-5xl font-bold text-center text-foreground leading-tight">
-            "Marina, mas e se…" <span className="text-rose-gold-gradient block mt-2">A mente da rainha tem respostas.</span>
+          <p className="text-center font-heading font-bold text-rose-gold-deep uppercase tracking-widest text-sm">Quebra de objeções finais</p>
+          <h2 className="mt-3 font-display text-3xl md:text-5xl font-bold text-center text-foreground leading-tight">
+            "Marina, mas e se…" <span className="text-rose-gold-gradient block mt-2">A mente da rainha não tem dúvidas. Ela tem respostas.</span>
           </h2>
         </Reveal>
         <div className="mt-12 space-y-5">
