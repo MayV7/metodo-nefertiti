@@ -708,10 +708,13 @@ function Bonuses() {
       <div className="container mx-auto px-4 max-w-6xl">
         <Reveal>
           <div className="text-center mb-12">
-            <p className="font-heading font-bold text-rose-gold tracking-widest uppercase text-sm">Oferta por tempo limitado</p>
+            <p className="font-heading font-bold text-rose-gold tracking-widest uppercase text-sm">🎁 Empilhamento de valor que quebra a banca</p>
             <h2 className="mt-3 font-display text-3xl md:text-5xl font-bold leading-tight">
-              <span className="text-rose-gold-gradient">Bônus exclusivos</span> — somente para as primeiras 25
+              <span className="text-rose-gold-gradient">Bônus Exclusivos</span> — seu caminho acelerado para o magnetismo
             </h2>
+            <p className="mt-4 text-pearl/80 max-w-2xl mx-auto">
+              Um presente de valor incalculável — incluso gratuitamente na sua compra hoje.
+            </p>
           </div>
         </Reveal>
         <div className="grid md:grid-cols-3 gap-6">
