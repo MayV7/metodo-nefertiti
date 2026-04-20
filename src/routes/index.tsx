@@ -203,9 +203,9 @@ function Pain() {
         <Reveal delay={0.4}>
           <div className="mt-12 text-center">
             <p className="text-lg text-foreground max-w-2xl mx-auto mb-8">
-              Se você assentiu para pelo menos 3 delas, você não está sozinha. E, mais importante: <strong>você está no lugar certo</strong>.
+              Se você assentiu para pelo menos 3 dessas afirmações, você não está sozinha. E, mais importante: <strong>você está no lugar CERTO!</strong> O que vou compartilhar com você nas próximas linhas não vai apenas mudar a forma como você se vê, mas como o mundo inteiro — e principalmente os homens — te veem.
             </p>
-            <CTAButton size="xl">Entrar para o <span className="font-display italic">Método Nefertiti</span></CTAButton>
+            <CTAButton size="xl">✨ Clique aqui para entrar para o <span className="font-display italic">Método Nefertiti</span></CTAButton>
           </div>
         </Reveal>
       </div>
