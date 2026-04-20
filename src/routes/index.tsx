@@ -323,22 +323,28 @@ function MarinaStory() {
             <Reveal>
               <p className="font-heading font-bold text-rose-gold-deep uppercase tracking-widest text-sm">Vamos às apresentações</p>
               <h2 className="mt-2 font-display text-3xl md:text-5xl font-bold text-foreground leading-tight">
-                Meu nome é <span className="text-rose-gold-gradient">Marina</span>, e eu era você alguns anos atrás.
+                Meu nome é <span className="text-rose-gold-gradient">Marina</span> e eu era você alguns anos atrás…
               </h2>
             </Reveal>
             <Reveal delay={0.15}>
               <div className="mt-6 space-y-4 text-foreground/90 leading-relaxed">
                 <p>
-                  Em outubro de 2022, eu estava exatamente onde você está agora. Deitada no chão do banheiro, às 3h da manhã, chorando porque tinha visto uma foto dele com outra mulher.
+                  Em outubro de 2022, eu estava exatamente onde você está agora. Deitada no chão do banheiro, às 3h da manhã, chorando compulsivamente porque tinha visto uma foto dele com outra mulher no Instagram.
                 </p>
                 <p>
-                  <strong>6 anos de relacionamento. Jogados fora.</strong> Eu, que sempre fui a namorada perfeita. Cuidava dele, cozinhava, estava sempre disponível. E mesmo assim, ele me trocou.
+                  <strong>6 anos de relacionamento. JOGADOS FORA, do nada.</strong> Eu, que sempre fui a namorada perfeita. Cuidava dele, cozinhava, estava sempre disponível para o que ele precisasse… fazia tudo para vê-lo feliz. E mesmo assim, ele me trocou. A dor era insuportável, a humilhação, paralisante.
                 </p>
                 <p>
-                  Por 6 meses fui uma sombra: perdi 8kg, evitava sair de casa, me sentia invisível. Até que numa viagem sozinha conheci a Dra. Sophia Miendez — psicóloga comportamental que estudou por 25 anos os padrões das mulheres mais magneticamente irresistíveis da história.
+                  Pelos próximos 6 meses, me transformei numa sombra: perdi 8kg (não de forma saudável), evitava sair de casa para não ver outros casais, me sentia <strong>INVISÍVEL</strong> para qualquer homem interessante. Chegava a ter ataques de pânico quando via que ele havia visualizado meu status — uma falsa esperança que só prolongava meu sofrimento.
+                </p>
+                <p>
+                  Sofri TANTO… Mas então, durante uma viagem pela primeira vez SOZINHA, conheci a <strong>Dra. Sophia Miendez</strong> — psicóloga comportamental renomada, especializada em dinâmicas de atração, que havia estudado por mais de <strong>25 anos</strong> os padrões das mulheres mais magneticamente irresistíveis da história. Nefertiti, a Rainha do Egito, por exemplo.
                 </p>
                 <p className="font-display italic text-xl text-rose-gold-deep border-l-4 border-rose-gold pl-5">
-                  "Marina, você acredita que Nefertiti chorava no banheiro quando foi rejeitada? Ela fazia o oposto. E muito provavelmente, fez ELE chorar."
+                  "Marina, você realmente acredita que Nefertiti chorava no banheiro quando foi rejeitada? Ela fazia o OPOSTO disso. Sua presença deixava os homens loucos para decifrá-la."
+                </p>
+                <p>
+                  Dra. Sophia me ajudou a refinar todo seu conhecimento e implementamos vários testes de campo antes de nascer o <span className="font-display italic">Método Nefertiti</span>. Deu tão certo que hoje já ajudamos <strong className="text-rose-gold-deep">+3.847 mulheres</strong> a superarem um término doloroso, recuperarem a autoestima e darem a volta por cima — tornando-se genuíno magnetismo irresistível para homens de alto valor.
                 </p>
               </div>
             </Reveal>
