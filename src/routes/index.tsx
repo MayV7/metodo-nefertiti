@@ -79,61 +79,44 @@ function Hero() {
           </div>
         </Reveal>
 
-        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center max-w-7xl mx-auto">
-          <div className="text-center lg:text-left">
-            <Reveal delay={0.1}>
-              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-card/70 backdrop-blur border border-rose-gold/30 text-xs md:text-sm font-heading font-semibold text-rose-gold-deep uppercase tracking-wider mb-6">
-                <Sparkles className="h-4 w-4" /> Validado por Harvard
-              </span>
-            </Reveal>
-            <Reveal delay={0.2}>
-              <h1 className="font-display text-3xl md:text-5xl lg:text-6xl font-bold leading-[1.1] text-foreground">
-                <span className="font-script text-5xl md:text-7xl lg:text-8xl text-rose-gold-gradient block leading-none mb-3">Método Nefertiti</span>
-                O segredo das <span className="text-rose-gold-gradient">3.847 mulheres</span> que transformaram a dor da rejeição em magnetismo irresistível
-              </h1>
-            </Reveal>
-            <Reveal delay={0.35}>
-              <p className="mt-6 text-base md:text-lg text-muted-foreground max-w-xl mx-auto lg:mx-0 leading-relaxed">
-                O <strong className="text-foreground">único sistema de reversão psicológica</strong> que faz ex-parceiros se arrependerem e homens de alto valor te perseguirem — mesmo que você se sinta invisível agora.
+        <div className="max-w-3xl mx-auto text-center">
+          <Reveal delay={0.1}>
+            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-card/70 backdrop-blur border border-rose-gold/30 text-xs md:text-sm font-heading font-semibold text-rose-gold-deep uppercase tracking-wider mb-6">
+              <Sparkles className="h-4 w-4" /> Validado por Harvard
+            </span>
+          </Reveal>
+          <Reveal delay={0.2}>
+            <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.15] text-foreground">
+              <span className="font-display italic font-semibold text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-rose-gold-gradient block leading-tight mb-3">Método Nefertiti</span>
+              O segredo das <span className="text-rose-gold-gradient">3.847 mulheres</span> que transformaram a dor da rejeição em magnetismo irresistível
+            </h1>
+          </Reveal>
+          <Reveal delay={0.35}>
+            <p className="mt-6 text-base md:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+              O <strong className="text-foreground">único sistema de reversão psicológica</strong> que faz ex-parceiros se arrependerem e homens de alto valor te perseguirem — mesmo que você se sinta invisível agora.
+            </p>
+          </Reveal>
+          <Reveal delay={0.5}>
+            <div className="mt-8 flex flex-col items-center gap-3">
+              <CTAButton size="xl">Desperte sua Rainha Interior</CTAButton>
+              <p className="text-xs text-muted-foreground italic">
+                Clique e garanta seu acesso imediato. Vagas limitadas.
               </p>
-            </Reveal>
-            <Reveal delay={0.5}>
-              <div className="mt-8 flex flex-col items-center lg:items-start gap-3">
-                <CTAButton size="xl">Desperte sua Rainha Interior</CTAButton>
-                <p className="text-xs text-muted-foreground italic">
-                  Clique e garanta seu acesso imediato. Vagas limitadas.
-                </p>
-              </div>
-            </Reveal>
-            <Reveal delay={0.65}>
-              <ul className="mt-8 grid sm:grid-cols-3 gap-3 text-left">
-                {[
-                  "Acesso imediato e vitalício",
-                  "Garantia incondicional 7 dias",
-                  "+3.847 mulheres transformadas",
-                ].map((t) => (
-                  <li key={t} className="flex items-start gap-2 text-sm font-medium text-foreground">
-                    <CheckCircle2 className="h-5 w-5 text-rose-gold-deep shrink-0 mt-0.5" />
-                    <span>{t}</span>
-                  </li>
-                ))}
-              </ul>
-            </Reveal>
-          </div>
-
-          <Reveal delay={0.3} y={40}>
-            <div className="relative">
-              <div className="absolute -inset-6 bg-rose-gold-gradient opacity-25 blur-3xl rounded-full" />
-              <img
-                src={mockup}
-                alt="Método Nefertiti — acesso em celular, tablet e computador"
-                className="relative w-full h-auto object-contain drop-shadow-2xl float-soft"
-              />
-              <div className="absolute -bottom-2 -right-2 md:-bottom-4 md:-right-4 bg-card border border-rose-gold/30 rounded-2xl px-4 py-3 shadow-card-soft hidden md:flex items-center gap-2">
-                <Star className="h-5 w-5 text-rose-gold-deep" fill="currentColor" />
-                <span className="font-heading font-bold text-sm">4.9 / 5 — 3.847 alunas</span>
-              </div>
             </div>
+          </Reveal>
+          <Reveal delay={0.65}>
+            <ul className="mt-10 grid sm:grid-cols-3 gap-3 text-left max-w-2xl mx-auto">
+              {[
+                "Acesso imediato e vitalício",
+                "Garantia incondicional 7 dias",
+                "+3.847 mulheres transformadas",
+              ].map((t) => (
+                <li key={t} className="flex items-start gap-2 text-sm font-medium text-foreground">
+                  <CheckCircle2 className="h-5 w-5 text-rose-gold-deep shrink-0 mt-0.5" />
+                  <span>{t}</span>
+                </li>
+              ))}
+            </ul>
           </Reveal>
         </div>
       </div>
