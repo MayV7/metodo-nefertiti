@@ -43,7 +43,7 @@
   --color-graphite: var(--graphite);
 
   --font-display: "Cormorant Garamond", "Playfair Display", serif;
-  --font-script: "Italianno", "Great Vibes", cursive;
+  --font-script: "Cormorant Garamond", "Playfair Display", serif;
   --font-heading: "Cinzel", "Cormorant Garamond", serif;
   --font-body: "Cormorant Garamond", "Cormorant", serif;
   --font-imperial: "Cinzel", serif;
@@ -117,7 +117,7 @@
 }
 
 @layer utilities {
-  .font-script { font-family: var(--font-script); }
+  .font-script { font-family: var(--font-script); font-style: italic; font-weight: 600; letter-spacing: -0.01em; }
   .font-imperial { font-family: var(--font-imperial); letter-spacing: 0.08em; }
   .font-display { font-family: var(--font-display); }
   .font-heading { font-family: var(--font-heading); }
