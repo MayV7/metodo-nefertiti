@@ -3,16 +3,16 @@ import { motion } from "framer-motion";
 import {
   Crown, Heart, Sparkles, ShieldCheck, Star, CheckCircle2, XCircle,
   Award, Brain, Flame, Gem, Zap, Smartphone, Monitor, Tablet, Lock,
-  CreditCard, Smartphone as Pix, Play, ChevronRight, Quote,
+  CreditCard, Smartphone as Pix, ChevronRight, Quote,
 } from "lucide-react";
 import { Header } from "@/components/Header";
-import { VisitorBar } from "@/components/VisitorBar";
+import { TopCountdown } from "@/components/TopCountdown";
 import { SocialProofPopup } from "@/components/SocialProofPopup";
 import { CTAButton } from "@/components/CTAButton";
 import { Reveal } from "@/components/Reveal";
 import { Countdown } from "@/components/Countdown";
 import logo from "@/assets/logo-nefertiti.png";
-import heroWoman from "@/assets/hero-woman.jpg";
+import mockup from "@/assets/mockup-nefertiti.png";
 import marina from "@/assets/marina.jpg";
 import sophia from "@/assets/sophia.jpg";
 
@@ -40,7 +40,7 @@ export const Route = createFileRoute("/")({
 function LandingPage() {
   return (
     <div id="top" className="min-h-screen bg-background overflow-x-hidden">
-      <VisitorBar />
+      <TopCountdown hours={12} />
       <Header />
       <SocialProofPopup />
 
@@ -119,19 +119,13 @@ function Hero() {
 
           <Reveal delay={0.3} y={40}>
             <div className="relative">
-              <div className="absolute -inset-6 bg-rose-gold-gradient opacity-30 blur-3xl rounded-full" />
-              <div className="relative rounded-3xl overflow-hidden shadow-elegant border border-rose-gold/30">
-                <img src={heroWoman} alt="Mulher confiante e magnética" className="w-full h-auto object-cover" />
-                <button
-                  aria-label="Assistir vídeo"
-                  className="absolute inset-0 flex items-center justify-center group"
-                >
-                  <span className="h-20 w-20 md:h-24 md:w-24 rounded-full bg-rose-gold-gradient flex items-center justify-center shadow-glow cta-pulse group-hover:scale-110 transition-transform">
-                    <Play className="h-9 w-9 md:h-11 md:w-11 text-pearl ml-1" fill="currentColor" />
-                  </span>
-                </button>
-              </div>
-              <div className="absolute -bottom-4 -right-4 bg-card border border-rose-gold/30 rounded-2xl px-4 py-3 shadow-card-soft hidden md:flex items-center gap-2">
+              <div className="absolute -inset-6 bg-rose-gold-gradient opacity-25 blur-3xl rounded-full" />
+              <img
+                src={mockup}
+                alt="Método Nefertiti — acesso em celular, tablet e computador"
+                className="relative w-full h-auto object-contain drop-shadow-2xl float-soft"
+              />
+              <div className="absolute -bottom-2 -right-2 md:-bottom-4 md:-right-4 bg-card border border-rose-gold/30 rounded-2xl px-4 py-3 shadow-card-soft hidden md:flex items-center gap-2">
                 <Star className="h-5 w-5 text-rose-gold-deep" fill="currentColor" />
                 <span className="font-heading font-bold text-sm">4.9 / 5 — 3.847 alunas</span>
               </div>
