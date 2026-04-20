@@ -62,17 +62,18 @@ function LandingPage() {
       <Pain />
       <FirstResults />
       <Discovery />
+      <Triggers />
       <Method />
       <Modules />
-      <Devices />
-      <Triggers />
       <Bonuses />
+      <Devices />
       <Offer />
       <MoreProof />
       <Decision />
       <Guarantee />
       <FAQ />
       <MarinaStory />
+      <Scarcity />
       <Objections />
       <Footer />
     </div>
