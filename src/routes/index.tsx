@@ -413,6 +413,16 @@ function Discovery() {
             </Reveal>
           </div>
         </div>
+        <Reveal delay={0.5}>
+          <div className="mt-12 text-center max-w-3xl mx-auto">
+            <p className="text-pearl/90 leading-relaxed">
+              Hoje, <strong className="text-rose-gold-gradient">+4 anos depois</strong>, já ajudei +3.847 mulheres a fazerem a mesma transformação e ressignificarem suas vidas amorosas. Elas não apenas superaram o término — elas <strong>DOMINARAM</strong> a arte da atração. E agora é <span className="text-rose-gold-gradient font-bold">SUA vez</span>. Não amanhã. Não depois. <strong>AGORA</strong>.
+            </p>
+            <div className="mt-8">
+              <CTAButton size="xl">👑 Desperte sua Rainha Interior agora</CTAButton>
+            </div>
+          </div>
+        </Reveal>
       </div>
     </section>
   );
