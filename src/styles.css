@@ -4,7 +4,7 @@
 
 @custom-variant dark (&:is(.dark *));
 
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Italianno&family=Great+Vibes&family=Cinzel:wght@500;600;700&family=Cormorant:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Cinzel:wght@400;500;600;700;800&family=Italiana&family=Marcellus&display=swap');
 
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
@@ -42,11 +42,12 @@
   --color-pearl: var(--pearl);
   --color-graphite: var(--graphite);
 
-  --font-display: "Cormorant Garamond", "Playfair Display", serif;
-  --font-script: "Cormorant Garamond", "Playfair Display", serif;
-  --font-heading: "Cinzel", "Cormorant Garamond", serif;
-  --font-body: "Cormorant Garamond", "Cormorant", serif;
-  --font-imperial: "Cinzel", serif;
+  --font-display: "Playfair Display", "Cormorant Garamond", Georgia, serif;
+  --font-script: "Italiana", "Playfair Display", serif;
+  --font-heading: "Cinzel", "Marcellus", "Playfair Display", serif;
+  --font-body: "Cormorant Garamond", "Playfair Display", Georgia, serif;
+  --font-imperial: "Cinzel", "Marcellus", serif;
+  --font-accent: "Marcellus", "Playfair Display", serif;
 }
 
 :root {
@@ -106,14 +107,22 @@
     font-family: var(--font-body);
     font-size: 1.0625rem;
     font-weight: 500;
-    line-height: 1.7;
+    line-height: 1.65;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
+    font-feature-settings: "liga", "kern", "calt";
   }
   h1, h2, h3, h4 {
     font-family: var(--font-display);
-    letter-spacing: -0.01em;
+    letter-spacing: -0.015em;
+    font-weight: 600;
   }
+  h1 { font-weight: 700; }
+  strong, b { font-weight: 700; }
+}
+
+@layer utilities {
+  .font-accent { font-family: var(--font-accent); letter-spacing: 0.02em; }
 }
 
 @layer utilities {
