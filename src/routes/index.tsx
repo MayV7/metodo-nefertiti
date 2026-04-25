@@ -31,23 +31,41 @@ import pVanessa from "@/assets/p-vanessa.jpg";
 import ogImage from "@/assets/og-nefertiti.jpg";
 
 export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "Método Nefertiti — Desperte sua Rainha Interior" },
-      {
-        name: "description",
-        content:
-          "Sistema de Reversão Psicológica validado por Harvard que transformou +3.847 mulheres. Desperte seu magnetismo irresistível em 21 dias.",
-      },
-      { property: "og:title", content: "Método Nefertiti — Desperte sua Rainha Interior" },
-      {
-        property: "og:description",
-        content:
-          "Transforme a dor da rejeição em magnetismo irresistível. Junte-se a +3.847 mulheres que reescreveram seu destino amoroso.",
-      },
-      { property: "og:type", content: "website" },
-    ],
-  }),
+  head: () => {
+    const title = "Método Nefertiti — Desperte sua Rainha Interior em 21 Dias";
+    const description =
+      "Sistema de Reversão Psicológica validado por Harvard que já transformou +3.847 mulheres. Transforme a dor da rejeição em magnetismo irresistível e atraia homens de alto valor em 21 dias.";
+    const url = "https://pay.kiwify.com.br/iX5ySX9";
+    return {
+      meta: [
+        { title },
+        { name: "description", content: description },
+        { name: "keywords", content: "método nefertiti, reconquista, autoestima feminina, magnetismo, atração, superar término, rainha interior, marina nefertiti" },
+        { name: "author", content: "Marina — Método Nefertiti" },
+        { name: "robots", content: "index, follow, max-image-preview:large" },
+        { name: "theme-color", content: "#c98a73" },
+
+        // Open Graph
+        { property: "og:type", content: "website" },
+        { property: "og:site_name", content: "Método Nefertiti" },
+        { property: "og:title", content: title },
+        { property: "og:description", content: description },
+        { property: "og:image", content: ogImage },
+        { property: "og:image:width", content: "1200" },
+        { property: "og:image:height", content: "1200" },
+        { property: "og:image:alt", content: "Método Nefertiti — Desperte sua Rainha Interior" },
+        { property: "og:locale", content: "pt_BR" },
+        { property: "og:url", content: url },
+
+        // Twitter / X
+        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:title", content: title },
+        { name: "twitter:description", content: description },
+        { name: "twitter:image", content: ogImage },
+        { name: "twitter:image:alt", content: "Método Nefertiti — Desperte sua Rainha Interior" },
+      ],
+    };
+  },
   component: LandingPage,
 });
 
