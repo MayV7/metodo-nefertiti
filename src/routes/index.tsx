@@ -28,6 +28,7 @@ import pMarianaK from "@/assets/p-marianak.jpg";
 import pPatricia from "@/assets/p-patricia.jpg";
 import pSuzana from "@/assets/p-suzana.jpg";
 import pVanessa from "@/assets/p-vanessa.jpg";
+import ogImage from "@/assets/og-nefertiti.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
