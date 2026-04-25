@@ -94,21 +94,30 @@ function Hero() {
         </Reveal>
 
         <div className="max-w-3xl mx-auto text-center">
+          <Reveal delay={0.15}>
+            <p className="eyebrow text-rose-gold-deep mb-4">
+              <Sparkles className="inline h-3.5 w-3.5 mr-1.5 -mt-0.5" />
+              O método das rainhas modernas
+            </p>
+          </Reveal>
           <Reveal delay={0.2}>
-            <h1 className="hero-headline text-foreground">
-              <span className="font-display italic font-semibold text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-rose-gold-gradient block leading-tight mb-3">Método Nefertiti</span>
-              O segredo das <span className="text-rose-gold-gradient">3.847 mulheres</span> que transformaram a dor da rejeição em um magnetismo irresistível que faz homens de alto valor <span className="text-rose-gold-gradient">QUEREREM VOCÊ</span> — mesmo que você se sinta "invisível" agora.
+            <h1 className="text-foreground">
+              <span className="hero-eyebrow-script block mb-2">Método Nefertiti</span>
+              <span className="hero-divider mb-4 mx-auto">✦</span>
+              <span className="hero-headline block">
+                O segredo das <span className="accent text-rose-gold-gradient">3.847 mulheres</span> que transformaram a dor da rejeição em <span className="accent">magnetismo irresistível</span> — fazendo homens de alto valor <span className="accent text-rose-gold-gradient">QUEREREM VOCÊ</span>, mesmo que você se sinta <em>"invisível"</em> agora.
+              </span>
             </h1>
           </Reveal>
-          <Reveal delay={0.28}>
-            <p className="mt-5 text-xs md:text-sm text-muted-foreground italic max-w-xl mx-auto">
+          <Reveal delay={0.32}>
+            <p className="mt-5 text-xs md:text-sm text-muted-foreground italic max-w-xl mx-auto tracking-wide">
               <Sparkles className="inline h-3.5 w-3.5 text-rose-gold-deep mr-1" />
               Validado por Harvard
             </p>
           </Reveal>
-          <Reveal delay={0.35}>
+          <Reveal delay={0.4}>
             <p className="hero-sub mt-5 text-muted-foreground max-w-2xl mx-auto">
-              Descubra o <strong className="text-foreground">único sistema de reversão psicológica validado por Harvard</strong> que faz ex-parceiros se arrependerem de terem te perdido e homens de alto valor te perseguirem.
+              Descubra o <strong className="text-foreground not-italic">único sistema de reversão psicológica validado por Harvard</strong> que faz ex-parceiros se arrependerem de terem te perdido e homens de alto valor te perseguirem.
             </p>
           </Reveal>
           <Reveal delay={0.5}>
