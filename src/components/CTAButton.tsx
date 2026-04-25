@@ -9,7 +9,9 @@ interface CTAButtonProps {
   icon?: boolean;
 }
 
-export function CTAButton({ children, className, size = "lg", href = "#oferta", icon = true }: CTAButtonProps) {
+export const KIWIFY_CHECKOUT_URL = "https://pay.kiwify.com.br/iX5ySX9";
+
+export function CTAButton({ children, className, size = "lg", href = KIWIFY_CHECKOUT_URL, icon = true }: CTAButtonProps) {
   const sizes = {
     lg: "px-8 py-4 text-base md:text-lg",
     xl: "px-10 py-5 text-lg md:text-xl",
@@ -17,6 +19,8 @@ export function CTAButton({ children, className, size = "lg", href = "#oferta", 
   return (
     <a
       href={href}
+      target="_blank"
+      rel="noopener noreferrer"
       className={cn(
         "group relative inline-flex items-center justify-center gap-3 rounded-full font-heading font-bold tracking-wide text-primary-foreground bg-rose-gold-gradient cta-pulse transition-transform hover:scale-[1.03] active:scale-[0.98] uppercase text-center",
         sizes[size],
