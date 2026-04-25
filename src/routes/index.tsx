@@ -793,10 +793,10 @@ function Offer() {
             <div className="mt-10 text-center">
               <p className="font-heading text-foreground/70 line-through text-lg">De R$ 997,00</p>
               <p className="mt-2 font-heading text-sm uppercase tracking-widest text-rose-gold-deep">12x sem juros de</p>
-              <p className="font-display font-bold text-foreground text-5xl md:text-7xl mt-2 leading-none">
+              <p className="price-display text-foreground mt-2">
                 12x <span className="text-rose-gold-gradient">R$ 14<span className="text-3xl md:text-4xl">,70</span></span>
               </p>
-              <p className="mt-3 text-base md:text-lg text-muted-foreground">
+              <p className="price-sub mt-3 text-muted-foreground">
                 ou <strong className="text-foreground">R$ 147,00</strong> à vista no PIX
               </p>
 
