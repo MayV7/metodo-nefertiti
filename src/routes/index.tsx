@@ -114,29 +114,31 @@ function Hero() {
 
         <div className="max-w-3xl mx-auto text-center">
           <Reveal delay={0.15}>
-            <p className="eyebrow text-rose-gold-deep mb-4">
-              <Sparkles className="inline h-3.5 w-3.5 mr-1.5 -mt-0.5" />
-              O método das rainhas modernas
+            <p className="hero-kicker mb-6">
+              <span>Método das Rainhas Modernas</span>
             </p>
           </Reveal>
           <Reveal delay={0.2}>
             <h1 className="text-foreground">
-              <span className="hero-eyebrow-script block mb-2">Método Nefertiti</span>
-              <span className="hero-divider mb-4 mx-auto">✦</span>
+              <span className="hero-eyebrow-script block">Nefertiti</span>
+              <span className="hero-divider mt-3 mb-6 mx-auto">✦</span>
               <span className="hero-headline block">
-                O segredo das <span className="accent text-rose-gold-gradient">3.847 mulheres</span> que transformaram a dor da rejeição em <span className="accent">magnetismo irresistível</span> — fazendo homens de alto valor <span className="accent text-rose-gold-gradient">QUEREREM VOCÊ</span>, mesmo que você se sinta <em>"invisível"</em> agora.
+                O segredo silencioso de <span className="accent-gold">3.847 mulheres</span> que transformaram a dor da rejeição em
+                <span className="hero-power">Magnetismo Irresistível</span>
+                fazendo homens de alto valor <span className="accent">QUEREREM VOCÊ</span> — mesmo que você se sinta <em>"invisível"</em> agora.
               </span>
             </h1>
           </Reveal>
           <Reveal delay={0.32}>
-            <p className="mt-5 text-xs md:text-sm text-muted-foreground italic max-w-xl mx-auto tracking-wide">
-              <Sparkles className="inline h-3.5 w-3.5 text-rose-gold-deep mr-1" />
+            <p className="mt-6 inline-flex items-center gap-2 text-[0.7rem] md:text-xs text-rose-gold-deep uppercase tracking-[0.4em] font-heading font-semibold">
+              <Sparkles className="h-3.5 w-3.5" />
               Validado por Harvard
+              <Sparkles className="h-3.5 w-3.5" />
             </p>
           </Reveal>
           <Reveal delay={0.4}>
-            <p className="hero-sub mt-5 text-muted-foreground max-w-2xl mx-auto">
-              Descubra o <strong className="text-foreground not-italic">único sistema de reversão psicológica validado por Harvard</strong> que faz ex-parceiros se arrependerem de terem te perdido e homens de alto valor te perseguirem.
+            <p className="hero-sub mt-6 max-w-2xl mx-auto">
+              Descubra o <strong>único sistema de reversão psicológica</strong> que faz ex-parceiros se arrependerem de terem te perdido — e homens de alto valor te perseguirem.
             </p>
           </Reveal>
           <Reveal delay={0.5}>
