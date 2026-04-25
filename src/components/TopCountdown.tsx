@@ -1,34 +1,12 @@
-import { useEffect, useState } from "react";
 import { Clock, Flame } from "lucide-react";
+import { useSyncedCountdown } from "@/hooks/use-countdown";
 
 function pad(n: number) {
   return n.toString().padStart(2, "0");
 }
 
 export function TopCountdown({ hours = 12 }: { hours?: number }) {
-  const [end, setEnd] = useState<number | null>(null);
-  const [now, setNow] = useState(0);
-
-  useEffect(() => {
-    const stored = window.localStorage.getItem("nefertiti_top_countdown_end");
-    let target: number;
-    if (stored) {
-      const v = parseInt(stored, 10);
-      target = !Number.isNaN(v) && v > Date.now() ? v : Date.now() + hours * 3_600_000;
-    } else {
-      target = Date.now() + hours * 3_600_000;
-    }
-    window.localStorage.setItem("nefertiti_top_countdown_end", String(target));
-    setEnd(target);
-    setNow(Date.now());
-    const id = setInterval(() => setNow(Date.now()), 1000);
-    return () => clearInterval(id);
-  }, [hours]);
-
-  const diff = end ? Math.max(0, end - now) : hours * 3_600_000;
-  const h = Math.floor(diff / 3_600_000);
-  const m = Math.floor((diff % 3_600_000) / 60_000);
-  const s = Math.floor((diff % 60_000) / 1000);
+  const { hours: h, minutes: m, seconds: s } = useSyncedCountdown(hours);
 
   return (
     <div className="bg-graphite-gradient text-pearl py-2 px-3 md:py-2.5 md:px-4 text-center font-heading tracking-wide flex flex-wrap items-center justify-center gap-x-4 gap-y-1.5 border-b border-rose-gold/20">

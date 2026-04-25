@@ -181,12 +181,49 @@
   .italic-soft { font-style: italic; font-weight: 500; }
 
   /* Section emphasis presets — luxury hierarchy */
+  .hero-eyebrow-script {
+    font-family: var(--font-script);
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(2.75rem, 2rem + 4.2vw, 6rem);
+    line-height: 0.95;
+    letter-spacing: -0.01em;
+    background: var(--gradient-rose-gold);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 4px 30px oklch(0.7 0.1 33 / 0.35);
+    display: inline-block;
+  }
   .hero-headline {
     font-family: var(--font-display);
-    font-weight: 700;
-    font-size: clamp(2.5rem, 1.8rem + 3.6vw, 5rem);
-    line-height: 1.02;
-    letter-spacing: -0.03em;
+    font-weight: 600;
+    font-style: italic;
+    font-size: clamp(1.875rem, 1.4rem + 2.4vw, 3.5rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+  .hero-headline strong,
+  .hero-headline .accent {
+    font-style: normal;
+    font-weight: 800;
+    font-family: var(--font-display);
+    letter-spacing: -0.025em;
+  }
+  .hero-divider {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--rose-gold-deep);
+    font-family: var(--font-script);
+    font-size: 1.5rem;
+  }
+  .hero-divider::before,
+  .hero-divider::after {
+    content: "";
+    width: clamp(40px, 8vw, 90px);
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--rose-gold), transparent);
   }
   .hero-sub {
     font-family: var(--font-body);

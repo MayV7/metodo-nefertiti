@@ -28,25 +28,44 @@ import pMarianaK from "@/assets/p-marianak.jpg";
 import pPatricia from "@/assets/p-patricia.jpg";
 import pSuzana from "@/assets/p-suzana.jpg";
 import pVanessa from "@/assets/p-vanessa.jpg";
+import ogImage from "@/assets/og-nefertiti.jpg";
 
 export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "Método Nefertiti — Desperte sua Rainha Interior" },
-      {
-        name: "description",
-        content:
-          "Sistema de Reversão Psicológica validado por Harvard que transformou +3.847 mulheres. Desperte seu magnetismo irresistível em 21 dias.",
-      },
-      { property: "og:title", content: "Método Nefertiti — Desperte sua Rainha Interior" },
-      {
-        property: "og:description",
-        content:
-          "Transforme a dor da rejeição em magnetismo irresistível. Junte-se a +3.847 mulheres que reescreveram seu destino amoroso.",
-      },
-      { property: "og:type", content: "website" },
-    ],
-  }),
+  head: () => {
+    const title = "Método Nefertiti — Desperte sua Rainha Interior em 21 Dias";
+    const description =
+      "Sistema de Reversão Psicológica validado por Harvard que já transformou +3.847 mulheres. Transforme a dor da rejeição em magnetismo irresistível e atraia homens de alto valor em 21 dias.";
+    const url = "https://pay.kiwify.com.br/iX5ySX9";
+    return {
+      meta: [
+        { title },
+        { name: "description", content: description },
+        { name: "keywords", content: "método nefertiti, reconquista, autoestima feminina, magnetismo, atração, superar término, rainha interior, marina nefertiti" },
+        { name: "author", content: "Marina — Método Nefertiti" },
+        { name: "robots", content: "index, follow, max-image-preview:large" },
+        { name: "theme-color", content: "#c98a73" },
+
+        // Open Graph
+        { property: "og:type", content: "website" },
+        { property: "og:site_name", content: "Método Nefertiti" },
+        { property: "og:title", content: title },
+        { property: "og:description", content: description },
+        { property: "og:image", content: ogImage },
+        { property: "og:image:width", content: "1200" },
+        { property: "og:image:height", content: "1200" },
+        { property: "og:image:alt", content: "Método Nefertiti — Desperte sua Rainha Interior" },
+        { property: "og:locale", content: "pt_BR" },
+        { property: "og:url", content: url },
+
+        // Twitter / X
+        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:title", content: title },
+        { name: "twitter:description", content: description },
+        { name: "twitter:image", content: ogImage },
+        { name: "twitter:image:alt", content: "Método Nefertiti — Desperte sua Rainha Interior" },
+      ],
+    };
+  },
   component: LandingPage,
 });
 
@@ -94,21 +113,30 @@ function Hero() {
         </Reveal>
 
         <div className="max-w-3xl mx-auto text-center">
+          <Reveal delay={0.15}>
+            <p className="eyebrow text-rose-gold-deep mb-4">
+              <Sparkles className="inline h-3.5 w-3.5 mr-1.5 -mt-0.5" />
+              O método das rainhas modernas
+            </p>
+          </Reveal>
           <Reveal delay={0.2}>
-            <h1 className="hero-headline text-foreground">
-              <span className="font-display italic font-semibold text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-rose-gold-gradient block leading-tight mb-3">Método Nefertiti</span>
-              O segredo das <span className="text-rose-gold-gradient">3.847 mulheres</span> que transformaram a dor da rejeição em um magnetismo irresistível que faz homens de alto valor <span className="text-rose-gold-gradient">QUEREREM VOCÊ</span> — mesmo que você se sinta "invisível" agora.
+            <h1 className="text-foreground">
+              <span className="hero-eyebrow-script block mb-2">Método Nefertiti</span>
+              <span className="hero-divider mb-4 mx-auto">✦</span>
+              <span className="hero-headline block">
+                O segredo das <span className="accent text-rose-gold-gradient">3.847 mulheres</span> que transformaram a dor da rejeição em <span className="accent">magnetismo irresistível</span> — fazendo homens de alto valor <span className="accent text-rose-gold-gradient">QUEREREM VOCÊ</span>, mesmo que você se sinta <em>"invisível"</em> agora.
+              </span>
             </h1>
           </Reveal>
-          <Reveal delay={0.28}>
-            <p className="mt-5 text-xs md:text-sm text-muted-foreground italic max-w-xl mx-auto">
+          <Reveal delay={0.32}>
+            <p className="mt-5 text-xs md:text-sm text-muted-foreground italic max-w-xl mx-auto tracking-wide">
               <Sparkles className="inline h-3.5 w-3.5 text-rose-gold-deep mr-1" />
               Validado por Harvard
             </p>
           </Reveal>
-          <Reveal delay={0.35}>
+          <Reveal delay={0.4}>
             <p className="hero-sub mt-5 text-muted-foreground max-w-2xl mx-auto">
-              Descubra o <strong className="text-foreground">único sistema de reversão psicológica validado por Harvard</strong> que faz ex-parceiros se arrependerem de terem te perdido e homens de alto valor te perseguirem.
+              Descubra o <strong className="text-foreground not-italic">único sistema de reversão psicológica validado por Harvard</strong> que faz ex-parceiros se arrependerem de terem te perdido e homens de alto valor te perseguirem.
             </p>
           </Reveal>
           <Reveal delay={0.5}>
