@@ -278,7 +278,7 @@ function FirstResults() {
                 <div className="flex items-center gap-4 mb-4">
                   <img src={t.photo} alt={t.name} loading="lazy" width={64} height={64} className="h-16 w-16 rounded-full object-cover border-2 border-rose-gold/40 shadow-card-soft shrink-0" />
                   <div>
-                    <p className="font-heading font-bold text-foreground leading-tight">{t.name}</p>
+                    <p className="testimonial-name text-foreground leading-tight">{t.name}</p>
                     <p className="text-xs text-muted-foreground">{t.age} anos • {t.role}</p>
                     <div className="flex items-center gap-0.5 text-rose-gold-deep mt-1">
                       {[...Array(5)].map((_, k) => <Star key={k} className="h-3.5 w-3.5" fill="currentColor" />)}
@@ -286,7 +286,7 @@ function FirstResults() {
                   </div>
                 </div>
                 <Quote className="h-6 w-6 text-rose-gold-deep mb-2 opacity-60" />
-                <p className="text-foreground leading-relaxed flex-1 italic">"{t.text}"</p>
+                <p className="testimonial-quote text-foreground flex-1">"{t.text}"</p>
                 <div className="mt-5 pt-5 border-t border-border">
                   <p className="text-sm text-rose-gold-deep font-medium flex items-start gap-2">
                     <Sparkles className="h-4 w-4 shrink-0 mt-0.5" /> {t.highlight}
