@@ -95,7 +95,7 @@ function Hero() {
 
         <div className="max-w-3xl mx-auto text-center">
           <Reveal delay={0.2}>
-            <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.15] text-foreground">
+            <h1 className="hero-headline text-foreground">
               <span className="font-display italic font-semibold text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-rose-gold-gradient block leading-tight mb-3">Método Nefertiti</span>
               O segredo das <span className="text-rose-gold-gradient">3.847 mulheres</span> que transformaram a dor da rejeição em um magnetismo irresistível que faz homens de alto valor <span className="text-rose-gold-gradient">QUEREREM VOCÊ</span> — mesmo que você se sinta "invisível" agora.
             </h1>
@@ -107,7 +107,7 @@ function Hero() {
             </p>
           </Reveal>
           <Reveal delay={0.35}>
-            <p className="mt-5 text-base md:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+            <p className="hero-sub mt-5 text-muted-foreground max-w-2xl mx-auto">
               Descubra o <strong className="text-foreground">único sistema de reversão psicológica validado por Harvard</strong> que faz ex-parceiros se arrependerem de terem te perdido e homens de alto valor te perseguirem.
             </p>
           </Reveal>
@@ -278,7 +278,7 @@ function FirstResults() {
                 <div className="flex items-center gap-4 mb-4">
                   <img src={t.photo} alt={t.name} loading="lazy" width={64} height={64} className="h-16 w-16 rounded-full object-cover border-2 border-rose-gold/40 shadow-card-soft shrink-0" />
                   <div>
-                    <p className="font-heading font-bold text-foreground leading-tight">{t.name}</p>
+                    <p className="testimonial-name text-foreground leading-tight">{t.name}</p>
                     <p className="text-xs text-muted-foreground">{t.age} anos • {t.role}</p>
                     <div className="flex items-center gap-0.5 text-rose-gold-deep mt-1">
                       {[...Array(5)].map((_, k) => <Star key={k} className="h-3.5 w-3.5" fill="currentColor" />)}
@@ -286,7 +286,7 @@ function FirstResults() {
                   </div>
                 </div>
                 <Quote className="h-6 w-6 text-rose-gold-deep mb-2 opacity-60" />
-                <p className="text-foreground leading-relaxed flex-1 italic">"{t.text}"</p>
+                <p className="testimonial-quote text-foreground flex-1">"{t.text}"</p>
                 <div className="mt-5 pt-5 border-t border-border">
                   <p className="text-sm text-rose-gold-deep font-medium flex items-start gap-2">
                     <Sparkles className="h-4 w-4 shrink-0 mt-0.5" /> {t.highlight}
@@ -569,14 +569,14 @@ function MoreProof() {
                 <div className="flex items-center gap-4 mb-4">
                   <img src={t.photo} alt={t.name} loading="lazy" width={64} height={64} className="h-16 w-16 rounded-full object-cover border-2 border-rose-gold/40 shrink-0" />
                   <div>
-                    <p className="font-heading font-bold text-foreground leading-tight">{t.name}</p>
+                    <p className="testimonial-name text-foreground leading-tight">{t.name}</p>
                     <p className="text-xs text-muted-foreground">{t.age} anos</p>
                     <div className="flex items-center gap-0.5 text-rose-gold-deep mt-1">
                       {[...Array(5)].map((_, k) => <Star key={k} className="h-3.5 w-3.5" fill="currentColor" />)}
                     </div>
                   </div>
                 </div>
-                <p className="text-foreground leading-relaxed italic flex-1">"{t.text}"</p>
+                <p className="testimonial-quote text-foreground flex-1">"{t.text}"</p>
               </div>
             </Reveal>
           ))}
@@ -793,10 +793,10 @@ function Offer() {
             <div className="mt-10 text-center">
               <p className="font-heading text-foreground/70 line-through text-lg">De R$ 997,00</p>
               <p className="mt-2 font-heading text-sm uppercase tracking-widest text-rose-gold-deep">12x sem juros de</p>
-              <p className="font-display font-bold text-foreground text-5xl md:text-7xl mt-2 leading-none">
+              <p className="price-display text-foreground mt-2">
                 12x <span className="text-rose-gold-gradient">R$ 14<span className="text-3xl md:text-4xl">,70</span></span>
               </p>
-              <p className="mt-3 text-base md:text-lg text-muted-foreground">
+              <p className="price-sub mt-3 text-muted-foreground">
                 ou <strong className="text-foreground">R$ 147,00</strong> à vista no PIX
               </p>
 
