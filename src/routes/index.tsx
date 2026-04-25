@@ -90,6 +90,7 @@ function LandingPage() {
       <MoreProof />
       <Decision />
       <Guarantee />
+      <PostGuaranteePrice />
       <FAQ />
       <MarinaStory />
       <Scarcity />
@@ -966,6 +967,115 @@ function Guarantee() {
         <Reveal delay={0.3}>
           <p className="mt-10 text-center text-pearl/95 max-w-2xl mx-auto leading-relaxed">
             Ou você se transforma, ou seu dinheiro volta integralmente. <span className="text-rose-gold-gradient font-bold">💕</span>
+          </p>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
+/* -------------------- POST-GUARANTEE PRICE -------------------- */
+function PostGuaranteePrice() {
+  const includes = [
+    "Método Nefertiti completo (8 módulos)",
+    "Bônus #1 — Guia de Transformação Digital (R$ 297)",
+    "Bônus #2 — Manual de Inteligência Emocional (R$ 467)",
+    "Bônus #3 — Comunicação Feminina Avançada (R$ 697)",
+    "Acesso vitalício + atualizações futuras",
+    "Suporte VIP por 21 dias",
+  ];
+
+  return (
+    <section className="py-20 md:py-28 bg-pearl-gradient relative overflow-hidden">
+      <div
+        className="absolute inset-0 opacity-30"
+        style={{
+          backgroundImage:
+            "radial-gradient(circle at 20% 20%, oklch(0.7 0.105 33 / 0.18), transparent 55%), radial-gradient(circle at 80% 80%, oklch(0.78 0.12 75 / 0.18), transparent 55%)",
+        }}
+      />
+      <div className="container mx-auto px-4 max-w-5xl relative">
+        <Reveal>
+          <div className="text-center mb-10">
+            <p className="font-heading font-bold text-rose-gold tracking-widest uppercase text-sm">
+              👑 Sua coroa está pronta
+            </p>
+            <h2 className="mt-3 font-display text-3xl md:text-5xl font-bold leading-tight text-foreground">
+              Agora que você está <span className="text-rose-gold-gradient">100% protegida</span>,
+              <br className="hidden md:block" /> garanta seu acesso pelo valor especial
+            </h2>
+            <p className="mt-4 text-foreground/75 max-w-2xl mx-auto leading-relaxed">
+              Tudo o que você viu até aqui — método completo, bônus exclusivos e tripla garantia blindada — por um investimento simbólico perto da transformação que você vai viver.
+            </p>
+          </div>
+        </Reveal>
+
+        <Reveal delay={0.1}>
+          <div className="bg-card border-2 border-rose-gold/40 rounded-3xl shadow-elegant p-8 md:p-12 max-w-3xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              <div>
+                <p className="font-heading uppercase tracking-widest text-xs text-foreground/60">
+                  Você leva tudo isto:
+                </p>
+                <ul className="mt-4 space-y-3">
+                  {includes.map((item) => (
+                    <li key={item} className="flex items-start gap-2.5">
+                      <CheckCircle2 className="h-5 w-5 text-rose-gold mt-0.5 flex-shrink-0" />
+                      <span className="text-foreground/85 text-sm leading-relaxed">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+                <p className="mt-5 font-heading text-foreground/70">
+                  Valor real: <span className="line-through">R$ 2.458,00</span>
+                </p>
+              </div>
+
+              <div className="text-center md:border-l md:border-rose-gold/25 md:pl-8">
+                <p className="font-heading uppercase tracking-widest text-xs text-foreground/60">
+                  Hoje, apenas
+                </p>
+                <p className="font-heading text-foreground/70 line-through text-lg mt-2">
+                  De R$ 997,00
+                </p>
+                <p className="font-display text-5xl md:text-6xl font-bold leading-none mt-1">
+                  12x <span className="text-rose-gold-gradient">R$ 14<span className="text-3xl md:text-4xl">,70</span></span>
+                </p>
+                <p className="font-heading text-foreground/80 mt-2">
+                  ou <strong className="text-foreground">R$ 147,00</strong> à vista no PIX
+                </p>
+
+                <div className="mt-6">
+                  <CTAButton size="xl">Quero garantir meu acesso agora</CTAButton>
+                </div>
+
+                <div className="mt-5 flex items-center justify-center gap-4 text-foreground/60 text-xs">
+                  <span className="inline-flex items-center gap-1.5">
+                    <Lock className="h-3.5 w-3.5" /> Compra 100% segura
+                  </span>
+                  <span className="inline-flex items-center gap-1.5">
+                    <ShieldCheck className="h-3.5 w-3.5" /> Garantia de 7 dias
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-8 pt-6 border-t border-rose-gold/20 flex flex-wrap items-center justify-center gap-4 text-foreground/65 text-xs font-heading">
+              <span className="inline-flex items-center gap-1.5">
+                <CreditCard className="h-4 w-4 text-rose-gold" /> Cartão em até 12x
+              </span>
+              <span className="inline-flex items-center gap-1.5">
+                <Pix className="h-4 w-4 text-rose-gold" /> PIX com desconto
+              </span>
+              <span className="inline-flex items-center gap-1.5">
+                <Sparkles className="h-4 w-4 text-rose-gold" /> Acesso imediato
+              </span>
+            </div>
+          </div>
+        </Reveal>
+
+        <Reveal delay={0.2}>
+          <p className="mt-8 text-center text-foreground/70 max-w-2xl mx-auto text-sm">
+            Lembre-se: se em <strong>7 dias</strong> você sentir que o Método Nefertiti não é para você, devolvemos <strong>cada centavo</strong>. Seu risco é literalmente <span className="text-rose-gold-gradient font-bold">ZERO</span>.
           </p>
         </Reveal>
       </div>
