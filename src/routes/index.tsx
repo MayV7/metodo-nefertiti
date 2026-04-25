@@ -90,6 +90,7 @@ function LandingPage() {
       <MoreProof />
       <Decision />
       <Guarantee />
+      <PostGuaranteePrice />
       <FAQ />
       <MarinaStory />
       <Scarcity />
