@@ -113,32 +113,27 @@ function Hero() {
         </Reveal>
 
         <div className="max-w-3xl mx-auto text-center">
-          <Reveal delay={0.15}>
-            <p className="hero-kicker mb-6">
-              <span>Método das Rainhas Modernas</span>
-            </p>
-          </Reveal>
           <Reveal delay={0.2}>
             <h1 className="text-foreground">
               <span className="hero-eyebrow-script block">Nefertiti</span>
               <span className="hero-divider mt-3 mb-6 mx-auto">✦</span>
               <span className="hero-headline block">
-                O segredo silencioso de <span className="accent-gold">3.847 mulheres</span> que transformaram a dor da rejeição em
-                <span className="hero-power">Magnetismo Irresistível</span>
-                fazendo homens de alto valor <span className="accent">QUEREREM VOCÊ</span> — mesmo que você se sinta <em>"invisível"</em> agora.
+                Use este <span className="accent">protocolo psicológico milenar</span> para fazer qualquer homem de alto valor
+                <span className="hero-power">Obcecar-se Por Você</span>
+                em até <span className="accent-gold">21 dias</span> — sem perseguir, sem se humilhar e sem joguinhos infantis.
               </span>
             </h1>
           </Reveal>
           <Reveal delay={0.32}>
             <p className="mt-6 inline-flex items-center gap-2 text-[0.7rem] md:text-xs text-rose-gold-deep uppercase tracking-[0.4em] font-heading font-semibold">
               <Sparkles className="h-3.5 w-3.5" />
-              Validado por Harvard
+              Validado por Harvard · +3.847 mulheres
               <Sparkles className="h-3.5 w-3.5" />
             </p>
           </Reveal>
           <Reveal delay={0.4}>
             <p className="hero-sub mt-6 max-w-2xl mx-auto">
-              Descubra o <strong>único sistema de reversão psicológica</strong> que faz ex-parceiros se arrependerem de terem te perdido — e homens de alto valor te perseguirem.
+              O <strong>único sistema de reversão emocional</strong> que faz ex-parceiros se arrependerem de terem te perdido — e homens que antes te ignoravam <em>implorarem</em> por sua atenção.
             </p>
           </Reveal>
           <Reveal delay={0.5}>
