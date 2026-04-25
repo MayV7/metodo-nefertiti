@@ -569,14 +569,14 @@ function MoreProof() {
                 <div className="flex items-center gap-4 mb-4">
                   <img src={t.photo} alt={t.name} loading="lazy" width={64} height={64} className="h-16 w-16 rounded-full object-cover border-2 border-rose-gold/40 shrink-0" />
                   <div>
-                    <p className="font-heading font-bold text-foreground leading-tight">{t.name}</p>
+                    <p className="testimonial-name text-foreground leading-tight">{t.name}</p>
                     <p className="text-xs text-muted-foreground">{t.age} anos</p>
                     <div className="flex items-center gap-0.5 text-rose-gold-deep mt-1">
                       {[...Array(5)].map((_, k) => <Star key={k} className="h-3.5 w-3.5" fill="currentColor" />)}
                     </div>
                   </div>
                 </div>
-                <p className="text-foreground leading-relaxed italic flex-1">"{t.text}"</p>
+                <p className="testimonial-quote text-foreground flex-1">"{t.text}"</p>
               </div>
             </Reveal>
           ))}
