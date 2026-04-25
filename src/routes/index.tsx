@@ -1054,10 +1054,7 @@ function Scarcity() {
       <div className="container mx-auto px-4 max-w-4xl relative">
         <Reveal>
           <div className="text-center mb-10">
-            <span className="inline-flex items-center gap-2 bg-rose-gold-gradient text-pearl px-4 py-2 rounded-full font-heading text-xs md:text-sm uppercase tracking-widest shadow-glow cta-pulse">
-              ⚠️ Escassez e urgência
-            </span>
-            <h2 className="mt-5 font-display text-3xl md:text-5xl font-bold leading-tight">
+            <h2 className="font-display text-3xl md:text-5xl font-bold leading-tight">
               A decisão que define seu futuro — <span className="text-rose-gold-gradient">não perca seu trono</span>
             </h2>
           </div>
