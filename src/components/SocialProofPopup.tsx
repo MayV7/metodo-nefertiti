@@ -19,19 +19,20 @@ export function SocialProofPopup() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    const start = setTimeout(() => setVisible(true), 6000);
+    const start = setTimeout(() => setVisible(true), 8000);
     return () => clearTimeout(start);
   }, []);
 
   useEffect(() => {
     if (!visible) return;
+    // Spaced cadence: ~25s visible, then fade and rotate to next buyer.
     const id = setInterval(() => {
       setVisible(false);
       setTimeout(() => {
         setIdx((i) => (i + 1) % buyers.length);
         setVisible(true);
-      }, 800);
-    }, 10000);
+      }, 1200);
+    }, 25000);
     return () => clearInterval(id);
   }, [visible]);
 

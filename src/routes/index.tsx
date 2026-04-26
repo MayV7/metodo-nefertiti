@@ -14,6 +14,7 @@ import { SocialProofPopup } from "@/components/SocialProofPopup";
 import { StickyBottomBar } from "@/components/StickyBottomBar";
 import { CTAButton } from "@/components/CTAButton";
 import { Reveal } from "@/components/Reveal";
+import { WhatsAppProof } from "@/components/WhatsAppProof";
 import { Countdown } from "@/components/Countdown";
 import { useSyncedSpots } from "@/hooks/use-spots";
 import logo from "@/assets/logo-nefertiti.png";
@@ -81,6 +82,7 @@ function LandingPage() {
       <Hero />
       <Pain />
       <FirstResults />
+      <WhatsAppProof />
       <Discovery />
       <Triggers />
       <Method />
@@ -979,7 +981,7 @@ function Guarantee() {
 /* -------------------- POST-GUARANTEE PRICE -------------------- */
 function PostGuaranteePrice() {
   const includes = [
-    "Método Nefertiti completo (8 módulos)",
+    "Método Nefertiti completo (3 módulos)",
     "Bônus #1 — Guia de Transformação Digital (R$ 297)",
     "Bônus #2 — Manual de Inteligência Emocional (R$ 467)",
     "Bônus #3 — Comunicação Feminina Avançada (R$ 697)",
@@ -1039,12 +1041,35 @@ function PostGuaranteePrice() {
                 <p className="font-heading text-foreground/70 line-through text-lg mt-2">
                   De R$ 997,00
                 </p>
-                <p className="font-display text-5xl md:text-6xl font-bold leading-none mt-1">
-                  12x <span className="text-rose-gold-gradient">R$ 14<span className="text-3xl md:text-4xl">,70</span></span>
-                </p>
-                <p className="font-heading text-foreground/80 mt-2">
-                  ou <strong className="text-foreground">R$ 147,00</strong> à vista no PIX
-                </p>
+
+                {/* Preço destacado — tipografia elegante e visual */}
+                <div className="mt-3 relative inline-flex flex-col items-center">
+                  <span className="font-heading uppercase tracking-[0.4em] text-[0.65rem] text-rose-gold-deep mb-1">
+                    12x de
+                  </span>
+                  <div className="flex items-start justify-center leading-none">
+                    <span className="font-display text-3xl md:text-4xl text-rose-gold-gradient font-bold mt-2 mr-1">
+                      R$
+                    </span>
+                    <span
+                      className="font-display font-bold text-rose-gold-gradient drop-shadow-sm"
+                      style={{
+                        fontSize: "clamp(4.5rem, 11vw, 6.75rem)",
+                        letterSpacing: "-0.04em",
+                        lineHeight: "0.9",
+                      }}
+                    >
+                      14
+                    </span>
+                    <span className="font-display text-3xl md:text-4xl text-rose-gold-gradient font-bold mt-2">
+                      ,70
+                    </span>
+                  </div>
+                  <span className="block mt-2 h-px w-24 bg-rose-gold-gradient opacity-60" />
+                  <span className="font-heading uppercase tracking-[0.3em] text-[0.65rem] text-foreground/60 mt-2">
+                    no cartão
+                  </span>
+                </div>
 
                 <div className="mt-6">
                   <CTAButton size="xl">Quero garantir meu acesso agora</CTAButton>
@@ -1066,10 +1091,10 @@ function PostGuaranteePrice() {
                 <CreditCard className="h-4 w-4 text-rose-gold" /> Cartão em até 12x
               </span>
               <span className="inline-flex items-center gap-1.5">
-                <Pix className="h-4 w-4 text-rose-gold" /> PIX com desconto
+                <Pix className="h-4 w-4 text-rose-gold" /> PIX
               </span>
               <span className="inline-flex items-center gap-1.5">
-                <Sparkles className="h-4 w-4 text-rose-gold" /> Acesso imediato
+                <Zap className="h-4 w-4 text-rose-gold" /> Acesso imediato
               </span>
             </div>
           </div>
@@ -1213,7 +1238,7 @@ function Scarcity() {
               ⚠️ Vagas limitadas: apenas 25 mulheres terão acesso a esta oportunidade única e irrepetível!
             </p>
             <p>
-              <strong className="text-pearl">Por que esta oferta é tão exclusiva e limitada?</strong> Simples: quero garantir que cada mulher tenha resultados excepcionais e um suporte personalizado de rainha. Nos últimos 12 meses, sempre que abro mais de 100 vagas, o suporte fica sobrecarregado e algumas alunas podem não conseguir a atenção que merecem. Eu não comprometo a sua transformação.
+              <strong className="text-pearl">Por que esta oferta é tão exclusiva e limitada?</strong> Simples: quero garantir que cada uma das 25 mulheres deste lote tenha resultados excepcionais e suporte personalizado de rainha. Sempre que abro turmas maiores, o suporte fica sobrecarregado e algumas alunas podem não conseguir a atenção que merecem. Eu não comprometo a sua transformação.
             </p>
             <p className="font-display italic text-lg md:text-xl text-pearl border-l-4 border-rose-gold pl-5">
               Prefiro transformar 25 vidas COMPLETAMENTE do que ajudar 100 pela metade.
