@@ -1213,7 +1213,7 @@ function Scarcity() {
               ⚠️ Vagas limitadas: apenas 25 mulheres terão acesso a esta oportunidade única e irrepetível!
             </p>
             <p>
-              <strong className="text-pearl">Por que esta oferta é tão exclusiva e limitada?</strong> Simples: quero garantir que cada mulher tenha resultados excepcionais e um suporte personalizado de rainha. Nos últimos 12 meses, sempre que abro mais de 100 vagas, o suporte fica sobrecarregado e algumas alunas podem não conseguir a atenção que merecem. Eu não comprometo a sua transformação.
+              <strong className="text-pearl">Por que esta oferta é tão exclusiva e limitada?</strong> Simples: quero garantir que cada uma das 25 mulheres deste lote tenha resultados excepcionais e suporte personalizado de rainha. Sempre que abro turmas maiores, o suporte fica sobrecarregado e algumas alunas podem não conseguir a atenção que merecem. Eu não comprometo a sua transformação.
             </p>
             <p className="font-display italic text-lg md:text-xl text-pearl border-l-4 border-rose-gold pl-5">
               Prefiro transformar 25 vidas COMPLETAMENTE do que ajudar 100 pela metade.
