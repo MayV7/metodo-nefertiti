@@ -117,12 +117,11 @@ function Hero() {
         <div className="max-w-3xl mx-auto text-center">
           <Reveal delay={0.2}>
             <h1 className="text-foreground">
-              <span className="hero-eyebrow-script block">Nefertiti</span>
-              <span className="hero-divider mt-3 mb-6 mx-auto">✦</span>
               <span className="hero-headline block">
-                Use este <span className="accent">protocolo psicológico milenar</span> para fazer qualquer homem de alto valor
-                <span className="hero-power">Obcecar-se Por Você</span>
-                em até <span className="accent-gold">21 dias</span> — sem perseguir, sem se humilhar e sem joguinhos infantis.
+                <span className="hero-power">Use este protocolo</span>
+                <span className="block mt-3">psicológico milenar para fazer qualquer homem de alto valor</span>
+                <span className="accent block mt-3">Obcecar-se Por Você</span>
+                <span className="block mt-3">em até <span className="accent-gold">21 dias</span> — sem perseguir, sem se humilhar e sem joguinhos infantis.</span>
               </span>
             </h1>
           </Reveal>
