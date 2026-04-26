@@ -1174,8 +1174,8 @@ function Scarcity() {
           <div className="grid sm:grid-cols-2 gap-4 mb-10">
             <div className="bg-card/10 backdrop-blur-md border border-rose-gold/40 rounded-2xl p-6 text-center shadow-glow">
               <p className="font-heading uppercase tracking-widest text-rose-gold text-xs">Vagas restantes</p>
-              <p className="font-display text-5xl md:text-6xl font-bold text-rose-gold-gradient mt-2 cta-pulse">12</p>
-              <p className="text-pearl/70 text-xs mt-1">de 25 disponíveis</p>
+              <p className="font-display text-5xl md:text-6xl font-bold text-rose-gold-gradient mt-2 cta-pulse" suppressHydrationWarning>{spots}</p>
+              <p className="text-pearl/70 text-xs mt-1" suppressHydrationWarning>de {initial} disponíveis</p>
             </div>
             <div className="bg-card/10 backdrop-blur-md border border-rose-gold/40 rounded-2xl p-6 text-center shadow-glow">
               <p className="font-heading uppercase tracking-widest text-rose-gold text-xs">Tempo restante</p>
