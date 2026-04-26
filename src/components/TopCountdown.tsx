@@ -1,5 +1,6 @@
 import { Clock, Flame } from "lucide-react";
 import { useSyncedCountdown } from "@/hooks/use-countdown";
+import { useSyncedSpots } from "@/hooks/use-spots";
 
 function pad(n: number) {
   return n.toString().padStart(2, "0");
