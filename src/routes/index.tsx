@@ -112,7 +112,7 @@ function Hero() {
       <div className="container mx-auto px-4 relative">
         <Reveal>
           <div className="flex justify-center mb-6">
-            <img src={logo} alt="Método Nefertiti" className="h-16 md:h-24 w-auto float-soft" />
+            <img src={logo} alt="Método Nefertiti" width={200} height={200} fetchPriority="high" decoding="async" className="h-16 md:h-24 w-auto float-soft" />
           </div>
         </Reveal>
 
