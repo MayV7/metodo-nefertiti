@@ -82,6 +82,7 @@ function LandingPage() {
       <Hero />
       <Pain />
       <FirstResults />
+      <WhatsAppProof />
       <Discovery />
       <Triggers />
       <Method />
