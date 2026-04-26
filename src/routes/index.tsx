@@ -906,8 +906,8 @@ function Decision() {
 
         <Reveal delay={0.3}>
           <div className="mt-12 text-center">
-            <p className="text-lg text-foreground max-w-2xl mx-auto">
-              A escolha é sua. Mas lembre-se: <strong className="text-rose-gold-deep">apenas 12 vagas restantes</strong> e este preço especial <strong>nunca mais</strong> será oferecido.
+            <p className="text-lg text-foreground max-w-2xl mx-auto" suppressHydrationWarning>
+              A escolha é sua. Mas lembre-se: <strong className="text-rose-gold-deep">apenas {spots} vagas restantes</strong> e este preço especial <strong>nunca mais</strong> será oferecido.
             </p>
             <div className="mt-8">
               <CTAButton size="xl">Entrar agora para o Método Nefertiti</CTAButton>
