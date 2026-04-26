@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import { Flame } from "lucide-react";
+import { useSyncedSpots } from "@/hooks/use-spots";
 
 export function StickyBottomBar() {
   const [show, setShow] = useState(false);
+  const { spots } = useSyncedSpots();
   useEffect(() => {
     const onScroll = () => setShow(window.scrollY > 600);
     onScroll();
