@@ -856,6 +856,7 @@ function Offer() {
 
 /* -------------------- DECISION -------------------- */
 function Decision() {
+  const { spots } = useSyncedSpots();
   return (
     <section className="py-20 md:py-28 bg-background">
       <div className="container mx-auto px-4 max-w-5xl">
