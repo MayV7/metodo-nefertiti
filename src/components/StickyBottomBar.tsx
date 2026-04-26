@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import { Flame } from "lucide-react";
+import { useSyncedSpots } from "@/hooks/use-spots";
 
 export function StickyBottomBar() {
   const [show, setShow] = useState(false);
+  const { spots } = useSyncedSpots();
   useEffect(() => {
     const onScroll = () => setShow(window.scrollY > 600);
     onScroll();
@@ -22,7 +24,7 @@ export function StickyBottomBar() {
             <Flame className="h-5 w-5 md:h-6 md:w-6 text-rose-gold shrink-0 cta-pulse" />
             <div className="min-w-0">
               <p className="font-heading font-bold text-pearl text-[11px] sm:text-sm md:text-base leading-tight truncate">
-                <span className="text-rose-gold-gradient">Últimas 12 vagas</span> — garanta já
+                <span className="text-rose-gold-gradient" suppressHydrationWarning>Últimas {spots} vagas</span> — garanta já
               </p>
               <p className="text-[9px] sm:text-[10px] md:text-xs text-pearl/70 leading-tight">
                 Acesso imediato • Garantia de 7 dias

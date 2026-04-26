@@ -15,6 +15,7 @@ import { StickyBottomBar } from "@/components/StickyBottomBar";
 import { CTAButton } from "@/components/CTAButton";
 import { Reveal } from "@/components/Reveal";
 import { Countdown } from "@/components/Countdown";
+import { useSyncedSpots } from "@/hooks/use-spots";
 import logo from "@/assets/logo-nefertiti.png";
 import mockup from "@/assets/mockup-nefertiti.png";
 import marina from "@/assets/marina.jpg";
@@ -116,12 +117,11 @@ function Hero() {
         <div className="max-w-3xl mx-auto text-center">
           <Reveal delay={0.2}>
             <h1 className="text-foreground">
-              <span className="hero-eyebrow-script block">Nefertiti</span>
-              <span className="hero-divider mt-3 mb-6 mx-auto">✦</span>
               <span className="hero-headline block">
-                Use este <span className="accent">protocolo psicológico milenar</span> para fazer qualquer homem de alto valor
-                <span className="hero-power">Obcecar-se Por Você</span>
-                em até <span className="accent-gold">21 dias</span> — sem perseguir, sem se humilhar e sem joguinhos infantis.
+                <span className="hero-power">Use este protocolo</span>
+                <span className="block mt-3">psicológico milenar para fazer qualquer homem de alto valor</span>
+                <span className="accent block mt-3">Obcecar-se Por Você</span>
+                <span className="block mt-3">em até <span className="accent-gold">21 dias</span> — sem perseguir, sem se humilhar e sem joguinhos infantis.</span>
               </span>
             </h1>
           </Reveal>
@@ -793,13 +793,14 @@ function Bonuses() {
 
 /* -------------------- OFFER -------------------- */
 function Offer() {
+  const { spots } = useSyncedSpots();
   return (
     <section id="oferta" className="py-20 md:py-28 bg-rose-soft-gradient relative overflow-hidden">
       <div className="container mx-auto px-4 max-w-4xl">
         <Reveal>
           <div className="text-center mb-8">
-            <span className="inline-flex items-center gap-2 bg-graphite-gradient text-pearl px-4 py-2 rounded-full font-heading text-xs md:text-sm uppercase tracking-widest border border-rose-gold/40">
-              ⚠ Apenas 12 vagas restantes neste lote
+            <span className="inline-flex items-center gap-2 bg-graphite-gradient text-pearl px-4 py-2 rounded-full font-heading text-xs md:text-sm uppercase tracking-widest border border-rose-gold/40" suppressHydrationWarning>
+              ⚠ Apenas {spots} vagas restantes neste lote
             </span>
             <h2 className="mt-6 font-display text-3xl md:text-5xl font-bold text-foreground leading-tight">
               A decisão que <span className="text-rose-gold-gradient">define seu futuro</span>
@@ -855,6 +856,7 @@ function Offer() {
 
 /* -------------------- DECISION -------------------- */
 function Decision() {
+  const { spots } = useSyncedSpots();
   return (
     <section className="py-20 md:py-28 bg-background">
       <div className="container mx-auto px-4 max-w-5xl">
@@ -904,8 +906,8 @@ function Decision() {
 
         <Reveal delay={0.3}>
           <div className="mt-12 text-center">
-            <p className="text-lg text-foreground max-w-2xl mx-auto">
-              A escolha é sua. Mas lembre-se: <strong className="text-rose-gold-deep">apenas 12 vagas restantes</strong> e este preço especial <strong>nunca mais</strong> será oferecido.
+            <p className="text-lg text-foreground max-w-2xl mx-auto" suppressHydrationWarning>
+              A escolha é sua. Mas lembre-se: <strong className="text-rose-gold-deep">apenas {spots} vagas restantes</strong> e este preço especial <strong>nunca mais</strong> será oferecido.
             </p>
             <div className="mt-8">
               <CTAButton size="xl">Entrar agora para o Método Nefertiti</CTAButton>
@@ -1073,7 +1075,30 @@ function PostGuaranteePrice() {
           </div>
         </Reveal>
 
-        <Reveal delay={0.2}>
+        <Reveal delay={0.18}>
+          <div className="mt-10 grid sm:grid-cols-3 gap-4 max-w-3xl mx-auto">
+            {[
+              { icon: Lock, title: "Pagamento seguro", desc: "Criptografia SSL · Kiwify oficial" },
+              { icon: Zap, title: "Acesso imediato", desc: "Liberação automática após o pagamento" },
+              { icon: ShieldCheck, title: "Garantia de 7 dias", desc: "Reembolso integral · risco zero" },
+            ].map(({ icon: Icon, title, desc }) => (
+              <div
+                key={title}
+                className="bg-card/90 backdrop-blur border border-rose-gold/25 rounded-2xl p-5 text-center shadow-card-soft flex flex-col items-center gap-2 hover:border-rose-gold/60 transition-colors"
+              >
+                <div className="h-11 w-11 rounded-xl bg-rose-gold-gradient flex items-center justify-center shadow-glow">
+                  <Icon className="h-5 w-5 text-pearl" strokeWidth={2.2} />
+                </div>
+                <p className="font-heading font-bold uppercase tracking-wider text-xs text-foreground">
+                  {title}
+                </p>
+                <p className="text-xs text-foreground/65 leading-snug">{desc}</p>
+              </div>
+            ))}
+          </div>
+        </Reveal>
+
+        <Reveal delay={0.25}>
           <p className="mt-8 text-center text-foreground/70 max-w-2xl mx-auto text-sm">
             Lembre-se: se em <strong>7 dias</strong> você sentir que o Método Nefertiti não é para você, devolvemos <strong>cada centavo</strong>. Seu risco é literalmente <span className="text-rose-gold-gradient font-bold">ZERO</span>.
           </p>
@@ -1155,6 +1180,7 @@ function FAQ() {
 
 /* -------------------- SCARCITY -------------------- */
 function Scarcity() {
+  const { spots, initial } = useSyncedSpots();
   return (
     <section className="py-20 md:py-28 bg-graphite-gradient text-pearl relative overflow-hidden">
       <div className="absolute inset-0 opacity-25 pointer-events-none" style={{ backgroundImage: "radial-gradient(circle at 50% 30%, oklch(0.7 0.105 33 / 0.7), transparent 60%)" }} />
@@ -1171,8 +1197,8 @@ function Scarcity() {
           <div className="grid sm:grid-cols-2 gap-4 mb-10">
             <div className="bg-card/10 backdrop-blur-md border border-rose-gold/40 rounded-2xl p-6 text-center shadow-glow">
               <p className="font-heading uppercase tracking-widest text-rose-gold text-xs">Vagas restantes</p>
-              <p className="font-display text-5xl md:text-6xl font-bold text-rose-gold-gradient mt-2 cta-pulse">12</p>
-              <p className="text-pearl/70 text-xs mt-1">de 25 disponíveis</p>
+              <p className="font-display text-5xl md:text-6xl font-bold text-rose-gold-gradient mt-2 cta-pulse" suppressHydrationWarning>{spots}</p>
+              <p className="text-pearl/70 text-xs mt-1" suppressHydrationWarning>de {initial} disponíveis</p>
             </div>
             <div className="bg-card/10 backdrop-blur-md border border-rose-gold/40 rounded-2xl p-6 text-center shadow-glow">
               <p className="font-heading uppercase tracking-widest text-rose-gold text-xs">Tempo restante</p>
@@ -1195,8 +1221,8 @@ function Scarcity() {
             <p>
               Além disso, este preço especial foi autorizado pela minha equipe apenas para <strong className="text-rose-gold-gradient">este lançamento exclusivo</strong>. A partir da próxima turma, o investimento volta para <span className="line-through">R$ 997,00</span>. Esta é a sua única chance de acessar o <span className="font-display italic">Método Nefertiti</span> por este valor.
             </p>
-            <p className="bg-rose-gold/15 border border-rose-gold/40 rounded-2xl p-5 text-pearl">
-              ⏳ <strong className="text-rose-gold-gradient">Atenção:</strong> restam apenas 12 vagas neste lote exclusivo! O tempo está se esgotando. Depois disso, terei que abrir lista de espera — e sinceramente, sem data ainda. Não deixe para depois o poder que você pode ter hoje.
+            <p className="bg-rose-gold/15 border border-rose-gold/40 rounded-2xl p-5 text-pearl" suppressHydrationWarning>
+              ⏳ <strong className="text-rose-gold-gradient">Atenção:</strong> restam apenas {spots} vagas neste lote exclusivo! O tempo está se esgotando. Depois disso, terei que abrir lista de espera — e sinceramente, sem data ainda. Não deixe para depois o poder que você pode ter hoje.
             </p>
           </div>
         </Reveal>
