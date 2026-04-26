@@ -15,6 +15,7 @@ import { StickyBottomBar } from "@/components/StickyBottomBar";
 import { CTAButton } from "@/components/CTAButton";
 import { Reveal } from "@/components/Reveal";
 import { Countdown } from "@/components/Countdown";
+import { useSyncedSpots } from "@/hooks/use-spots";
 import logo from "@/assets/logo-nefertiti.png";
 import mockup from "@/assets/mockup-nefertiti.png";
 import marina from "@/assets/marina.jpg";
