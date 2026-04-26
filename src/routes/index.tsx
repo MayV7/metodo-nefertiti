@@ -793,13 +793,14 @@ function Bonuses() {
 
 /* -------------------- OFFER -------------------- */
 function Offer() {
+  const { spots } = useSyncedSpots();
   return (
     <section id="oferta" className="py-20 md:py-28 bg-rose-soft-gradient relative overflow-hidden">
       <div className="container mx-auto px-4 max-w-4xl">
         <Reveal>
           <div className="text-center mb-8">
-            <span className="inline-flex items-center gap-2 bg-graphite-gradient text-pearl px-4 py-2 rounded-full font-heading text-xs md:text-sm uppercase tracking-widest border border-rose-gold/40">
-              ⚠ Apenas 12 vagas restantes neste lote
+            <span className="inline-flex items-center gap-2 bg-graphite-gradient text-pearl px-4 py-2 rounded-full font-heading text-xs md:text-sm uppercase tracking-widest border border-rose-gold/40" suppressHydrationWarning>
+              ⚠ Apenas {spots} vagas restantes neste lote
             </span>
             <h2 className="mt-6 font-display text-3xl md:text-5xl font-bold text-foreground leading-tight">
               A decisão que <span className="text-rose-gold-gradient">define seu futuro</span>
