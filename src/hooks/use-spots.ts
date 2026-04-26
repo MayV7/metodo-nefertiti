@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 const STORAGE_KEY = "nefertiti_spots_remaining";
 const STORAGE_LAST = "nefertiti_spots_last_tick";
 const INITIAL_SPOTS = 25;
-const MIN_SPOTS = 3;
+const MIN_SPOTS = 1;
 // Decrement aligned with the social-proof popup cadence (~26s per buyer).
 const TICK_MS = 26_000;
 

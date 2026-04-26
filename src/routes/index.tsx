@@ -1234,14 +1234,14 @@ function Scarcity() {
 
         <Reveal delay={0.2}>
           <div className="bg-card/10 backdrop-blur-md border border-rose-gold/30 rounded-3xl p-7 md:p-10 space-y-5 text-pearl/90 leading-relaxed">
-            <p className="font-display text-xl md:text-2xl text-rose-gold-gradient">
-              ⚠️ Vagas limitadas: apenas 25 mulheres terão acesso a esta oportunidade única e irrepetível!
+            <p className="font-display text-xl md:text-2xl text-rose-gold-gradient" suppressHydrationWarning>
+              ⚠️ Vagas limitadas: apenas {initial} mulheres terão acesso a esta oportunidade única e irrepetível — restam só {spots}!
             </p>
-            <p>
-              <strong className="text-pearl">Por que esta oferta é tão exclusiva e limitada?</strong> Simples: quero garantir que cada uma das 25 mulheres deste lote tenha resultados excepcionais e suporte personalizado de rainha. Sempre que abro turmas maiores, o suporte fica sobrecarregado e algumas alunas podem não conseguir a atenção que merecem. Eu não comprometo a sua transformação.
+            <p suppressHydrationWarning>
+              <strong className="text-pearl">Por que esta oferta é tão exclusiva e limitada?</strong> Simples: quero garantir que cada uma das {initial} mulheres deste lote tenha resultados excepcionais e suporte personalizado de rainha. Sempre que abro turmas maiores, o suporte fica sobrecarregado e algumas alunas podem não conseguir a atenção que merecem. Eu não comprometo a sua transformação.
             </p>
-            <p className="font-display italic text-lg md:text-xl text-pearl border-l-4 border-rose-gold pl-5">
-              Prefiro transformar 25 vidas COMPLETAMENTE do que ajudar 100 pela metade.
+            <p className="font-display italic text-lg md:text-xl text-pearl border-l-4 border-rose-gold pl-5" suppressHydrationWarning>
+              Prefiro transformar {initial} vidas COMPLETAMENTE do que ajudar 100 pela metade.
             </p>
             <p>
               Além disso, este preço especial foi autorizado pela minha equipe apenas para <strong className="text-rose-gold-gradient">este lançamento exclusivo</strong>. A partir da próxima turma, o investimento volta para <span className="line-through">R$ 997,00</span>. Esta é a sua única chance de acessar o <span className="font-display italic">Método Nefertiti</span> por este valor.
