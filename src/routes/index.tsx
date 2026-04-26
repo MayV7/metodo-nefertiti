@@ -1198,8 +1198,8 @@ function Scarcity() {
             <p>
               Além disso, este preço especial foi autorizado pela minha equipe apenas para <strong className="text-rose-gold-gradient">este lançamento exclusivo</strong>. A partir da próxima turma, o investimento volta para <span className="line-through">R$ 997,00</span>. Esta é a sua única chance de acessar o <span className="font-display italic">Método Nefertiti</span> por este valor.
             </p>
-            <p className="bg-rose-gold/15 border border-rose-gold/40 rounded-2xl p-5 text-pearl">
-              ⏳ <strong className="text-rose-gold-gradient">Atenção:</strong> restam apenas 12 vagas neste lote exclusivo! O tempo está se esgotando. Depois disso, terei que abrir lista de espera — e sinceramente, sem data ainda. Não deixe para depois o poder que você pode ter hoje.
+            <p className="bg-rose-gold/15 border border-rose-gold/40 rounded-2xl p-5 text-pearl" suppressHydrationWarning>
+              ⏳ <strong className="text-rose-gold-gradient">Atenção:</strong> restam apenas {spots} vagas neste lote exclusivo! O tempo está se esgotando. Depois disso, terei que abrir lista de espera — e sinceramente, sem data ainda. Não deixe para depois o poder que você pode ter hoje.
             </p>
           </div>
         </Reveal>
