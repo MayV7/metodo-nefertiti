@@ -14,6 +14,7 @@ import { SocialProofPopup } from "@/components/SocialProofPopup";
 import { StickyBottomBar } from "@/components/StickyBottomBar";
 import { CTAButton } from "@/components/CTAButton";
 import { Reveal } from "@/components/Reveal";
+import { WhatsAppProof } from "@/components/WhatsAppProof";
 import { Countdown } from "@/components/Countdown";
 import { useSyncedSpots } from "@/hooks/use-spots";
 import logo from "@/assets/logo-nefertiti.png";
