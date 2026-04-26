@@ -1075,7 +1075,30 @@ function PostGuaranteePrice() {
           </div>
         </Reveal>
 
-        <Reveal delay={0.2}>
+        <Reveal delay={0.18}>
+          <div className="mt-10 grid sm:grid-cols-3 gap-4 max-w-3xl mx-auto">
+            {[
+              { icon: Lock, title: "Pagamento seguro", desc: "Criptografia SSL · Kiwify oficial" },
+              { icon: Zap, title: "Acesso imediato", desc: "Liberação automática após o pagamento" },
+              { icon: ShieldCheck, title: "Garantia de 7 dias", desc: "Reembolso integral · risco zero" },
+            ].map(({ icon: Icon, title, desc }) => (
+              <div
+                key={title}
+                className="bg-card/90 backdrop-blur border border-rose-gold/25 rounded-2xl p-5 text-center shadow-card-soft flex flex-col items-center gap-2 hover:border-rose-gold/60 transition-colors"
+              >
+                <div className="h-11 w-11 rounded-xl bg-rose-gold-gradient flex items-center justify-center shadow-glow">
+                  <Icon className="h-5 w-5 text-pearl" strokeWidth={2.2} />
+                </div>
+                <p className="font-heading font-bold uppercase tracking-wider text-xs text-foreground">
+                  {title}
+                </p>
+                <p className="text-xs text-foreground/65 leading-snug">{desc}</p>
+              </div>
+            ))}
+          </div>
+        </Reveal>
+
+        <Reveal delay={0.25}>
           <p className="mt-8 text-center text-foreground/70 max-w-2xl mx-auto text-sm">
             Lembre-se: se em <strong>7 dias</strong> você sentir que o Método Nefertiti não é para você, devolvemos <strong>cada centavo</strong>. Seu risco é literalmente <span className="text-rose-gold-gradient font-bold">ZERO</span>.
           </p>
