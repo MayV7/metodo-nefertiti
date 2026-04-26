@@ -1157,6 +1157,7 @@ function FAQ() {
 
 /* -------------------- SCARCITY -------------------- */
 function Scarcity() {
+  const { spots, initial } = useSyncedSpots();
   return (
     <section className="py-20 md:py-28 bg-graphite-gradient text-pearl relative overflow-hidden">
       <div className="absolute inset-0 opacity-25 pointer-events-none" style={{ backgroundImage: "radial-gradient(circle at 50% 30%, oklch(0.7 0.105 33 / 0.7), transparent 60%)" }} />
