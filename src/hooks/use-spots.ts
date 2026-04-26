@@ -4,8 +4,8 @@ const STORAGE_KEY = "nefertiti_spots_remaining";
 const STORAGE_LAST = "nefertiti_spots_last_tick";
 const INITIAL_SPOTS = 25;
 const MIN_SPOTS = 3;
-// Decrement roughly every ~45s to align with the social-proof popup cadence.
-const TICK_MS = 45_000;
+// Decrement aligned with the social-proof popup cadence (~26s per buyer).
+const TICK_MS = 26_000;
 
 /**
  * Shared scarcity counter — decrements over time and is synchronized across
