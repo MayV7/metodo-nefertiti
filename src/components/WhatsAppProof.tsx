@@ -151,20 +151,49 @@ function Bubble({ msg }: { msg: Msg }) {
   );
 }
 
+function Avatar({ src, name }: { src: string; name: string }) {
+  // Lightweight initials fallback — shown until the real avatar loads
+  // (or permanently if it fails on slow mobile networks).
+  const initials = name
+    .replace(/·.*$/, "")
+    .trim()
+    .split(/\s+/)
+    .slice(0, 2)
+    .map((p) => p[0])
+    .join("")
+    .toUpperCase();
+  return (
+    <span
+      aria-hidden
+      className="relative inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full overflow-hidden border border-pearl/30 bg-rose-gold-gradient text-pearl font-heading text-[11px] font-bold tracking-wider"
+    >
+      <span className="absolute inset-0 flex items-center justify-center select-none">
+        {initials}
+      </span>
+      <img
+        src={src}
+        alt=""
+        loading="lazy"
+        decoding="async"
+        width={36}
+        height={36}
+        className="relative h-full w-full object-cover"
+        onError={(e) => {
+          // Hide broken image so the initials placeholder remains visible.
+          (e.currentTarget as HTMLImageElement).style.display = "none";
+        }}
+      />
+    </span>
+  );
+}
+
 function Phone({ convo }: { convo: Conversation }) {
   return (
     <div className="relative mx-auto w-full max-w-[320px] rounded-[2.2rem] bg-[#0b141a] p-2 shadow-elegant border border-rose-gold/20">
       <div className="mx-auto h-5 w-24 rounded-b-2xl bg-[#0b141a] absolute top-0 left-1/2 -translate-x-1/2 z-10" />
       <div className="rounded-[1.8rem] overflow-hidden bg-[#e5ddd5]">
         <div className="flex items-center gap-3 bg-[#075e54] px-3 py-3 text-pearl">
-          <img
-            src={convo.avatar}
-            alt={convo.name}
-            loading="lazy"
-            width={36}
-            height={36}
-            className="h-9 w-9 rounded-full object-cover border border-pearl/30"
-          />
+          <Avatar src={convo.avatar} name={convo.name} />
           <div className="leading-tight flex-1 min-w-0">
             <p className="font-heading font-semibold text-[13.5px] truncate">
               {convo.name}
