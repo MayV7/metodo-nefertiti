@@ -17,6 +17,7 @@ import { Reveal } from "@/components/Reveal";
 import { WhatsAppProof } from "@/components/WhatsAppProof";
 import { Countdown } from "@/components/Countdown";
 import { useSyncedSpots } from "@/hooks/use-spots";
+import { AnimatedSpots } from "@/components/AnimatedSpots";
 import logo from "@/assets/logo-nefertiti.webp";
 import mockup from "@/assets/mockup-nefertiti.webp";
 import marina from "@/assets/marina.jpg";
@@ -803,8 +804,8 @@ function Offer() {
       <div className="container mx-auto px-4 max-w-4xl">
         <Reveal>
           <div className="text-center mb-8">
-            <span className="inline-flex items-center gap-2 bg-graphite-gradient text-pearl px-4 py-2 rounded-full font-heading text-xs md:text-sm uppercase tracking-widest border border-rose-gold/40" suppressHydrationWarning>
-              ⚠ Apenas {spots} vagas restantes neste lote
+            <span className="inline-flex items-center gap-2 bg-graphite-gradient text-pearl px-4 py-2 rounded-full font-heading text-xs md:text-sm uppercase tracking-widest border border-rose-gold/40">
+              ⚠ Apenas <AnimatedSpots className="text-rose-gold font-bold" live /> vagas restantes neste lote
             </span>
             <h2 className="mt-6 font-display text-3xl md:text-5xl font-bold text-foreground leading-tight">
               A decisão que <span className="text-rose-gold-gradient">define seu futuro</span>
@@ -911,8 +912,8 @@ function Decision() {
 
         <Reveal delay={0.3}>
           <div className="mt-12 text-center">
-            <p className="text-lg text-foreground max-w-2xl mx-auto" suppressHydrationWarning>
-              A escolha é sua. Mas lembre-se: <strong className="text-rose-gold-deep">apenas {spots} vagas restantes</strong> e este preço especial <strong>nunca mais</strong> será oferecido.
+            <p className="text-lg text-foreground max-w-2xl mx-auto">
+              A escolha é sua. Mas lembre-se: <strong className="text-rose-gold-deep">apenas <AnimatedSpots className="font-bold" /> vagas restantes</strong> e este preço especial <strong>nunca mais</strong> será oferecido.
             </p>
             <div className="mt-8">
               <CTAButton size="xl">Entrar agora para o Método Nefertiti</CTAButton>
@@ -1225,7 +1226,9 @@ function Scarcity() {
           <div className="grid sm:grid-cols-2 gap-4 mb-10">
             <div className="bg-card/10 backdrop-blur-md border border-rose-gold/40 rounded-2xl p-6 text-center shadow-glow">
               <p className="font-heading uppercase tracking-widest text-rose-gold text-xs">Vagas restantes</p>
-              <p className="font-display text-5xl md:text-6xl font-bold text-rose-gold-gradient mt-2 cta-pulse" suppressHydrationWarning>{spots}</p>
+              <p className="font-display text-5xl md:text-6xl font-bold text-rose-gold-gradient mt-2 cta-pulse">
+                <AnimatedSpots live />
+              </p>
               <p className="text-pearl/70 text-xs mt-1" suppressHydrationWarning>de {initial} disponíveis</p>
             </div>
             <div className="bg-card/10 backdrop-blur-md border border-rose-gold/40 rounded-2xl p-6 text-center shadow-glow">
