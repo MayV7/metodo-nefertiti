@@ -19,7 +19,11 @@ export function SocialProofPopup() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    const start = setTimeout(() => setVisible(true), 8000);
+    const start = setTimeout(() => {
+      setVisible(true);
+      // First buyer appears → emit so the spots counter ticks in lockstep.
+      window.dispatchEvent(new CustomEvent("nefertiti:buyer-shown"));
+    }, 8000);
     return () => clearTimeout(start);
   }, []);
 
@@ -31,6 +35,8 @@ export function SocialProofPopup() {
       setTimeout(() => {
         setIdx((i) => (i + 1) % buyers.length);
         setVisible(true);
+        // Each new buyer = one fewer spot. Single source of truth for cadence.
+        window.dispatchEvent(new CustomEvent("nefertiti:buyer-shown"));
       }, 1200);
     }, 25000);
     return () => clearInterval(id);
