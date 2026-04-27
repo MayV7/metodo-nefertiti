@@ -221,7 +221,57 @@ function Phone({ convo }: { convo: Conversation }) {
   );
 }
 
+function PhoneSkeleton() {
+  return (
+    <div
+      className="relative mx-auto w-full max-w-[320px] rounded-[2.2rem] bg-[#0b141a] p-2 shadow-elegant border border-rose-gold/20"
+      aria-hidden
+    >
+      <div className="mx-auto h-5 w-24 rounded-b-2xl bg-[#0b141a] absolute top-0 left-1/2 -translate-x-1/2 z-10" />
+      <div className="rounded-[1.8rem] overflow-hidden bg-[#e5ddd5]">
+        <div className="flex items-center gap-3 bg-[#075e54] px-3 py-3">
+          <span className="h-9 w-9 rounded-full shimmer-block" />
+          <div className="flex-1 space-y-1.5">
+            <span className="block h-3 w-2/3 rounded shimmer-block" />
+            <span className="block h-2 w-1/3 rounded shimmer-block opacity-70" />
+          </div>
+        </div>
+        <div className="px-3 py-4 space-y-3 min-h-[320px] bg-[#e5ddd5]">
+          <div className="flex justify-start">
+            <span className="h-10 w-3/4 rounded-2xl rounded-tl-sm shimmer-block" />
+          </div>
+          <div className="flex justify-end">
+            <span className="h-12 w-2/3 rounded-2xl rounded-tr-sm shimmer-block" />
+          </div>
+          <div className="flex justify-start">
+            <span className="h-8 w-1/2 rounded-2xl rounded-tl-sm shimmer-block" />
+          </div>
+          <div className="flex justify-end">
+            <span className="h-10 w-3/5 rounded-2xl rounded-tr-sm shimmer-block" />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export function WhatsAppProof() {
+  const [ready, setReady] = useState(false);
+
+  useEffect(() => {
+    // Brief delay so the shimmer is perceptible on slower mobile networks,
+    // and to let Embla measure layout before the first paint.
+    const idle =
+      (window as unknown as { requestIdleCallback?: (cb: () => void) => number })
+        .requestIdleCallback ?? ((cb: () => void) => window.setTimeout(cb, 1));
+    const id = idle(() => setReady(true));
+    const fallback = window.setTimeout(() => setReady(true), 600);
+    return () => {
+      window.clearTimeout(fallback);
+      if (typeof id === "number") window.clearTimeout(id);
+    };
+  }, []);
+
   return (
     <section className="py-20 md:py-28 bg-muted relative overflow-hidden">
       <div
@@ -247,25 +297,44 @@ export function WhatsAppProof() {
         </Reveal>
 
         <Reveal delay={0.15}>
-          <Carousel
-            opts={{ align: "start", loop: true }}
-            className="w-full max-w-5xl mx-auto px-2 sm:px-10"
-          >
-            <CarouselContent className="-ml-4">
-              {conversations.map((c) => (
-                <CarouselItem
-                  key={c.name}
-                  className="pl-4 basis-full sm:basis-1/2 lg:basis-1/3"
-                >
-                  <div className="py-2">
-                    <Phone convo={c} />
-                  </div>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselPrevious className="hidden sm:flex -left-2 lg:-left-4 bg-card border-rose-gold/40 text-rose-gold-deep hover:bg-rose-gold/10" />
-            <CarouselNext className="hidden sm:flex -right-2 lg:-right-4 bg-card border-rose-gold/40 text-rose-gold-deep hover:bg-rose-gold/10" />
-          </Carousel>
+          {!ready ? (
+            <div
+              className="w-full max-w-5xl mx-auto px-2 sm:px-10"
+              role="status"
+              aria-label="Carregando conversas"
+            >
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <PhoneSkeleton />
+                <div className="hidden sm:block">
+                  <PhoneSkeleton />
+                </div>
+                <div className="hidden lg:block">
+                  <PhoneSkeleton />
+                </div>
+              </div>
+              <span className="sr-only">Carregando prints de WhatsApp…</span>
+            </div>
+          ) : (
+            <Carousel
+              opts={{ align: "start", loop: true }}
+              className="w-full max-w-5xl mx-auto px-2 sm:px-10"
+            >
+              <CarouselContent className="-ml-4">
+                {conversations.map((c) => (
+                  <CarouselItem
+                    key={c.name}
+                    className="pl-4 basis-full sm:basis-1/2 lg:basis-1/3"
+                  >
+                    <div className="py-2">
+                      <Phone convo={c} />
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="hidden sm:flex -left-2 lg:-left-4 bg-card border-rose-gold/40 text-rose-gold-deep hover:bg-rose-gold/10" />
+              <CarouselNext className="hidden sm:flex -right-2 lg:-right-4 bg-card border-rose-gold/40 text-rose-gold-deep hover:bg-rose-gold/10" />
+            </Carousel>
+          )}
         </Reveal>
 
         <Reveal delay={0.3}>
