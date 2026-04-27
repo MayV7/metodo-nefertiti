@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 import { useSyncedSpots } from "@/hooks/use-spots";
 
 type Props = {
@@ -9,33 +9,43 @@ type Props = {
 };
 
 /**
- * Renders the synced "spots remaining" count with a soft fade+slide animation
- * each time the value changes. Accessible (aria-live polite + readable label)
- * and SSR-safe (suppressHydrationWarning, fixed width via tabular-nums).
+ * Renders the synced "spots remaining" count.
+ *
+ * Critical: the number must ALWAYS be visible — including during SSR and
+ * before JS hydrates. So we render the value as plain text (never wrapped
+ * in a transform/opacity that could hide it on slow devices), and only add
+ * a brief CSS-driven flash + scale pulse when the value actually changes.
  */
 export function AnimatedSpots({ className = "", live = false }: Props) {
   const { spots } = useSyncedSpots();
+  const [pulse, setPulse] = useState(false);
+  const prev = useRef<number | null>(null);
+
+  useEffect(() => {
+    if (prev.current !== null && prev.current !== spots) {
+      setPulse(true);
+      const id = window.setTimeout(() => setPulse(false), 600);
+      return () => window.clearTimeout(id);
+    }
+    prev.current = spots;
+  }, [spots]);
 
   return (
     <span
-      className="relative inline-flex items-baseline tabular-nums"
+      className="inline-block tabular-nums"
       suppressHydrationWarning
       aria-live={live ? "polite" : undefined}
       aria-atomic={live ? "true" : undefined}
       aria-label={`${spots} vagas restantes`}
     >
-      <AnimatePresence mode="popLayout" initial={false}>
-        <motion.span
-          key={spots}
-          initial={{ y: -10, opacity: 0, filter: "blur(4px)" }}
-          animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
-          exit={{ y: 10, opacity: 0, filter: "blur(4px)" }}
-          transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-          className={`inline-block ${className}`}
-        >
-          {spots}
-        </motion.span>
-      </AnimatePresence>
+      <span
+        className={`inline-block transition-transform duration-500 ease-out ${
+          pulse ? "scale-125 text-rose-gold" : "scale-100"
+        } ${className}`}
+        style={{ transformOrigin: "center" }}
+      >
+        {spots}
+      </span>
     </span>
   );
 }
