@@ -1,6 +1,6 @@
 import { Clock, Flame } from "lucide-react";
 import { useSyncedCountdown } from "@/hooks/use-countdown";
-import { useSyncedSpots } from "@/hooks/use-spots";
+import { AnimatedSpots } from "@/components/AnimatedSpots";
 
 function pad(n: number) {
   return n.toString().padStart(2, "0");
@@ -8,7 +8,6 @@ function pad(n: number) {
 
 export function TopCountdown({ hours = 12 }: { hours?: number }) {
   const { hours: h, minutes: m, seconds: s } = useSyncedCountdown(hours);
-  const { spots } = useSyncedSpots();
 
   return (
     <div className="bg-graphite-gradient text-pearl py-2 px-3 md:py-2.5 md:px-4 text-center font-heading tracking-wide flex flex-wrap items-center justify-center gap-x-4 gap-y-1.5 border-b border-rose-gold/20">
@@ -25,8 +24,11 @@ export function TopCountdown({ hours = 12 }: { hours?: number }) {
       <span className="hidden md:inline opacity-30">•</span>
       <div className="flex items-center gap-1.5 text-xs md:text-sm">
         <Flame className="h-4 w-4 text-rose-gold" />
-        <span suppressHydrationWarning>
-          <strong className="text-rose-gold-gradient">Últimas {spots} vagas</strong> disponíveis
+        <span>
+          <strong className="text-rose-gold-gradient">
+            Últimas <AnimatedSpots live /> vagas
+          </strong>{" "}
+          disponíveis
         </span>
       </div>
     </div>
