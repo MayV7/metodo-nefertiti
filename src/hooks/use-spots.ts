@@ -4,13 +4,19 @@ const STORAGE_KEY = "nefertiti_spots_remaining";
 const STORAGE_LAST = "nefertiti_spots_last_tick";
 const INITIAL_SPOTS = 25;
 const MIN_SPOTS = 1;
-// Decrement aligned with the social-proof popup cadence (~26s per buyer).
-const TICK_MS = 26_000;
+// Reference cadence for catch-up math (matches popup interval + fade).
+const POPUP_CADENCE_MS = 26_200;
 
 /**
- * Shared scarcity counter — decrements over time and is synchronized across
- * every component on the page (and across tabs) via localStorage.
- * Mirrors the rhythm of the social-proof popup so the narrative stays coherent.
+ * Shared scarcity counter — decrements in lockstep with the social-proof
+ * popup so the two narratives are always coherent.
+ *
+ * Source of truth: the `nefertiti:buyer-shown` window event dispatched by
+ * <SocialProofPopup /> every time a new buyer card appears. One buyer
+ * shown = one spot taken. We freeze at MIN_SPOTS.
+ *
+ * On (re)load we also catch up using elapsed wall-clock time so users who
+ * close and reopen the page never see the counter jump backwards.
  */
 export function useSyncedSpots() {
   const [spots, setSpots] = useState<number>(INITIAL_SPOTS);
@@ -24,10 +30,8 @@ export function useSyncedSpots() {
     let current = stored ? parseInt(stored, 10) : INITIAL_SPOTS;
     if (Number.isNaN(current) || current > INITIAL_SPOTS) current = INITIAL_SPOTS;
 
-    // Catch up: if the page was closed for a while, decrement what would have
-    // ticked down meanwhile (cap to keep the floor visible).
     if (lastTick && current > MIN_SPOTS) {
-      const elapsedTicks = Math.floor((now - lastTick) / TICK_MS);
+      const elapsedTicks = Math.floor((now - lastTick) / POPUP_CADENCE_MS);
       if (elapsedTicks > 0) {
         current = Math.max(MIN_SPOTS, current - elapsedTicks);
       }
@@ -38,17 +42,19 @@ export function useSyncedSpots() {
     setSpots(current);
     setReady(true);
 
-    const id = setInterval(() => {
+    // Primary trigger: every time the popup shows a new buyer, drop a spot.
+    const onBuyer = () => {
       setSpots((prev) => {
         if (prev <= MIN_SPOTS) return prev;
-        // 70% chance to drop by 1 each tick to feel organic.
-        const next = Math.random() < 0.7 ? prev - 1 : prev;
+        const next = prev - 1;
         window.localStorage.setItem(STORAGE_KEY, String(next));
         window.localStorage.setItem(STORAGE_LAST, String(Date.now()));
         return next;
       });
-    }, TICK_MS);
+    };
+    window.addEventListener("nefertiti:buyer-shown", onBuyer);
 
+    // Cross-tab sync.
     const onStorage = (e: StorageEvent) => {
       if (e.key === STORAGE_KEY && e.newValue) {
         const v = parseInt(e.newValue, 10);
@@ -58,7 +64,7 @@ export function useSyncedSpots() {
     window.addEventListener("storage", onStorage);
 
     return () => {
-      clearInterval(id);
+      window.removeEventListener("nefertiti:buyer-shown", onBuyer);
       window.removeEventListener("storage", onStorage);
     };
   }, []);
