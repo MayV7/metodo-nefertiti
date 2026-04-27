@@ -482,7 +482,9 @@ function Method() {
                 src={mockup}
                 alt="Método Nefertiti — acesso em celular, tablet e computador"
                 loading="lazy"
-                className="relative w-full max-w-lg mx-auto h-auto object-contain drop-shadow-2xl float-soft"
+                width={900}
+                height={748}
+                className="relative w-full max-w-md mx-auto h-auto object-contain drop-shadow-2xl float-soft"
               />
             </div>
           </Reveal>
@@ -672,12 +674,14 @@ function Modules() {
           </div>
         </Reveal>
         <Reveal y={40}>
-          <div className="relative max-w-md mx-auto mb-14">
+          <div className="relative max-w-sm md:max-w-md mx-auto mb-14">
             <div className="absolute -inset-6 bg-rose-gold-gradient opacity-25 blur-3xl rounded-full" />
             <img
               src={mockup}
               alt="Método Nefertiti — acesso em celular, tablet e computador"
               loading="lazy"
+              width={900}
+              height={748}
               className="relative w-full h-auto object-contain drop-shadow-2xl float-soft"
             />
           </div>

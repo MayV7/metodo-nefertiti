@@ -190,22 +190,22 @@ function Avatar({ src, name }: { src: string; name: string }) {
 
 function Phone({ convo }: { convo: Conversation }) {
   return (
-    <div className="relative mx-auto w-full max-w-[320px] rounded-[2.2rem] bg-[#0b141a] p-2 shadow-elegant border border-rose-gold/20">
-      <div className="mx-auto h-5 w-24 rounded-b-2xl bg-[#0b141a] absolute top-0 left-1/2 -translate-x-1/2 z-10" />
-      <div className="rounded-[1.8rem] overflow-hidden bg-[#e5ddd5]">
-        <div className="flex items-center gap-3 bg-[#075e54] px-3 py-3 text-pearl">
+    <div className="relative mx-auto w-full max-w-[280px] aspect-[9/17] rounded-[2rem] bg-[#0b141a] p-1.5 shadow-elegant border border-rose-gold/20 flex flex-col">
+      <div className="mx-auto h-4 w-20 rounded-b-2xl bg-[#0b141a] absolute top-0 left-1/2 -translate-x-1/2 z-10" />
+      <div className="rounded-[1.6rem] overflow-hidden bg-[#e5ddd5] flex flex-col flex-1">
+        <div className="flex items-center gap-2.5 bg-[#075e54] px-3 py-2.5 text-pearl shrink-0">
           <Avatar src={convo.avatar} name={convo.name} />
           <div className="leading-tight flex-1 min-w-0">
-            <p className="font-heading font-semibold text-[13.5px] truncate">
+            <p className="font-heading font-semibold text-[12.5px] truncate">
               {convo.name}
             </p>
-            <p className="text-[11px] opacity-80">{convo.status}</p>
+            <p className="text-[10px] opacity-80">{convo.status}</p>
           </div>
           <MessageCircle className="h-4 w-4 opacity-80" />
         </div>
 
         <div
-          className="px-3 py-4 space-y-2 min-h-[320px]"
+          className="px-3 py-3 space-y-2 flex-1 overflow-hidden"
           style={{
             backgroundImage:
               "radial-gradient(circle at 25% 15%, rgba(0,0,0,0.04), transparent 40%), radial-gradient(circle at 75% 85%, rgba(0,0,0,0.04), transparent 40%)",
@@ -224,19 +224,19 @@ function Phone({ convo }: { convo: Conversation }) {
 function PhoneSkeleton() {
   return (
     <div
-      className="relative mx-auto w-full max-w-[320px] rounded-[2.2rem] bg-[#0b141a] p-2 shadow-elegant border border-rose-gold/20"
+      className="relative mx-auto w-full max-w-[280px] aspect-[9/17] rounded-[2rem] bg-[#0b141a] p-1.5 shadow-elegant border border-rose-gold/20 flex flex-col"
       aria-hidden
     >
-      <div className="mx-auto h-5 w-24 rounded-b-2xl bg-[#0b141a] absolute top-0 left-1/2 -translate-x-1/2 z-10" />
-      <div className="rounded-[1.8rem] overflow-hidden bg-[#e5ddd5]">
-        <div className="flex items-center gap-3 bg-[#075e54] px-3 py-3">
+      <div className="mx-auto h-4 w-20 rounded-b-2xl bg-[#0b141a] absolute top-0 left-1/2 -translate-x-1/2 z-10" />
+      <div className="rounded-[1.6rem] overflow-hidden bg-[#e5ddd5] flex flex-col flex-1">
+        <div className="flex items-center gap-2.5 bg-[#075e54] px-3 py-2.5 shrink-0">
           <span className="h-9 w-9 rounded-full shimmer-block" />
           <div className="flex-1 space-y-1.5">
             <span className="block h-3 w-2/3 rounded shimmer-block" />
             <span className="block h-2 w-1/3 rounded shimmer-block opacity-70" />
           </div>
         </div>
-        <div className="px-3 py-4 space-y-3 min-h-[320px] bg-[#e5ddd5]">
+        <div className="px-3 py-3 space-y-3 flex-1 bg-[#e5ddd5]">
           <div className="flex justify-start">
             <span className="h-10 w-3/4 rounded-2xl rounded-tl-sm shimmer-block" />
           </div>
