@@ -658,8 +658,11 @@ function Modules() {
       <div className="container mx-auto px-4 max-w-6xl">
         <Reveal>
           <div className="text-center mb-10">
-            <p className="font-heading font-bold text-rose-gold-deep tracking-widest uppercase text-sm">O Que Você Vai Receber Dentro do Método Nefertiti</p>
-            <h2 className="mt-3 font-display text-3xl md:text-5xl font-bold text-foreground leading-tight">
+            <p className="font-heading font-bold text-rose-gold-deep tracking-widest uppercase text-sm">O Que Você Vai Receber</p>
+            <p className="mt-2 font-heading font-semibold text-foreground/75 tracking-[0.25em] uppercase text-xs md:text-sm">
+              Por dentro do <span className="font-display italic normal-case tracking-normal text-rose-gold-deep">Método Nefertiti</span>
+            </p>
+            <h2 className="mt-4 font-display text-3xl md:text-5xl font-bold text-foreground leading-tight">
               Um programa de <span className="text-rose-gold-gradient">21 dias</span>, em 3 módulos poderosos
             </h2>
             <p className="mt-4 text-muted-foreground max-w-2xl mx-auto">
@@ -718,7 +721,6 @@ function Devices() {
           <p className="font-heading font-semibold text-foreground text-lg md:text-2xl">
             <span className="font-display italic">Método Nefertiti</span> — Sua transformação acessível em qualquer lugar, a qualquer hora
           </p>
-          <p className="mt-2 text-sm text-muted-foreground">📱 Celular • 💻 Computador • 📲 Tablet</p>
           <div className="mt-5 flex items-center justify-center gap-6 md:gap-10 text-rose-gold-deep">
             <div className="flex items-center gap-2"><Smartphone className="h-5 w-5" /><span className="text-sm font-heading">Celular</span></div>
             <div className="flex items-center gap-2"><Monitor className="h-5 w-5" /><span className="text-sm font-heading">Computador</span></div>
@@ -820,12 +822,13 @@ function Offer() {
             </div>
 
             <div className="mt-10 text-center">
-              <p className="font-heading text-foreground/70 line-through text-lg">De R$ 997,00</p>
-              <p className="mt-2 font-heading text-sm uppercase tracking-widest text-rose-gold-deep">12x sem juros de</p>
-              <p className="price-display text-foreground mt-2">
-                12x <span className="text-rose-gold-gradient">R$ 14<span className="text-3xl md:text-4xl">,70</span></span>
+              <p className="price-original">De R$ 997,00</p>
+              <p className="mt-3 font-heading text-xs md:text-sm uppercase tracking-[0.4em] text-rose-gold-deep">Por apenas</p>
+              <p className="mt-3 leading-none">
+                <span className="price-hero-prefix">12x</span>
+                <span className="price-hero">R$ 14<span className="price-hero-cents">,70</span></span>
               </p>
-              <p className="price-sub mt-3 text-muted-foreground">
+              <p className="price-sub mt-4 text-muted-foreground">
                 ou <strong className="text-foreground">R$ 147,00</strong> à vista no PIX
               </p>
 
