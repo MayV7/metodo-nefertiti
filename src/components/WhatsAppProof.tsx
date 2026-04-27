@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { Check, CheckCheck, MessageCircle } from "lucide-react";
 import { Reveal } from "./Reveal";
 import {
