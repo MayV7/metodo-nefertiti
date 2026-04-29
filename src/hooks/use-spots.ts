@@ -5,7 +5,6 @@ import { useEffect, useState } from "react";
 const STORAGE_KEY = "nefertiti_spots_remaining_v2";
 const STORAGE_LAST = "nefertiti_spots_last_tick_v2";
 const STORAGE_EPOCH = "nefertiti_spots_epoch_v2";
-const STORAGE_LOCK = "nefertiti_spots_tick_lock_v2";
 const LEGACY_KEYS = [
   "nefertiti_spots_remaining",
   "nefertiti_spots_last_tick",
@@ -74,13 +73,13 @@ export function useSyncedSpots() {
     setReady(true);
 
     const tickSpot = () => {
-      setSpots((prev) => {
-        const storedNow = readStoredSpots();
-        const base = Math.min(prev, storedNow);
-        if (base <= MIN_SPOTS) return base;
-        const next = writeSyncedSpots(base - 1);
-        return next;
-      });
+      const storedNow = readStoredSpots();
+      if (storedNow <= MIN_SPOTS) {
+        setSpots(storedNow);
+        return;
+      }
+      const next = writeSyncedSpots(storedNow - 1);
+      setSpots(next);
     };
 
     // Primary trigger: every time the popup shows a new buyer, drop a spot.
@@ -90,11 +89,9 @@ export function useSyncedSpots() {
     // Fallback trigger: guarantees depletion every 40s even if a popup is
     // delayed, remounted, or missed during fast navigation/re-renders.
     const fallbackTicker = window.setInterval(() => {
-      const lockUntil = parseInt(window.localStorage.getItem(STORAGE_LOCK) ?? "0", 10);
       const last = parseInt(window.localStorage.getItem(STORAGE_LAST) ?? "0", 10);
       const time = Date.now();
-      if (time < lockUntil || !last || time - last < POPUP_CADENCE_MS) return;
-      window.localStorage.setItem(STORAGE_LOCK, String(time + 1500));
+      if (!last || time - last < POPUP_CADENCE_MS) return;
       tickSpot();
     }, 1000);
 
