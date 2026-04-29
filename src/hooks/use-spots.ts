@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 // have frozen previous visitors at the floor (e.g. "1 vaga restante").
 const STORAGE_KEY = "nefertiti_spots_remaining_v2";
 const STORAGE_LAST = "nefertiti_spots_last_tick_v2";
+const STORAGE_EPOCH = "nefertiti_spots_epoch_v2";
+const STORAGE_LOCK = "nefertiti_spots_tick_lock_v2";
 const LEGACY_KEYS = [
   "nefertiti_spots_remaining",
   "nefertiti_spots_last_tick",
@@ -14,6 +16,26 @@ const INITIAL_SPOTS = 25;
 const MIN_SPOTS = 3;
 // Reference cadence for catch-up math (matches popup interval + fade ≈ 40s).
 const POPUP_CADENCE_MS = 40_000;
+const RESYNC_EVENT = "nefertiti:spots-resync";
+
+function clampSpots(value: number) {
+  if (Number.isNaN(value)) return INITIAL_SPOTS;
+  return Math.min(INITIAL_SPOTS, Math.max(MIN_SPOTS, value));
+}
+
+function readStoredSpots() {
+  return clampSpots(parseInt(window.localStorage.getItem(STORAGE_KEY) ?? String(INITIAL_SPOTS), 10));
+}
+
+function writeSyncedSpots(spots: number, tickTime = Date.now()) {
+  const safeSpots = clampSpots(spots);
+  const epoch = Date.now();
+  window.localStorage.setItem(STORAGE_KEY, String(safeSpots));
+  window.localStorage.setItem(STORAGE_LAST, String(tickTime));
+  window.localStorage.setItem(STORAGE_EPOCH, String(epoch));
+  window.dispatchEvent(new CustomEvent(RESYNC_EVENT, { detail: { spots: safeSpots, epoch } }));
+  return safeSpots;
+}
 
 /**
  * Shared scarcity counter — decrements in lockstep with the social-proof
@@ -38,11 +60,7 @@ export function useSyncedSpots() {
     const lastTick = parseInt(window.localStorage.getItem(STORAGE_LAST) ?? "0", 10);
     const now = Date.now();
 
-    let current = stored ? parseInt(stored, 10) : INITIAL_SPOTS;
-    if (Number.isNaN(current) || current > INITIAL_SPOTS) current = INITIAL_SPOTS;
-    // Defensive: if stored value is somehow below the new floor, lift it back
-    // up so the counter is never visually "travado" at the minimum.
-    if (current < MIN_SPOTS) current = MIN_SPOTS;
+    let current = clampSpots(stored ? parseInt(stored, 10) : INITIAL_SPOTS);
 
     if (lastTick && current > MIN_SPOTS) {
       const elapsedTicks = Math.floor((now - lastTick) / POPUP_CADENCE_MS);
@@ -51,35 +69,63 @@ export function useSyncedSpots() {
       }
     }
 
-    window.localStorage.setItem(STORAGE_KEY, String(current));
-    window.localStorage.setItem(STORAGE_LAST, String(now));
+    current = writeSyncedSpots(current, now);
     setSpots(current);
     setReady(true);
 
-    // Primary trigger: every time the popup shows a new buyer, drop a spot.
-    const onBuyer = () => {
+    const tickSpot = () => {
       setSpots((prev) => {
-        if (prev <= MIN_SPOTS) return prev;
-        const next = prev - 1;
-        window.localStorage.setItem(STORAGE_KEY, String(next));
-        window.localStorage.setItem(STORAGE_LAST, String(Date.now()));
+        const storedNow = readStoredSpots();
+        const base = Math.min(prev, storedNow);
+        if (base <= MIN_SPOTS) return base;
+        const next = writeSyncedSpots(base - 1);
         return next;
       });
     };
+
+    // Primary trigger: every time the popup shows a new buyer, drop a spot.
+    const onBuyer = () => tickSpot();
     window.addEventListener("nefertiti:buyer-shown", onBuyer);
+
+    // Fallback trigger: guarantees depletion every 40s even if a popup is
+    // delayed, remounted, or missed during fast navigation/re-renders.
+    const fallbackTicker = window.setInterval(() => {
+      const lockUntil = parseInt(window.localStorage.getItem(STORAGE_LOCK) ?? "0", 10);
+      const last = parseInt(window.localStorage.getItem(STORAGE_LAST) ?? "0", 10);
+      const time = Date.now();
+      if (time < lockUntil || !last || time - last < POPUP_CADENCE_MS) return;
+      window.localStorage.setItem(STORAGE_LOCK, String(time + 1500));
+      tickSpot();
+    }, 1000);
+
+    // Auto-resync: if localStorage becomes invalid/inconsistent, normalize it
+    // and push the same value to every mounted counter immediately.
+    const resync = () => {
+      const normalized = writeSyncedSpots(readStoredSpots(), parseInt(window.localStorage.getItem(STORAGE_LAST) ?? String(Date.now()), 10));
+      setSpots(normalized);
+    };
+    const resyncInterval = window.setInterval(resync, 5000);
+
+    const onResync = (e: Event) => {
+      const detail = (e as CustomEvent<{ spots?: number }>).detail;
+      if (typeof detail?.spots === "number") setSpots(clampSpots(detail.spots));
+    };
+    window.addEventListener(RESYNC_EVENT, onResync as EventListener);
 
     // Cross-tab sync.
     const onStorage = (e: StorageEvent) => {
       if (e.key === STORAGE_KEY && e.newValue) {
-        const v = parseInt(e.newValue, 10);
-        if (!Number.isNaN(v)) setSpots(v);
+        setSpots(clampSpots(parseInt(e.newValue, 10)));
       }
     };
     window.addEventListener("storage", onStorage);
 
     return () => {
       window.removeEventListener("nefertiti:buyer-shown", onBuyer);
+      window.removeEventListener(RESYNC_EVENT, onResync as EventListener);
       window.removeEventListener("storage", onStorage);
+      window.clearInterval(fallbackTicker);
+      window.clearInterval(resyncInterval);
     };
   }, []);
 
