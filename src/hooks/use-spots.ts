@@ -31,12 +31,18 @@ export function useSyncedSpots() {
   const [ready, setReady] = useState(false);
 
   useEffect(() => {
+    // Wipe any legacy keys from earlier deploys (they may have frozen at 1).
+    for (const k of LEGACY_KEYS) window.localStorage.removeItem(k);
+
     const stored = window.localStorage.getItem(STORAGE_KEY);
     const lastTick = parseInt(window.localStorage.getItem(STORAGE_LAST) ?? "0", 10);
     const now = Date.now();
 
     let current = stored ? parseInt(stored, 10) : INITIAL_SPOTS;
     if (Number.isNaN(current) || current > INITIAL_SPOTS) current = INITIAL_SPOTS;
+    // Defensive: if stored value is somehow below the new floor, lift it back
+    // up so the counter is never visually "travado" at the minimum.
+    if (current < MIN_SPOTS) current = MIN_SPOTS;
 
     if (lastTick && current > MIN_SPOTS) {
       const elapsedTicks = Math.floor((now - lastTick) / POPUP_CADENCE_MS);
