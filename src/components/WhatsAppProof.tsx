@@ -33,10 +33,28 @@ const conversations: Conversation[] = [
     avatar: alunaBeatriz,
     status: "online",
     messages: [
-      { from: "aluna", text: "Marina, EU NÃO ACREDITO 😱 ele acabou de me chamar… depois de 4 meses sumido!!", time: "14:08" },
-      { from: "marina", text: "Eu te disse, querida 👑 quando você para de correr atrás, eles voltam correndo. O que ele disse?", time: "14:09", read: true },
-      { from: "aluna", text: "Que sentiu MUITA falta de mim e que se arrepende de ter terminado 🥹 já chamou pra jantar sábado", time: "14:11" },
-      { from: "marina", text: "Vai sem ansiedade. Lembre-se: você é a rainha agora. Ele que precisa provar 💎", time: "14:12", read: true },
+      {
+        from: "aluna",
+        text: "Marina, EU NÃO ACREDITO 😱 ele acabou de me chamar… depois de 4 meses sumido!!",
+        time: "14:08",
+      },
+      {
+        from: "marina",
+        text: "Eu te disse, querida 👑 quando você para de correr atrás, eles voltam correndo. O que ele disse?",
+        time: "14:09",
+        read: true,
+      },
+      {
+        from: "aluna",
+        text: "Que sentiu MUITA falta de mim e que se arrepende de ter terminado 🥹 já chamou pra jantar sábado",
+        time: "14:11",
+      },
+      {
+        from: "marina",
+        text: "Vai sem ansiedade. Lembre-se: você é a rainha agora. Ele que precisa provar 💎",
+        time: "14:12",
+        read: true,
+      },
     ],
   },
   {
@@ -44,10 +62,27 @@ const conversations: Conversation[] = [
     avatar: alunaCamila,
     status: "online",
     messages: [
-      { from: "aluna", text: "Marina, dia 14 do método e já tenho 2 homens incríveis me chamando 😳", time: "09:42" },
-      { from: "aluna", text: "Um deles é médico, o outro é arquiteto. Nunca aconteceu isso comigo!!", time: "09:42" },
-      { from: "marina", text: "É isso, minha rainha 👑 magnetismo verdadeiro atrai homens à altura. Agora você ESCOLHE ✨", time: "09:45", read: true },
-      { from: "aluna", text: "Marina, obrigada por mudar minha vida. De verdade. ❤️", time: "09:46" },
+      {
+        from: "aluna",
+        text: "Marina, dia 14 do método e já tenho 2 homens incríveis me chamando 😳",
+        time: "09:42",
+      },
+      {
+        from: "aluna",
+        text: "Um deles é médico, o outro é arquiteto. Nunca aconteceu isso comigo!!",
+        time: "09:42",
+      },
+      {
+        from: "marina",
+        text: "É isso, minha rainha 👑 magnetismo verdadeiro atrai homens à altura. Agora você ESCOLHE ✨",
+        time: "09:45",
+        read: true,
+      },
+      {
+        from: "aluna",
+        text: "Marina, obrigada por mudar minha vida. De verdade. ❤️",
+        time: "09:46",
+      },
     ],
   },
   {
@@ -55,10 +90,23 @@ const conversations: Conversation[] = [
     avatar: alunaPaula,
     status: "online",
     messages: [
-      { from: "aluna", text: "Marina, lembra que eu te disse que tinha 47 anos e achava que ninguém ia me querer mais?", time: "21:03" },
+      {
+        from: "aluna",
+        text: "Marina, lembra que eu te disse que tinha 47 anos e achava que ninguém ia me querer mais?",
+        time: "21:03",
+      },
       { from: "aluna", text: "ELE PEDIU MINHA MÃO HOJE 💍✨ estamos noivos!!!", time: "21:03" },
-      { from: "marina", text: "Paula, eu chorei lendo isso 🥹 você merece TUDO. Idade nunca foi o problema — era a forma como você se via.", time: "21:08", read: true },
-      { from: "aluna", text: "Hoje me vejo como rainha. E ele me trata como uma 👑", time: "21:09" },
+      {
+        from: "marina",
+        text: "Paula, eu chorei lendo isso 🥹 você merece TUDO. Idade nunca foi o problema — era a forma como você se via.",
+        time: "21:08",
+        read: true,
+      },
+      {
+        from: "aluna",
+        text: "Hoje me vejo como rainha. E ele me trata como uma 👑",
+        time: "21:09",
+      },
     ],
   },
   {
@@ -66,10 +114,27 @@ const conversations: Conversation[] = [
     avatar: alunaJuliana,
     status: "online",
     messages: [
-      { from: "aluna", text: "Marina, ele acabou de aparecer aqui no meu trabalho com flores 🌹😳", time: "11:20" },
-      { from: "aluna", text: "Falou que está há semanas tentando coragem pra me procurar de novo", time: "11:21" },
-      { from: "marina", text: "Viu? O protocolo funciona. Respira, escuta, e responde com elegância 👑", time: "11:23", read: true },
-      { from: "aluna", text: "Estou tremendo, mas dessa vez é DE PODER, não de ansiedade ❤️", time: "11:24" },
+      {
+        from: "aluna",
+        text: "Marina, ele acabou de aparecer aqui no meu trabalho com flores 🌹😳",
+        time: "11:20",
+      },
+      {
+        from: "aluna",
+        text: "Falou que está há semanas tentando coragem pra me procurar de novo",
+        time: "11:21",
+      },
+      {
+        from: "marina",
+        text: "Viu? O protocolo funciona. Respira, escuta, e responde com elegância 👑",
+        time: "11:23",
+        read: true,
+      },
+      {
+        from: "aluna",
+        text: "Estou tremendo, mas dessa vez é DE PODER, não de ansiedade ❤️",
+        time: "11:24",
+      },
     ],
   },
   {
@@ -77,9 +142,22 @@ const conversations: Conversation[] = [
     avatar: alunaBeatriz,
     status: "online",
     messages: [
-      { from: "aluna", text: "Marina, recebi um convite pra viajar com um homem incrível… ele tem yacht 🛥️😅", time: "18:02" },
-      { from: "marina", text: "Olha você atraindo homens à sua altura ✨ e aí, vai?", time: "18:04", read: true },
-      { from: "aluna", text: "Vou! Mas SEM ansiedade. Sigo as leis do método: presença, não dependência 👑", time: "18:05" },
+      {
+        from: "aluna",
+        text: "Marina, recebi um convite pra viajar com um homem incrível… ele tem yacht 🛥️😅",
+        time: "18:02",
+      },
+      {
+        from: "marina",
+        text: "Olha você atraindo homens à sua altura ✨ e aí, vai?",
+        time: "18:04",
+        read: true,
+      },
+      {
+        from: "aluna",
+        text: "Vou! Mas SEM ansiedade. Sigo as leis do método: presença, não dependência 👑",
+        time: "18:05",
+      },
       { from: "marina", text: "É ASSIM que se faz, rainha 💎", time: "18:06", read: true },
     ],
   },
@@ -88,9 +166,22 @@ const conversations: Conversation[] = [
     avatar: alunaCamila,
     status: "online",
     messages: [
-      { from: "aluna", text: "Marina, o ex que me bloqueou em TODAS as redes acabou de me desbloquear 😱", time: "07:55" },
-      { from: "aluna", text: "Pediu desculpas e disse que foi o pior erro da vida dele", time: "07:56" },
-      { from: "marina", text: "Energia de rainha cura distância 👑 não responde correndo. Dá tempo dele sentir o peso da ausência.", time: "08:01", read: true },
+      {
+        from: "aluna",
+        text: "Marina, o ex que me bloqueou em TODAS as redes acabou de me desbloquear 😱",
+        time: "07:55",
+      },
+      {
+        from: "aluna",
+        text: "Pediu desculpas e disse que foi o pior erro da vida dele",
+        time: "07:56",
+      },
+      {
+        from: "marina",
+        text: "Energia de rainha cura distância 👑 não responde correndo. Dá tempo dele sentir o peso da ausência.",
+        time: "08:01",
+        read: true,
+      },
       { from: "aluna", text: "Tô seguindo o protocolo à risca. Obrigada Marina 🥹", time: "08:02" },
     ],
   },
@@ -99,9 +190,22 @@ const conversations: Conversation[] = [
     avatar: alunaPaula,
     status: "online",
     messages: [
-      { from: "aluna", text: "Marina, primeira vez que ALGUÉM me trata como prioridade na vida 🥹", time: "22:41" },
-      { from: "aluna", text: "Ele chegou do trabalho com jantar pronto e flores. Sem motivo nenhum.", time: "22:42" },
-      { from: "marina", text: "Esse é o padrão de homem que você merece, sempre mereceu 👑", time: "22:45", read: true },
+      {
+        from: "aluna",
+        text: "Marina, primeira vez que ALGUÉM me trata como prioridade na vida 🥹",
+        time: "22:41",
+      },
+      {
+        from: "aluna",
+        text: "Ele chegou do trabalho com jantar pronto e flores. Sem motivo nenhum.",
+        time: "22:42",
+      },
+      {
+        from: "marina",
+        text: "Esse é o padrão de homem que você merece, sempre mereceu 👑",
+        time: "22:45",
+        read: true,
+      },
       { from: "aluna", text: "Eu nunca mais aceito menos que isso ✨", time: "22:46" },
     ],
   },
@@ -110,9 +214,22 @@ const conversations: Conversation[] = [
     avatar: alunaJuliana,
     status: "online",
     messages: [
-      { from: "aluna", text: "Marina, depois de 12 anos casada e divórcio doloroso… achei que era o fim 😞", time: "16:10" },
-      { from: "aluna", text: "Hoje, 28 dias do método, conheci alguém que me faz sentir nova de novo 🥹", time: "16:11" },
-      { from: "marina", text: "Você floresceu de dentro pra fora 🌹 e o universo respondeu. Aproveita CADA segundo.", time: "16:14", read: true },
+      {
+        from: "aluna",
+        text: "Marina, depois de 12 anos casada e divórcio doloroso… achei que era o fim 😞",
+        time: "16:10",
+      },
+      {
+        from: "aluna",
+        text: "Hoje, 28 dias do método, conheci alguém que me faz sentir nova de novo 🥹",
+        time: "16:11",
+      },
+      {
+        from: "marina",
+        text: "Você floresceu de dentro pra fora 🌹 e o universo respondeu. Aproveita CADA segundo.",
+        time: "16:14",
+        read: true,
+      },
       { from: "aluna", text: "Obrigada, Marina. De coração ❤️👑", time: "16:15" },
     ],
   },
@@ -121,10 +238,28 @@ const conversations: Conversation[] = [
     avatar: alunaBeatriz,
     status: "online",
     messages: [
-      { from: "aluna", text: "Marina, ele me ligou chorando ontem 😳 disse que não consegue mais dormir pensando em mim", time: "23:18" },
-      { from: "marina", text: "É o efeito da inversão psicológica. A pergunta agora é: você QUER de volta?", time: "23:20", read: true },
-      { from: "aluna", text: "Sinceramente? Não sei. Tô ESCOLHENDO pela primeira vez 👑", time: "23:21" },
-      { from: "marina", text: "ESSA é a verdadeira vitória, rainha ✨ poder de escolha.", time: "23:23", read: true },
+      {
+        from: "aluna",
+        text: "Marina, ele me ligou chorando ontem 😳 disse que não consegue mais dormir pensando em mim",
+        time: "23:18",
+      },
+      {
+        from: "marina",
+        text: "É o efeito da inversão psicológica. A pergunta agora é: você QUER de volta?",
+        time: "23:20",
+        read: true,
+      },
+      {
+        from: "aluna",
+        text: "Sinceramente? Não sei. Tô ESCOLHENDO pela primeira vez 👑",
+        time: "23:21",
+      },
+      {
+        from: "marina",
+        text: "ESSA é a verdadeira vitória, rainha ✨ poder de escolha.",
+        time: "23:23",
+        read: true,
+      },
     ],
   },
 ];
@@ -199,9 +334,7 @@ function Phone({ convo }: { convo: Conversation }) {
         <div className="flex items-center gap-2.5 bg-[#075e54] px-3 py-2.5 text-pearl shrink-0">
           <Avatar src={convo.avatar} name={convo.name} />
           <div className="leading-tight flex-1 min-w-0">
-            <p className="font-heading font-semibold text-[12.5px] truncate">
-              {convo.name}
-            </p>
+            <p className="font-heading font-semibold text-[12.5px] truncate">{convo.name}</p>
             <p className="text-[10px] opacity-80">{convo.status}</p>
           </div>
           <MessageCircle className="h-4 w-4 opacity-80" />
@@ -291,10 +424,13 @@ export function WhatsAppProof() {
               💬 Conversas reais de alunas
             </p>
             <h2 className="mt-3 font-display text-3xl md:text-5xl font-bold text-foreground leading-tight">
-              As mensagens que <span className="text-rose-gold-gradient">chegam todos os dias</span> no WhatsApp da Marina
+              As mensagens que <span className="text-rose-gold-gradient">chegam todos os dias</span>{" "}
+              no WhatsApp da Marina
             </h2>
             <p className="mt-4 text-foreground/75 max-w-2xl mx-auto">
-              Navegue pelos prints reais (com identidades preservadas) de alunas que aplicaram o <span className="font-display italic">Método Nefertiti</span> e tiveram suas vidas transformadas em poucas semanas.
+              Navegue pelos prints reais (com identidades preservadas) de alunas que aplicaram o{" "}
+              <span className="font-display italic">Método Nefertiti</span> e tiveram suas vidas
+              transformadas em poucas semanas.
             </p>
           </div>
         </Reveal>
@@ -324,10 +460,7 @@ export function WhatsAppProof() {
             >
               <CarouselContent className="-ml-4">
                 {conversations.map((c) => (
-                  <CarouselItem
-                    key={c.name}
-                    className="pl-4 basis-full sm:basis-1/2 lg:basis-1/3"
-                  >
+                  <CarouselItem key={c.name} className="pl-4 basis-full sm:basis-1/2 lg:basis-1/3">
                     <div className="py-2">
                       <Phone convo={c} />
                     </div>
@@ -342,7 +475,8 @@ export function WhatsAppProof() {
 
         <Reveal delay={0.3}>
           <p className="mt-10 text-center text-xs text-foreground/55 italic max-w-2xl mx-auto">
-            * Prints baseados em depoimentos reais. Nomes e fotos das alunas preservados por questões de privacidade. Deslize para navegar entre as 9 conversas.
+            * Prints baseados em depoimentos reais. Nomes e fotos das alunas preservados por
+            questões de privacidade. Deslize para navegar entre as 9 conversas.
           </p>
         </Reveal>
       </div>

@@ -5,10 +5,7 @@ import { useEffect, useState } from "react";
 const STORAGE_KEY = "nefertiti_spots_remaining_v2";
 const STORAGE_LAST = "nefertiti_spots_last_tick_v2";
 const STORAGE_EPOCH = "nefertiti_spots_epoch_v2";
-const LEGACY_KEYS = [
-  "nefertiti_spots_remaining",
-  "nefertiti_spots_last_tick",
-];
+const LEGACY_KEYS = ["nefertiti_spots_remaining", "nefertiti_spots_last_tick"];
 const INITIAL_SPOTS = 25;
 // Floor kept above zero so the offer never reads "0 vagas", but well below
 // the previous floor of 1 so the counter visibly moves throughout the session.
@@ -25,7 +22,9 @@ function clampSpots(value: number) {
 }
 
 function readStoredSpots() {
-  return clampSpots(parseInt(window.localStorage.getItem(STORAGE_KEY) ?? String(INITIAL_SPOTS), 10));
+  return clampSpots(
+    parseInt(window.localStorage.getItem(STORAGE_KEY) ?? String(INITIAL_SPOTS), 10),
+  );
 }
 
 function writeSyncedSpots(spots: number, tickTime = Date.now()) {
