@@ -1,9 +1,17 @@
 import { useEffect, useState } from "react";
 
-const STORAGE_KEY = "nefertiti_spots_remaining";
-const STORAGE_LAST = "nefertiti_spots_last_tick";
+// Versioned keys — bumping the suffix invalidates any stale value that may
+// have frozen previous visitors at the floor (e.g. "1 vaga restante").
+const STORAGE_KEY = "nefertiti_spots_remaining_v2";
+const STORAGE_LAST = "nefertiti_spots_last_tick_v2";
+const LEGACY_KEYS = [
+  "nefertiti_spots_remaining",
+  "nefertiti_spots_last_tick",
+];
 const INITIAL_SPOTS = 25;
-const MIN_SPOTS = 1;
+// Floor kept above zero so the offer never reads "0 vagas", but well below
+// the previous floor of 1 so the counter visibly moves throughout the session.
+const MIN_SPOTS = 3;
 // Reference cadence for catch-up math (matches popup interval + fade ≈ 40s).
 const POPUP_CADENCE_MS = 40_000;
 
@@ -23,12 +31,18 @@ export function useSyncedSpots() {
   const [ready, setReady] = useState(false);
 
   useEffect(() => {
+    // Wipe any legacy keys from earlier deploys (they may have frozen at 1).
+    for (const k of LEGACY_KEYS) window.localStorage.removeItem(k);
+
     const stored = window.localStorage.getItem(STORAGE_KEY);
     const lastTick = parseInt(window.localStorage.getItem(STORAGE_LAST) ?? "0", 10);
     const now = Date.now();
 
     let current = stored ? parseInt(stored, 10) : INITIAL_SPOTS;
     if (Number.isNaN(current) || current > INITIAL_SPOTS) current = INITIAL_SPOTS;
+    // Defensive: if stored value is somehow below the new floor, lift it back
+    // up so the counter is never visually "travado" at the minimum.
+    if (current < MIN_SPOTS) current = MIN_SPOTS;
 
     if (lastTick && current > MIN_SPOTS) {
       const elapsedTicks = Math.floor((now - lastTick) / POPUP_CADENCE_MS);
