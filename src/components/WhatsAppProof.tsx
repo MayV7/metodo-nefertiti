@@ -176,11 +176,11 @@ function Avatar({ src, name }: { src: string; name: string }) {
       </span>
       <img
         src={src}
-        alt=""
+        alt={`Foto de perfil de ${name.replace(/·.*$/, "").trim()}`}
         loading="lazy"
         decoding="async"
-        width={36}
-        height={36}
+        width={768}
+        height={768}
         className="relative h-full w-full object-cover"
         onError={(e) => {
           // Hide broken image so the initials placeholder remains visible.
@@ -193,7 +193,7 @@ function Avatar({ src, name }: { src: string; name: string }) {
 
 function Phone({ convo }: { convo: Conversation }) {
   return (
-    <div className="relative mx-auto w-full max-w-[280px] aspect-[9/17] rounded-[2rem] bg-[#0b141a] p-1.5 shadow-elegant border border-rose-gold/20 flex flex-col">
+    <div className="relative mx-auto w-full max-w-[min(280px,78vw)] aspect-[9/17] rounded-[2rem] bg-[#0b141a] p-1.5 shadow-elegant border border-rose-gold/20 flex flex-col overflow-hidden">
       <div className="mx-auto h-4 w-20 rounded-b-2xl bg-[#0b141a] absolute top-0 left-1/2 -translate-x-1/2 z-10" />
       <div className="rounded-[1.6rem] overflow-hidden bg-[#e5ddd5] flex flex-col flex-1">
         <div className="flex items-center gap-2.5 bg-[#075e54] px-3 py-2.5 text-pearl shrink-0">
@@ -227,7 +227,7 @@ function Phone({ convo }: { convo: Conversation }) {
 function PhoneSkeleton() {
   return (
     <div
-      className="relative mx-auto w-full max-w-[280px] aspect-[9/17] rounded-[2rem] bg-[#0b141a] p-1.5 shadow-elegant border border-rose-gold/20 flex flex-col"
+      className="relative mx-auto w-full max-w-[min(280px,78vw)] aspect-[9/17] rounded-[2rem] bg-[#0b141a] p-1.5 shadow-elegant border border-rose-gold/20 flex flex-col overflow-hidden"
       aria-hidden
     >
       <div className="mx-auto h-4 w-20 rounded-b-2xl bg-[#0b141a] absolute top-0 left-1/2 -translate-x-1/2 z-10" />
