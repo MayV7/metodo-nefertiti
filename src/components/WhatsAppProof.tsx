@@ -302,7 +302,7 @@ export function WhatsAppProof() {
         <Reveal delay={0.15}>
           {!ready ? (
             <div
-              className="w-full max-w-5xl mx-auto px-2 sm:px-10"
+              className="w-full max-w-5xl mx-auto px-1 sm:px-10 overflow-hidden"
               role="status"
               aria-label="Carregando conversas"
             >
@@ -320,7 +320,7 @@ export function WhatsAppProof() {
           ) : (
             <Carousel
               opts={{ align: "start", loop: true }}
-              className="w-full max-w-5xl mx-auto px-2 sm:px-10"
+              className="w-full max-w-5xl mx-auto px-1 sm:px-10 overflow-hidden"
             >
               <CarouselContent className="-ml-4">
                 {conversations.map((c) => (
