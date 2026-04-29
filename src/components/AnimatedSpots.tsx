@@ -20,6 +20,7 @@ export function AnimatedSpots({ className = "", live = false }: Props) {
   const { spots } = useSyncedSpots();
   const [pulse, setPulse] = useState(false);
   const prev = useRef<number | null>(null);
+  const safeClassName = className.trim() || "text-rose-gold font-bold";
 
   useEffect(() => {
     if (prev.current !== null && prev.current !== spots) {
@@ -41,7 +42,7 @@ export function AnimatedSpots({ className = "", live = false }: Props) {
       <span
         className={`inline-block transition-transform duration-500 ease-out ${
           pulse ? "scale-125 text-rose-gold" : "scale-100"
-        } ${className}`}
+        } ${safeClassName}`}
         style={{ transformOrigin: "center" }}
       >
         {spots}
