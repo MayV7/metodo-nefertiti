@@ -16,6 +16,8 @@ const MIN_SPOTS = 3;
 // Reference cadence for catch-up math (matches popup interval + fade ≈ 40s).
 const POPUP_CADENCE_MS = 40_000;
 const RESYNC_EVENT = "nefertiti:spots-resync";
+let activeHooks = 0;
+let controllerStop: (() => void) | null = null;
 
 function clampSpots(value: number) {
   if (Number.isNaN(value)) return INITIAL_SPOTS;
@@ -34,6 +36,61 @@ function writeSyncedSpots(spots: number, tickTime = Date.now()) {
   window.localStorage.setItem(STORAGE_EPOCH, String(epoch));
   window.dispatchEvent(new CustomEvent(RESYNC_EVENT, { detail: { spots: safeSpots, epoch } }));
   return safeSpots;
+}
+
+function initializeSpotsState() {
+  for (const k of LEGACY_KEYS) window.localStorage.removeItem(k);
+
+  const stored = window.localStorage.getItem(STORAGE_KEY);
+  const lastTick = parseInt(window.localStorage.getItem(STORAGE_LAST) ?? "0", 10);
+  const now = Date.now();
+  let current = clampSpots(stored ? parseInt(stored, 10) : INITIAL_SPOTS);
+  let syncedLastTick = lastTick || now;
+
+  if (lastTick && current > MIN_SPOTS) {
+    const elapsedTicks = Math.floor((now - lastTick) / POPUP_CADENCE_MS);
+    if (elapsedTicks > 0) {
+      current = Math.max(MIN_SPOTS, current - elapsedTicks);
+      syncedLastTick = lastTick + elapsedTicks * POPUP_CADENCE_MS;
+    }
+  }
+
+  return writeSyncedSpots(current, syncedLastTick);
+}
+
+function startSpotsController() {
+  if (controllerStop) return;
+
+  const tickSpot = () => {
+    const storedNow = readStoredSpots();
+    if (storedNow <= MIN_SPOTS) {
+      writeSyncedSpots(storedNow);
+      return;
+    }
+    writeSyncedSpots(storedNow - 1);
+  };
+
+  const onBuyer = () => tickSpot();
+  window.addEventListener("nefertiti:buyer-shown", onBuyer);
+
+  const fallbackTicker = window.setInterval(() => {
+    const last = parseInt(window.localStorage.getItem(STORAGE_LAST) ?? "0", 10);
+    const time = Date.now();
+    if (!last || time - last < POPUP_CADENCE_MS) return;
+    tickSpot();
+  }, 1000);
+
+  const resyncInterval = window.setInterval(() => {
+    const last = parseInt(window.localStorage.getItem(STORAGE_LAST) ?? String(Date.now()), 10);
+    writeSyncedSpots(readStoredSpots(), last);
+  }, 5000);
+
+  controllerStop = () => {
+    window.removeEventListener("nefertiti:buyer-shown", onBuyer);
+    window.clearInterval(fallbackTicker);
+    window.clearInterval(resyncInterval);
+    controllerStop = null;
+  };
 }
 
 /**
