@@ -76,7 +76,9 @@ function startSpotsController() {
   const fallbackTicker = window.setInterval(() => {
     const last = parseInt(window.localStorage.getItem(STORAGE_LAST) ?? "0", 10);
     const time = Date.now();
-    if (!last || time - last < POPUP_CADENCE_MS) return;
+    // Give the popup event first chance to decrement at 40s; this fallback
+    // only repairs missed/delayed events so it never double-decrements.
+    if (!last || time - last < POPUP_CADENCE_MS + 2500) return;
     tickSpot();
   }, 1000);
 
