@@ -109,56 +109,11 @@ export function useSyncedSpots() {
   const [ready, setReady] = useState(false);
 
   useEffect(() => {
-    // Wipe any legacy keys from earlier deploys (they may have frozen at 1).
-    for (const k of LEGACY_KEYS) window.localStorage.removeItem(k);
-
-    const stored = window.localStorage.getItem(STORAGE_KEY);
-    const lastTick = parseInt(window.localStorage.getItem(STORAGE_LAST) ?? "0", 10);
-    const now = Date.now();
-
-    let current = clampSpots(stored ? parseInt(stored, 10) : INITIAL_SPOTS);
-
-    if (lastTick && current > MIN_SPOTS) {
-      const elapsedTicks = Math.floor((now - lastTick) / POPUP_CADENCE_MS);
-      if (elapsedTicks > 0) {
-        current = Math.max(MIN_SPOTS, current - elapsedTicks);
-      }
-    }
-
-    current = writeSyncedSpots(current, now);
+    activeHooks += 1;
+    const current = initializeSpotsState();
     setSpots(current);
     setReady(true);
-
-    const tickSpot = () => {
-      const storedNow = readStoredSpots();
-      if (storedNow <= MIN_SPOTS) {
-        setSpots(storedNow);
-        return;
-      }
-      const next = writeSyncedSpots(storedNow - 1);
-      setSpots(next);
-    };
-
-    // Primary trigger: every time the popup shows a new buyer, drop a spot.
-    const onBuyer = () => tickSpot();
-    window.addEventListener("nefertiti:buyer-shown", onBuyer);
-
-    // Fallback trigger: guarantees depletion every 40s even if a popup is
-    // delayed, remounted, or missed during fast navigation/re-renders.
-    const fallbackTicker = window.setInterval(() => {
-      const last = parseInt(window.localStorage.getItem(STORAGE_LAST) ?? "0", 10);
-      const time = Date.now();
-      if (!last || time - last < POPUP_CADENCE_MS) return;
-      tickSpot();
-    }, 1000);
-
-    // Auto-resync: if localStorage becomes invalid/inconsistent, normalize it
-    // and push the same value to every mounted counter immediately.
-    const resync = () => {
-      const normalized = writeSyncedSpots(readStoredSpots(), parseInt(window.localStorage.getItem(STORAGE_LAST) ?? String(Date.now()), 10));
-      setSpots(normalized);
-    };
-    const resyncInterval = window.setInterval(resync, 5000);
+    startSpotsController();
 
     const onResync = (e: Event) => {
       const detail = (e as CustomEvent<{ spots?: number }>).detail;
@@ -175,11 +130,10 @@ export function useSyncedSpots() {
     window.addEventListener("storage", onStorage);
 
     return () => {
-      window.removeEventListener("nefertiti:buyer-shown", onBuyer);
       window.removeEventListener(RESYNC_EVENT, onResync as EventListener);
       window.removeEventListener("storage", onStorage);
-      window.clearInterval(fallbackTicker);
-      window.clearInterval(resyncInterval);
+      activeHooks = Math.max(0, activeHooks - 1);
+      if (activeHooks === 0) controllerStop?.();
     };
   }, []);
 
