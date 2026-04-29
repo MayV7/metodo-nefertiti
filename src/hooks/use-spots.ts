@@ -4,16 +4,95 @@ import { useEffect, useState } from "react";
 // have frozen previous visitors at the floor (e.g. "1 vaga restante").
 const STORAGE_KEY = "nefertiti_spots_remaining_v2";
 const STORAGE_LAST = "nefertiti_spots_last_tick_v2";
-const LEGACY_KEYS = [
-  "nefertiti_spots_remaining",
-  "nefertiti_spots_last_tick",
-];
+const STORAGE_EPOCH = "nefertiti_spots_epoch_v2";
+const LEGACY_KEYS = ["nefertiti_spots_remaining", "nefertiti_spots_last_tick"];
 const INITIAL_SPOTS = 25;
 // Floor kept above zero so the offer never reads "0 vagas", but well below
 // the previous floor of 1 so the counter visibly moves throughout the session.
 const MIN_SPOTS = 3;
 // Reference cadence for catch-up math (matches popup interval + fade ≈ 40s).
 const POPUP_CADENCE_MS = 40_000;
+const RESYNC_EVENT = "nefertiti:spots-resync";
+let activeHooks = 0;
+let controllerStop: (() => void) | null = null;
+
+function clampSpots(value: number) {
+  if (Number.isNaN(value)) return INITIAL_SPOTS;
+  return Math.min(INITIAL_SPOTS, Math.max(MIN_SPOTS, value));
+}
+
+function readStoredSpots() {
+  return clampSpots(
+    parseInt(window.localStorage.getItem(STORAGE_KEY) ?? String(INITIAL_SPOTS), 10),
+  );
+}
+
+function writeSyncedSpots(spots: number, tickTime = Date.now()) {
+  const safeSpots = clampSpots(spots);
+  const epoch = Date.now();
+  window.localStorage.setItem(STORAGE_KEY, String(safeSpots));
+  window.localStorage.setItem(STORAGE_LAST, String(tickTime));
+  window.localStorage.setItem(STORAGE_EPOCH, String(epoch));
+  window.dispatchEvent(new CustomEvent(RESYNC_EVENT, { detail: { spots: safeSpots, epoch } }));
+  return safeSpots;
+}
+
+function initializeSpotsState() {
+  for (const k of LEGACY_KEYS) window.localStorage.removeItem(k);
+
+  const stored = window.localStorage.getItem(STORAGE_KEY);
+  const lastTick = parseInt(window.localStorage.getItem(STORAGE_LAST) ?? "0", 10);
+  const now = Date.now();
+  let current = clampSpots(stored ? parseInt(stored, 10) : INITIAL_SPOTS);
+  let syncedLastTick = lastTick || now;
+
+  if (lastTick && current > MIN_SPOTS) {
+    const elapsedTicks = Math.floor((now - lastTick) / POPUP_CADENCE_MS);
+    if (elapsedTicks > 0) {
+      current = Math.max(MIN_SPOTS, current - elapsedTicks);
+      syncedLastTick = lastTick + elapsedTicks * POPUP_CADENCE_MS;
+    }
+  }
+
+  return writeSyncedSpots(current, syncedLastTick);
+}
+
+function startSpotsController() {
+  if (controllerStop) return;
+
+  const tickSpot = () => {
+    const storedNow = readStoredSpots();
+    if (storedNow <= MIN_SPOTS) {
+      writeSyncedSpots(storedNow);
+      return;
+    }
+    writeSyncedSpots(storedNow - 1);
+  };
+
+  const onBuyer = () => tickSpot();
+  window.addEventListener("nefertiti:buyer-shown", onBuyer);
+
+  const fallbackTicker = window.setInterval(() => {
+    const last = parseInt(window.localStorage.getItem(STORAGE_LAST) ?? "0", 10);
+    const time = Date.now();
+    // Give the popup event first chance to decrement at 40s; this fallback
+    // only repairs missed/delayed events so it never double-decrements.
+    if (!last || time - last < POPUP_CADENCE_MS + 2500) return;
+    tickSpot();
+  }, 1000);
+
+  const resyncInterval = window.setInterval(() => {
+    const last = parseInt(window.localStorage.getItem(STORAGE_LAST) ?? String(Date.now()), 10);
+    writeSyncedSpots(readStoredSpots(), last);
+  }, 5000);
+
+  controllerStop = () => {
+    window.removeEventListener("nefertiti:buyer-shown", onBuyer);
+    window.clearInterval(fallbackTicker);
+    window.clearInterval(resyncInterval);
+    controllerStop = null;
+  };
+}
 
 /**
  * Shared scarcity counter — decrements in lockstep with the social-proof
@@ -31,55 +110,31 @@ export function useSyncedSpots() {
   const [ready, setReady] = useState(false);
 
   useEffect(() => {
-    // Wipe any legacy keys from earlier deploys (they may have frozen at 1).
-    for (const k of LEGACY_KEYS) window.localStorage.removeItem(k);
-
-    const stored = window.localStorage.getItem(STORAGE_KEY);
-    const lastTick = parseInt(window.localStorage.getItem(STORAGE_LAST) ?? "0", 10);
-    const now = Date.now();
-
-    let current = stored ? parseInt(stored, 10) : INITIAL_SPOTS;
-    if (Number.isNaN(current) || current > INITIAL_SPOTS) current = INITIAL_SPOTS;
-    // Defensive: if stored value is somehow below the new floor, lift it back
-    // up so the counter is never visually "travado" at the minimum.
-    if (current < MIN_SPOTS) current = MIN_SPOTS;
-
-    if (lastTick && current > MIN_SPOTS) {
-      const elapsedTicks = Math.floor((now - lastTick) / POPUP_CADENCE_MS);
-      if (elapsedTicks > 0) {
-        current = Math.max(MIN_SPOTS, current - elapsedTicks);
-      }
-    }
-
-    window.localStorage.setItem(STORAGE_KEY, String(current));
-    window.localStorage.setItem(STORAGE_LAST, String(now));
+    activeHooks += 1;
+    const current = initializeSpotsState();
     setSpots(current);
     setReady(true);
+    startSpotsController();
 
-    // Primary trigger: every time the popup shows a new buyer, drop a spot.
-    const onBuyer = () => {
-      setSpots((prev) => {
-        if (prev <= MIN_SPOTS) return prev;
-        const next = prev - 1;
-        window.localStorage.setItem(STORAGE_KEY, String(next));
-        window.localStorage.setItem(STORAGE_LAST, String(Date.now()));
-        return next;
-      });
+    const onResync = (e: Event) => {
+      const detail = (e as CustomEvent<{ spots?: number }>).detail;
+      if (typeof detail?.spots === "number") setSpots(clampSpots(detail.spots));
     };
-    window.addEventListener("nefertiti:buyer-shown", onBuyer);
+    window.addEventListener(RESYNC_EVENT, onResync as EventListener);
 
     // Cross-tab sync.
     const onStorage = (e: StorageEvent) => {
       if (e.key === STORAGE_KEY && e.newValue) {
-        const v = parseInt(e.newValue, 10);
-        if (!Number.isNaN(v)) setSpots(v);
+        setSpots(clampSpots(parseInt(e.newValue, 10)));
       }
     };
     window.addEventListener("storage", onStorage);
 
     return () => {
-      window.removeEventListener("nefertiti:buyer-shown", onBuyer);
+      window.removeEventListener(RESYNC_EVENT, onResync as EventListener);
       window.removeEventListener("storage", onStorage);
+      activeHooks = Math.max(0, activeHooks - 1);
+      if (activeHooks === 0) controllerStop?.();
     };
   }, []);
 

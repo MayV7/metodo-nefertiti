@@ -23,7 +23,7 @@ export function SocialProofPopup() {
       setVisible(true);
       // First buyer appears → emit so the spots counter ticks in lockstep.
       window.dispatchEvent(new CustomEvent("nefertiti:buyer-shown"));
-    }, 8000);
+    }, 40000);
     return () => clearTimeout(start);
   }, []);
 
@@ -51,13 +51,22 @@ export function SocialProofPopup() {
           <motion.div
             key={idx}
             initial={{ opacity: 0, y: 30, scale: 0.9 }}
-            animate={{ opacity: 1, y: 0, scale: 1, boxShadow: [
-              "0 0 0 0 rgba(212,165,116,0.0), 0 10px 30px -10px rgba(0,0,0,0.4)",
-              "0 0 24px 6px rgba(212,165,116,0.55), 0 10px 30px -10px rgba(0,0,0,0.4)",
-              "0 0 0 0 rgba(212,165,116,0.0), 0 10px 30px -10px rgba(0,0,0,0.4)",
-            ] }}
+            animate={{
+              opacity: 1,
+              y: 0,
+              scale: 1,
+              boxShadow: [
+                "0 0 0 0 rgba(212,165,116,0.0), 0 10px 30px -10px rgba(0,0,0,0.4)",
+                "0 0 24px 6px rgba(212,165,116,0.55), 0 10px 30px -10px rgba(0,0,0,0.4)",
+                "0 0 0 0 rgba(212,165,116,0.0), 0 10px 30px -10px rgba(0,0,0,0.4)",
+              ],
+            }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
-            transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1], boxShadow: { duration: 2.4, repeat: Infinity, ease: "easeInOut" } }}
+            transition={{
+              duration: 0.45,
+              ease: [0.22, 1, 0.36, 1],
+              boxShadow: { duration: 2.4, repeat: Infinity, ease: "easeInOut" },
+            }}
             className="pointer-events-auto bg-card/95 backdrop-blur-xl border border-rose-gold/50 rounded-2xl p-4 flex items-center gap-3"
           >
             <div className="h-12 w-12 rounded-full bg-rose-gold-gradient flex items-center justify-center shrink-0 shadow-glow">
@@ -68,9 +77,7 @@ export function SocialProofPopup() {
                 {b.name}
                 <CheckCircle2 className="h-4 w-4 text-rose-gold-deep" />
               </p>
-              <p className="text-xs text-muted-foreground truncate">
-                comprou agora • {b.city}
-              </p>
+              <p className="text-xs text-muted-foreground truncate">comprou agora • {b.city}</p>
               <p className="text-[11px] text-rose-gold-deep font-medium mt-0.5">{b.time}</p>
             </div>
           </motion.div>
