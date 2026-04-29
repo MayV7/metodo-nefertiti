@@ -1,9 +1,17 @@
 import { useEffect, useState } from "react";
 
-const STORAGE_KEY = "nefertiti_spots_remaining";
-const STORAGE_LAST = "nefertiti_spots_last_tick";
+// Versioned keys — bumping the suffix invalidates any stale value that may
+// have frozen previous visitors at the floor (e.g. "1 vaga restante").
+const STORAGE_KEY = "nefertiti_spots_remaining_v2";
+const STORAGE_LAST = "nefertiti_spots_last_tick_v2";
+const LEGACY_KEYS = [
+  "nefertiti_spots_remaining",
+  "nefertiti_spots_last_tick",
+];
 const INITIAL_SPOTS = 25;
-const MIN_SPOTS = 1;
+// Floor kept above zero so the offer never reads "0 vagas", but well below
+// the previous floor of 1 so the counter visibly moves throughout the session.
+const MIN_SPOTS = 3;
 // Reference cadence for catch-up math (matches popup interval + fade ≈ 40s).
 const POPUP_CADENCE_MS = 40_000;
 
