@@ -8,7 +8,10 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import marina from "@/assets/marina.jpg";
+import alunaBeatriz from "@/assets/aluna-beatriz.jpg";
+import alunaCamila from "@/assets/aluna-camila.jpg";
+import alunaPaula from "@/assets/aluna-paula.jpg";
+import alunaJuliana from "@/assets/aluna-juliana.jpg";
 
 type Msg = {
   from: "aluna" | "marina";
@@ -27,7 +30,7 @@ type Conversation = {
 const conversations: Conversation[] = [
   {
     name: "Beatriz · aluna",
-    avatar: marina,
+    avatar: alunaBeatriz,
     status: "online",
     messages: [
       { from: "aluna", text: "Marina, EU NÃO ACREDITO 😱 ele acabou de me chamar… depois de 4 meses sumido!!", time: "14:08" },
@@ -38,7 +41,7 @@ const conversations: Conversation[] = [
   },
   {
     name: "Camila · aluna",
-    avatar: marina,
+    avatar: alunaCamila,
     status: "online",
     messages: [
       { from: "aluna", text: "Marina, dia 14 do método e já tenho 2 homens incríveis me chamando 😳", time: "09:42" },
@@ -49,7 +52,7 @@ const conversations: Conversation[] = [
   },
   {
     name: "Paula · aluna",
-    avatar: marina,
+    avatar: alunaPaula,
     status: "online",
     messages: [
       { from: "aluna", text: "Marina, lembra que eu te disse que tinha 47 anos e achava que ninguém ia me querer mais?", time: "21:03" },
@@ -60,7 +63,7 @@ const conversations: Conversation[] = [
   },
   {
     name: "Juliana · aluna",
-    avatar: marina,
+    avatar: alunaJuliana,
     status: "online",
     messages: [
       { from: "aluna", text: "Marina, ele acabou de aparecer aqui no meu trabalho com flores 🌹😳", time: "11:20" },
@@ -71,7 +74,7 @@ const conversations: Conversation[] = [
   },
   {
     name: "Renata · aluna",
-    avatar: marina,
+    avatar: alunaBeatriz,
     status: "online",
     messages: [
       { from: "aluna", text: "Marina, recebi um convite pra viajar com um homem incrível… ele tem yacht 🛥️😅", time: "18:02" },
@@ -82,7 +85,7 @@ const conversations: Conversation[] = [
   },
   {
     name: "Amanda · aluna",
-    avatar: marina,
+    avatar: alunaCamila,
     status: "online",
     messages: [
       { from: "aluna", text: "Marina, o ex que me bloqueou em TODAS as redes acabou de me desbloquear 😱", time: "07:55" },
@@ -93,7 +96,7 @@ const conversations: Conversation[] = [
   },
   {
     name: "Larissa · aluna",
-    avatar: marina,
+    avatar: alunaPaula,
     status: "online",
     messages: [
       { from: "aluna", text: "Marina, primeira vez que ALGUÉM me trata como prioridade na vida 🥹", time: "22:41" },
@@ -104,7 +107,7 @@ const conversations: Conversation[] = [
   },
   {
     name: "Tatiane · aluna",
-    avatar: marina,
+    avatar: alunaJuliana,
     status: "online",
     messages: [
       { from: "aluna", text: "Marina, depois de 12 anos casada e divórcio doloroso… achei que era o fim 😞", time: "16:10" },
@@ -115,7 +118,7 @@ const conversations: Conversation[] = [
   },
   {
     name: "Isabela · aluna",
-    avatar: marina,
+    avatar: alunaBeatriz,
     status: "online",
     messages: [
       { from: "aluna", text: "Marina, ele me ligou chorando ontem 😳 disse que não consegue mais dormir pensando em mim", time: "23:18" },
