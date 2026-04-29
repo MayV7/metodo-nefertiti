@@ -23,7 +23,7 @@ export function SocialProofPopup() {
       setVisible(true);
       // First buyer appears → emit so the spots counter ticks in lockstep.
       window.dispatchEvent(new CustomEvent("nefertiti:buyer-shown"));
-    }, 8000);
+    }, 40000);
     return () => clearTimeout(start);
   }, []);
 
