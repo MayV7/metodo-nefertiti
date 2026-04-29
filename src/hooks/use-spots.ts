@@ -4,8 +4,8 @@ const STORAGE_KEY = "nefertiti_spots_remaining";
 const STORAGE_LAST = "nefertiti_spots_last_tick";
 const INITIAL_SPOTS = 25;
 const MIN_SPOTS = 1;
-// Reference cadence for catch-up math (matches popup interval + fade).
-const POPUP_CADENCE_MS = 26_200;
+// Reference cadence for catch-up math (matches popup interval + fade ≈ 40s).
+const POPUP_CADENCE_MS = 40_000;
 
 /**
  * Shared scarcity counter — decrements in lockstep with the social-proof

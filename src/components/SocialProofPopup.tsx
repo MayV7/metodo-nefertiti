@@ -29,7 +29,7 @@ export function SocialProofPopup() {
 
   useEffect(() => {
     if (!visible) return;
-    // Spaced cadence: ~25s visible, then fade and rotate to next buyer.
+    // Cadence sincronizada com o contador de vagas: ~40s entre buyers.
     const id = setInterval(() => {
       setVisible(false);
       setTimeout(() => {
@@ -38,7 +38,7 @@ export function SocialProofPopup() {
         // Each new buyer = one fewer spot. Single source of truth for cadence.
         window.dispatchEvent(new CustomEvent("nefertiti:buyer-shown"));
       }, 1200);
-    }, 25000);
+    }, 38800);
     return () => clearInterval(id);
   }, [visible]);
 

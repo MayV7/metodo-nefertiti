@@ -121,10 +121,10 @@ function Hero() {
           <Reveal delay={0.2}>
             <h1 className="text-foreground">
               <span className="hero-headline block">
-                <span className="hero-power">{"\n"}</span>
-                <span className="block mt-3">{"\n"}</span>
-                <span className="accent block mt-3">{"\n"}</span>
-                <span className="block mt-3">{"\n"}</span>
+                <span className="hero-power">Como 3.847 Mulheres</span>
+                <span className="block mt-3">Transformaram a Dor do Término na Arma Mais Poderosa Para Conquistar Homens de Alto Valor</span>
+                <span className="accent block mt-3">E Passaram de Rejeitadas a Irresistíveis</span>
+                <span className="block mt-3">Utilizando Este Método...</span>
               </span>
             </h1>
           </Reveal>
