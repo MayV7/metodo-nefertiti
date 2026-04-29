@@ -121,10 +121,10 @@ function Hero() {
           <Reveal delay={0.2}>
             <h1 className="text-foreground">
               <span className="hero-headline block">
-                <span className="hero-power">Use este protocolo</span>
-                <span className="block mt-3">psicológico milenar para fazer qualquer homem de alto valor</span>
-                <span className="accent block mt-3">Obcecar-se Por Você</span>
-                <span className="block mt-3">em até <span className="accent-gold">21 dias</span> — sem perseguir, sem se humilhar e sem joguinhos infantis.</span>
+                <span className="hero-power">{"\n"}</span>
+                <span className="block mt-3">{"\n"}</span>
+                <span className="accent block mt-3">{"\n"}</span>
+                <span className="block mt-3">{"\n"}</span>
               </span>
             </h1>
           </Reveal>
