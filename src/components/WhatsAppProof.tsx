@@ -144,12 +144,7 @@ const conversations: Conversation[] = [
   },
   {
     name: "Renata · aluna",
-    avatar: alunaBeatriz,
-    status: "online",
-    messages: [
-      {
-        from: "aluna",
-        text: "Marina, recebi um convite pra viajar com um homem incrível… ele tem yacht 🛥️😅",
+    avatar: alunaRenata,
         time: "18:02",
       },
       {
