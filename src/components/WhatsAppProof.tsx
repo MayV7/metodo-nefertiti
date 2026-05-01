@@ -168,7 +168,7 @@ const conversations: Conversation[] = [
   },
   {
     name: "Amanda · aluna",
-    avatar: alunaCamila,
+    avatar: alunaAmanda,
     status: "online",
     messages: [
       {
@@ -192,7 +192,7 @@ const conversations: Conversation[] = [
   },
   {
     name: "Larissa · aluna",
-    avatar: alunaPaula,
+    avatar: alunaLarissa,
     status: "online",
     messages: [
       {
@@ -216,7 +216,7 @@ const conversations: Conversation[] = [
   },
   {
     name: "Tatiane · aluna",
-    avatar: alunaJuliana,
+    avatar: alunaTatiane,
     status: "online",
     messages: [
       {
@@ -240,7 +240,7 @@ const conversations: Conversation[] = [
   },
   {
     name: "Isabela · aluna",
-    avatar: alunaBeatriz,
+    avatar: alunaIsabela,
     status: "online",
     messages: [
       {
