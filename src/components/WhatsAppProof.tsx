@@ -12,6 +12,11 @@ import alunaBeatriz from "@/assets/aluna-beatriz.jpg";
 import alunaCamila from "@/assets/aluna-camila.jpg";
 import alunaPaula from "@/assets/aluna-paula.jpg";
 import alunaJuliana from "@/assets/aluna-juliana.jpg";
+import alunaRenata from "@/assets/aluna-renata.jpg";
+import alunaAmanda from "@/assets/aluna-amanda.jpg";
+import alunaLarissa from "@/assets/aluna-larissa.jpg";
+import alunaTatiane from "@/assets/aluna-tatiane.jpg";
+import alunaIsabela from "@/assets/aluna-isabela.jpg";
 
 type Msg = {
   from: "aluna" | "marina";
