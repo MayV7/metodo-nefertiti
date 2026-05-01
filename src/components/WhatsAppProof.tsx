@@ -12,6 +12,11 @@ import alunaBeatriz from "@/assets/aluna-beatriz.jpg";
 import alunaCamila from "@/assets/aluna-camila.jpg";
 import alunaPaula from "@/assets/aluna-paula.jpg";
 import alunaJuliana from "@/assets/aluna-juliana.jpg";
+import alunaRenata from "@/assets/aluna-renata.jpg";
+import alunaAmanda from "@/assets/aluna-amanda.jpg";
+import alunaLarissa from "@/assets/aluna-larissa.jpg";
+import alunaTatiane from "@/assets/aluna-tatiane.jpg";
+import alunaIsabela from "@/assets/aluna-isabela.jpg";
 
 type Msg = {
   from: "aluna" | "marina";
@@ -139,7 +144,7 @@ const conversations: Conversation[] = [
   },
   {
     name: "Renata · aluna",
-    avatar: alunaBeatriz,
+    avatar: alunaRenata,
     status: "online",
     messages: [
       {
@@ -163,7 +168,7 @@ const conversations: Conversation[] = [
   },
   {
     name: "Amanda · aluna",
-    avatar: alunaCamila,
+    avatar: alunaAmanda,
     status: "online",
     messages: [
       {
@@ -187,7 +192,7 @@ const conversations: Conversation[] = [
   },
   {
     name: "Larissa · aluna",
-    avatar: alunaPaula,
+    avatar: alunaLarissa,
     status: "online",
     messages: [
       {
@@ -211,7 +216,7 @@ const conversations: Conversation[] = [
   },
   {
     name: "Tatiane · aluna",
-    avatar: alunaJuliana,
+    avatar: alunaTatiane,
     status: "online",
     messages: [
       {
@@ -235,7 +240,7 @@ const conversations: Conversation[] = [
   },
   {
     name: "Isabela · aluna",
-    avatar: alunaBeatriz,
+    avatar: alunaIsabela,
     status: "online",
     messages: [
       {
@@ -269,7 +274,7 @@ function Bubble({ msg }: { msg: Msg }) {
   return (
     <div className={`flex ${isMarina ? "justify-end" : "justify-start"}`}>
       <div
-        className={`relative max-w-[82%] px-3.5 py-2 rounded-2xl text-[13.5px] leading-snug shadow-sm ${
+        className={`relative max-w-[82%] px-3 py-1.5 rounded-2xl text-[12.5px] leading-snug shadow-sm ${
           isMarina
             ? "bg-[#dcf8c6] text-[#0b1f10] rounded-tr-sm"
             : "bg-white text-[#0b1f10] rounded-tl-sm"
@@ -328,7 +333,7 @@ function Avatar({ src, name }: { src: string; name: string }) {
 
 function Phone({ convo }: { convo: Conversation }) {
   return (
-    <div className="relative mx-auto w-full max-w-[min(280px,78vw)] aspect-[9/17] rounded-[2rem] bg-[#0b141a] p-1.5 shadow-elegant border border-rose-gold/20 flex flex-col overflow-hidden">
+    <div className="relative mx-auto w-full max-w-[min(290px,80vw)] aspect-[9/19] rounded-[2rem] bg-[#0b141a] p-1.5 shadow-elegant border border-rose-gold/20 flex flex-col overflow-hidden">
       <div className="mx-auto h-4 w-20 rounded-b-2xl bg-[#0b141a] absolute top-0 left-1/2 -translate-x-1/2 z-10" />
       <div className="rounded-[1.6rem] overflow-hidden bg-[#e5ddd5] flex flex-col flex-1">
         <div className="flex items-center gap-2.5 bg-[#075e54] px-3 py-2.5 text-pearl shrink-0">
@@ -341,7 +346,7 @@ function Phone({ convo }: { convo: Conversation }) {
         </div>
 
         <div
-          className="px-3 py-3 space-y-2 flex-1 overflow-hidden"
+          className="px-3 py-2.5 space-y-1.5 flex-1 overflow-y-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
           style={{
             backgroundImage:
               "radial-gradient(circle at 25% 15%, rgba(0,0,0,0.04), transparent 40%), radial-gradient(circle at 75% 85%, rgba(0,0,0,0.04), transparent 40%)",
@@ -360,7 +365,7 @@ function Phone({ convo }: { convo: Conversation }) {
 function PhoneSkeleton() {
   return (
     <div
-      className="relative mx-auto w-full max-w-[min(280px,78vw)] aspect-[9/17] rounded-[2rem] bg-[#0b141a] p-1.5 shadow-elegant border border-rose-gold/20 flex flex-col overflow-hidden"
+      className="relative mx-auto w-full max-w-[min(290px,80vw)] aspect-[9/19] rounded-[2rem] bg-[#0b141a] p-1.5 shadow-elegant border border-rose-gold/20 flex flex-col overflow-hidden"
       aria-hidden
     >
       <div className="mx-auto h-4 w-20 rounded-b-2xl bg-[#0b141a] absolute top-0 left-1/2 -translate-x-1/2 z-10" />
