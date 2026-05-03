@@ -14,33 +14,31 @@ const buyers = [
   { name: "Gabriela H.", city: "Vitória, ES", time: "há 21 minutos" },
 ];
 
+const CADENCE_MS = 40_000;
+
 export function SocialProofPopup() {
   const [idx, setIdx] = useState(0);
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    const start = setTimeout(() => {
+    // First popup appears quickly so the user sees it immediately, then
+    // every 40s thereafter — in lockstep with the spots store cadence.
+    const start = window.setTimeout(() => {
       setVisible(true);
-      // First buyer appears → emit so the spots counter ticks in lockstep.
       window.dispatchEvent(new CustomEvent("nefertiti:buyer-shown"));
-    }, 40000);
-    return () => clearTimeout(start);
-  }, []);
+    }, 5000);
 
-  useEffect(() => {
-    if (!visible) return;
-    // Cadence sincronizada com o contador de vagas: ~40s entre buyers.
-    const id = setInterval(() => {
-      setVisible(false);
-      setTimeout(() => {
-        setIdx((i) => (i + 1) % buyers.length);
-        setVisible(true);
-        // Each new buyer = one fewer spot. Single source of truth for cadence.
-        window.dispatchEvent(new CustomEvent("nefertiti:buyer-shown"));
-      }, 1200);
-    }, 38800);
-    return () => clearInterval(id);
-  }, [visible]);
+    const interval = window.setInterval(() => {
+      setIdx((i) => (i + 1) % buyers.length);
+      setVisible(true);
+      window.dispatchEvent(new CustomEvent("nefertiti:buyer-shown"));
+    }, CADENCE_MS);
+
+    return () => {
+      window.clearTimeout(start);
+      window.clearInterval(interval);
+    };
+  }, []);
 
   const b = buyers[idx];
 
@@ -77,8 +75,9 @@ export function SocialProofPopup() {
                 {b.name}
                 <CheckCircle2 className="h-4 w-4 text-rose-gold-deep" />
               </p>
-              <p className="text-xs text-muted-foreground truncate">comprou agora • {b.city}</p>
-              <p className="text-[11px] text-rose-gold-deep font-medium mt-0.5">{b.time}</p>
+              <p className="text-xs text-muted-foreground truncate">
+                comprou {b.time} • {b.city}
+              </p>
             </div>
           </motion.div>
         )}
