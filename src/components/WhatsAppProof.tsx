@@ -32,239 +32,164 @@ type Conversation = {
   messages: Msg[];
 };
 
+// Tom: WhatsApp de verdade. Minúsculas, frases curtas, alguns "kkk", emojis
+// pontuais, mensagens quebradas em duas. Sem jargão de coach, sem "rainha 👑"
+// em toda mensagem. Mais humano, menos roteiro.
 const conversations: Conversation[] = [
   {
-    name: "Beatriz · aluna",
+    name: "Beatriz",
     avatar: alunaBeatriz,
     status: "online",
     messages: [
-      {
-        from: "aluna",
-        text: "Marina, EU NÃO ACREDITO 😱 ele acabou de me chamar… depois de 4 meses sumido!!",
-        time: "14:08",
-      },
+      { from: "aluna", text: "marina vc nao vai acreditar", time: "14:08" },
+      { from: "aluna", text: "o ricardo me chamou agora… 4 meses sumido 😶", time: "14:08" },
       {
         from: "marina",
-        text: "Eu te disse, querida 👑 quando você para de correr atrás, eles voltam correndo. O que ele disse?",
+        text: "eu te falei rs. e aí, o que ele disse?",
         time: "14:09",
         read: true,
       },
       {
         from: "aluna",
-        text: "Que sentiu MUITA falta de mim e que se arrepende de ter terminado 🥹 já chamou pra jantar sábado",
+        text: "que sentiu mt minha falta, ja chamou pra jantar sabado",
         time: "14:11",
       },
-      {
-        from: "marina",
-        text: "Vai sem ansiedade. Lembre-se: você é a rainha agora. Ele que precisa provar 💎",
-        time: "14:12",
-        read: true,
-      },
+      { from: "marina", text: "vai sem ansiedade. e responde devagar 😉", time: "14:12", read: true },
     ],
   },
   {
-    name: "Camila · aluna",
+    name: "Camila",
     avatar: alunaCamila,
     status: "online",
     messages: [
-      {
-        from: "aluna",
-        text: "Marina, dia 14 do método e já tenho 2 homens incríveis me chamando 😳",
-        time: "09:42",
-      },
-      {
-        from: "aluna",
-        text: "Um deles é médico, o outro é arquiteto. Nunca aconteceu isso comigo!!",
-        time: "09:42",
-      },
+      { from: "aluna", text: "to no dia 14 e ja tem 2 caras me chamando kkkk", time: "09:42" },
+      { from: "aluna", text: "um é medico, o outro arquiteto", time: "09:42" },
+      { from: "aluna", text: "isso nunca tinha acontecido cmg", time: "09:43" },
       {
         from: "marina",
-        text: "É isso, minha rainha 👑 magnetismo verdadeiro atrai homens à altura. Agora você ESCOLHE ✨",
+        text: "viu? agora vc escolhe, nao corre atras ✨",
         time: "09:45",
         read: true,
       },
-      {
-        from: "aluna",
-        text: "Marina, obrigada por mudar minha vida. De verdade. ❤️",
-        time: "09:46",
-      },
+      { from: "aluna", text: "obrigada de coracao mesmo ❤️", time: "09:46" },
     ],
   },
   {
-    name: "Paula · aluna",
+    name: "Paula",
     avatar: alunaPaula,
     status: "online",
     messages: [
-      {
-        from: "aluna",
-        text: "Marina, lembra que eu te disse que tinha 47 anos e achava que ninguém ia me querer mais?",
-        time: "21:03",
-      },
-      { from: "aluna", text: "ELE PEDIU MINHA MÃO HOJE 💍✨ estamos noivos!!!", time: "21:03" },
+      { from: "aluna", text: "lembra q eu te disse q achava q ngm ia me querer com 47?", time: "21:03" },
+      { from: "aluna", text: "ele me pediu em casamento hoje 💍", time: "21:03" },
+      { from: "aluna", text: "ainda to tremendo", time: "21:04" },
       {
         from: "marina",
-        text: "Paula, eu chorei lendo isso 🥹 você merece TUDO. Idade nunca foi o problema — era a forma como você se via.",
+        text: "paula que coisa linda 🥹 idade nunca foi o problema",
         time: "21:08",
         read: true,
       },
-      {
-        from: "aluna",
-        text: "Hoje me vejo como rainha. E ele me trata como uma 👑",
-        time: "21:09",
-      },
+      { from: "aluna", text: "obrigada por nao deixar eu desistir", time: "21:09" },
     ],
   },
   {
-    name: "Juliana · aluna",
+    name: "Juliana",
     avatar: alunaJuliana,
     status: "online",
     messages: [
-      {
-        from: "aluna",
-        text: "Marina, ele acabou de aparecer aqui no meu trabalho com flores 🌹😳",
-        time: "11:20",
-      },
-      {
-        from: "aluna",
-        text: "Falou que está há semanas tentando coragem pra me procurar de novo",
-        time: "11:21",
-      },
+      { from: "aluna", text: "marina ele apareceu aqui no trampo agora", time: "11:20" },
+      { from: "aluna", text: "com flores 🌹 eu fiquei sem reacao", time: "11:21" },
+      { from: "aluna", text: "disse q tava tomando coragem ha semanas", time: "11:21" },
       {
         from: "marina",
-        text: "Viu? O protocolo funciona. Respira, escuta, e responde com elegância 👑",
+        text: "respira. escuta antes de responder, ok?",
         time: "11:23",
         read: true,
       },
-      {
-        from: "aluna",
-        text: "Estou tremendo, mas dessa vez é DE PODER, não de ansiedade ❤️",
-        time: "11:24",
-      },
+      { from: "aluna", text: "to tremendo mas e diferente dessa vez", time: "11:24" },
     ],
   },
   {
-    name: "Renata · aluna",
+    name: "Renata",
     avatar: alunaRenata,
     status: "online",
     messages: [
-      {
-        from: "aluna",
-        text: "Marina, recebi um convite pra viajar com um homem incrível… ele tem yacht 🛥️😅",
-        time: "18:02",
-      },
+      { from: "aluna", text: "olha esse convite q recebi 😅", time: "18:02" },
+      { from: "aluna", text: "viagem com um cara incrivel, ele tem barco e tudo", time: "18:02" },
       {
         from: "marina",
-        text: "Olha você atraindo homens à sua altura ✨ e aí, vai?",
+        text: "kkkk olha vc atraindo gente do seu nivel. e ai, vai?",
         time: "18:04",
         read: true,
       },
-      {
-        from: "aluna",
-        text: "Vou! Mas SEM ansiedade. Sigo as leis do método: presença, não dependência 👑",
-        time: "18:05",
-      },
-      { from: "marina", text: "É ASSIM que se faz, rainha 💎", time: "18:06", read: true },
+      { from: "aluna", text: "vou! mas calma, sem pressa nenhuma", time: "18:05" },
+      { from: "marina", text: "é assim mesmo 💎", time: "18:06", read: true },
     ],
   },
   {
-    name: "Amanda · aluna",
+    name: "Amanda",
     avatar: alunaAmanda,
     status: "online",
     messages: [
-      {
-        from: "aluna",
-        text: "Marina, o ex que me bloqueou em TODAS as redes acabou de me desbloquear 😱",
-        time: "07:55",
-      },
-      {
-        from: "aluna",
-        text: "Pediu desculpas e disse que foi o pior erro da vida dele",
-        time: "07:56",
-      },
+      { from: "aluna", text: "marina o ex me desbloqueou agora 😱", time: "07:55" },
+      { from: "aluna", text: "tinha me bloqueado em tudo, lembra?", time: "07:55" },
+      { from: "aluna", text: "mandou um audio pedindo desculpa", time: "07:56" },
       {
         from: "marina",
-        text: "Energia de rainha cura distância 👑 não responde correndo. Dá tempo dele sentir o peso da ausência.",
+        text: "nao responde correndo. deixa ele esperar um pouco",
         time: "08:01",
         read: true,
       },
-      { from: "aluna", text: "Tô seguindo o protocolo à risca. Obrigada Marina 🥹", time: "08:02" },
+      { from: "aluna", text: "to seguindo direitinho, prometo kkk", time: "08:02" },
     ],
   },
   {
-    name: "Larissa · aluna",
+    name: "Larissa",
     avatar: alunaLarissa,
     status: "online",
     messages: [
-      {
-        from: "aluna",
-        text: "Marina, primeira vez que ALGUÉM me trata como prioridade na vida 🥹",
-        time: "22:41",
-      },
-      {
-        from: "aluna",
-        text: "Ele chegou do trabalho com jantar pronto e flores. Sem motivo nenhum.",
-        time: "22:42",
-      },
+      { from: "aluna", text: "primeira vez na vida q alguem me trata como prioridade", time: "22:41" },
+      { from: "aluna", text: "ele chegou com jantar pronto hj 🥹 sem motivo", time: "22:42" },
       {
         from: "marina",
-        text: "Esse é o padrão de homem que você merece, sempre mereceu 👑",
+        text: "esse é o tipo de homem que vc merece, sempre mereceu",
         time: "22:45",
         read: true,
       },
-      { from: "aluna", text: "Eu nunca mais aceito menos que isso ✨", time: "22:46" },
+      { from: "aluna", text: "nunca mais aceito menos que isso", time: "22:46" },
     ],
   },
   {
-    name: "Tatiane · aluna",
+    name: "Tatiane",
     avatar: alunaTatiane,
     status: "online",
     messages: [
-      {
-        from: "aluna",
-        text: "Marina, depois de 12 anos casada e divórcio doloroso… achei que era o fim 😞",
-        time: "16:10",
-      },
-      {
-        from: "aluna",
-        text: "Hoje, 28 dias do método, conheci alguém que me faz sentir nova de novo 🥹",
-        time: "16:11",
-      },
+      { from: "aluna", text: "depois de 12 anos casada e o divorcio… achei q tinha acabado pra mim", time: "16:10" },
+      { from: "aluna", text: "hj conheci alguem q me faz rir de novo", time: "16:11" },
+      { from: "aluna", text: "to me sentindo gente outra vez", time: "16:11" },
       {
         from: "marina",
-        text: "Você floresceu de dentro pra fora 🌹 e o universo respondeu. Aproveita CADA segundo.",
+        text: "vc floresceu de dentro pra fora 🌹 aproveita cada segundo",
         time: "16:14",
         read: true,
       },
-      { from: "aluna", text: "Obrigada, Marina. De coração ❤️👑", time: "16:15" },
+      { from: "aluna", text: "obrigada marina, de coracao ❤️", time: "16:15" },
     ],
   },
   {
-    name: "Isabela · aluna",
+    name: "Isabela",
     avatar: alunaIsabela,
     status: "online",
     messages: [
-      {
-        from: "aluna",
-        text: "Marina, ele me ligou chorando ontem 😳 disse que não consegue mais dormir pensando em mim",
-        time: "23:18",
-      },
+      { from: "aluna", text: "ele me ligou chorando ontem a noite 😶", time: "23:18" },
+      { from: "aluna", text: "disse q nao consegue dormir pensando em mim", time: "23:18" },
       {
         from: "marina",
-        text: "É o efeito da inversão psicológica. A pergunta agora é: você QUER de volta?",
+        text: "e ai? vc ainda quer ele de volta?",
         time: "23:20",
         read: true,
       },
-      {
-        from: "aluna",
-        text: "Sinceramente? Não sei. Tô ESCOLHENDO pela primeira vez 👑",
-        time: "23:21",
-      },
-      {
-        from: "marina",
-        text: "ESSA é a verdadeira vitória, rainha ✨ poder de escolha.",
-        time: "23:23",
-        read: true,
-      },
+      { from: "aluna", text: "sinceramente nao sei, to escolhendo pela primeira vez", time: "23:21" },
+      { from: "marina", text: "essa e a maior vitoria ✨", time: "23:23", read: true },
     ],
   },
 ];
@@ -274,14 +199,14 @@ function Bubble({ msg }: { msg: Msg }) {
   return (
     <div className={`flex ${isMarina ? "justify-end" : "justify-start"}`}>
       <div
-        className={`relative max-w-[82%] px-3 py-1.5 rounded-2xl text-[12.5px] leading-snug shadow-sm ${
+        className={`relative max-w-[82%] px-3 py-1.5 rounded-2xl text-[13px] leading-snug shadow-sm ${
           isMarina
             ? "bg-[#dcf8c6] text-[#0b1f10] rounded-tr-sm"
             : "bg-white text-[#0b1f10] rounded-tl-sm"
         }`}
       >
         <p className="whitespace-pre-wrap">{msg.text}</p>
-        <span className="flex items-center gap-1 justify-end text-[10px] text-[#5e7066] mt-1">
+        <span className="flex items-center gap-1 justify-end text-[10px] text-[#5e7066] mt-0.5">
           {msg.time}
           {isMarina &&
             (msg.read ? (
@@ -296,8 +221,6 @@ function Bubble({ msg }: { msg: Msg }) {
 }
 
 function Avatar({ src, name }: { src: string; name: string }) {
-  // Lightweight initials fallback — shown until the real avatar loads
-  // (or permanently if it fails on slow mobile networks).
   const initials = name
     .replace(/·.*$/, "")
     .trim()
@@ -323,7 +246,6 @@ function Avatar({ src, name }: { src: string; name: string }) {
         height={768}
         className="relative h-full w-full object-cover"
         onError={(e) => {
-          // Hide broken image so the initials placeholder remains visible.
           (e.currentTarget as HTMLImageElement).style.display = "none";
         }}
       />
@@ -331,15 +253,18 @@ function Avatar({ src, name }: { src: string; name: string }) {
   );
 }
 
+// Phone: ratio 9/16 (proportion realista de smartphone moderno) e largura
+// um pouco maior para a tipografia respirar. Antes estávamos em 9/19, que
+// deixava o aparelho alongado demais para o volume de mensagens (4-5 bolhas).
 function Phone({ convo }: { convo: Conversation }) {
   return (
-    <div className="relative mx-auto w-full max-w-[min(290px,80vw)] aspect-[9/19] rounded-[2rem] bg-[#0b141a] p-1.5 shadow-elegant border border-rose-gold/20 flex flex-col overflow-hidden">
+    <div className="relative mx-auto w-full max-w-[min(300px,82vw)] aspect-[9/16] rounded-[2rem] bg-[#0b141a] p-1.5 shadow-elegant border border-rose-gold/20 flex flex-col overflow-hidden">
       <div className="mx-auto h-4 w-20 rounded-b-2xl bg-[#0b141a] absolute top-0 left-1/2 -translate-x-1/2 z-10" />
       <div className="rounded-[1.6rem] overflow-hidden bg-[#e5ddd5] flex flex-col flex-1">
         <div className="flex items-center gap-2.5 bg-[#075e54] px-3 py-2.5 text-pearl shrink-0">
           <Avatar src={convo.avatar} name={convo.name} />
           <div className="leading-tight flex-1 min-w-0">
-            <p className="font-heading font-semibold text-[12.5px] truncate">{convo.name}</p>
+            <p className="font-heading font-semibold text-[13px] truncate">{convo.name}</p>
             <p className="text-[10px] opacity-80">{convo.status}</p>
           </div>
           <MessageCircle className="h-4 w-4 opacity-80" />
@@ -365,7 +290,7 @@ function Phone({ convo }: { convo: Conversation }) {
 function PhoneSkeleton() {
   return (
     <div
-      className="relative mx-auto w-full max-w-[min(290px,80vw)] aspect-[9/19] rounded-[2rem] bg-[#0b141a] p-1.5 shadow-elegant border border-rose-gold/20 flex flex-col overflow-hidden"
+      className="relative mx-auto w-full max-w-[min(300px,82vw)] aspect-[9/16] rounded-[2rem] bg-[#0b141a] p-1.5 shadow-elegant border border-rose-gold/20 flex flex-col overflow-hidden"
       aria-hidden
     >
       <div className="mx-auto h-4 w-20 rounded-b-2xl bg-[#0b141a] absolute top-0 left-1/2 -translate-x-1/2 z-10" />
@@ -400,8 +325,6 @@ export function WhatsAppProof() {
   const [ready, setReady] = useState(false);
 
   useEffect(() => {
-    // Brief delay so the shimmer is perceptible on slower mobile networks,
-    // and to let Embla measure layout before the first paint.
     const idle =
       (window as unknown as { requestIdleCallback?: (cb: () => void) => number })
         .requestIdleCallback ?? ((cb: () => void) => window.setTimeout(cb, 1));
