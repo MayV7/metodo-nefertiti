@@ -1,38 +1,29 @@
-# Execução aprovada
+## Plano: Corrigir social proof + sincronizar contador em 13 vagas
 
-As 9 fotos já foram geradas, validadas em grade de QA (9 mulheres distintas, idades 23-51, cabelos/cenários únicos, estilo natural de WhatsApp) e copiadas para `src/assets/`:
+### 1. `src/components/SocialProofPopup.tsx` — popup visível e texto correto
+- **Garantir aparição a cada 40s**: trocar `setInterval` de `38800ms` para `40000ms` e simplificar a lógica de visibilidade. Hoje a "plaquinha" some entre ciclos (`setVisible(false)` por 1.2s antes do próximo); vou manter sempre visível alternando apenas o conteúdo via `key={idx}` no `motion.div` (AnimatePresence faz o cross-fade) — assim a plaquinha permanece na tela e o conteúdo troca a cada 40s.
+- **Texto "comprou agora" → "comprou há X minutos"**: usar o campo `b.time` que já existe (ex: "há 11 minutos") como o verbo principal. Linha passa a ser:
+  ```
+  comprou {b.time} • {b.city}
+  ```
+  Removo a linha separada de tempo embaixo.
+- **Primeiro popup**: aparece após 5s (em vez de 40s) para o usuário ver imediatamente; emite `nefertiti:buyer-shown` em sincronia com o store de vagas.
 
-- `aluna-beatriz.jpg` (26, castanha lisa) · `aluna-camila.jpg` (31, cacheada morena) · `aluna-paula.jpg` (47, curta com fios grisalhos)
-- `aluna-juliana.jpg` (25, loira longa) · `aluna-renata.jpg` (36, preta lisa, blazer) · `aluna-amanda.jpg` (29, ruiva com sardas)
-- `aluna-larissa.jpg` (41, ondulada com óculos) · `aluna-tatiane.jpg` (51, prata pixie) · `aluna-isabela.jpg` (23, longa escura, parque)
+### 2. `src/hooks/use-spots.ts` — base de 13 vagas
+- `INITIAL_SPOTS = 13` (era 25).
+- `MIN_SPOTS = 3` mantido.
+- **Bump de versão da chave** para `nefertiti_spots_remaining_v3` / `nefertiti_spots_last_tick_v3` e adicionar `v2` à lista `LEGACY_KEYS`, garantindo que usuários antigos (com 25/24/etc no localStorage) sejam ressincronizados em 13 automaticamente no próximo load. Sem isso, o site continua mostrando o valor antigo persistido.
+- Cadência permanece 40s, dirigida pelo evento `nefertiti:buyer-shown`. Como o `useSyncExternalStore` já é a fonte única, TopCountdown, StickyBottomBar, AnimatedSpots e Offer leem o mesmo número no mesmo render — e cada popup do social proof decrementa exatamente 1 vaga, mantendo a sincronia pedida.
 
-Resta aplicar **3 edições de código** (bloqueadas pelo plan mode):
+### 3. Verificação
+- TopCountdown, StickyBottomBar e qualquer `<AnimatedSpots />` no Offer começam exibindo **13** e decrementam para 12, 11, 10… a cada popup (40s), até o piso de 3.
+- Plaquinha do social proof permanece visível, trocando o nome/cidade/tempo a cada 40s, com o texto "comprou há X minutos".
 
-## 1. `src/hooks/use-spots.ts` — store global com `useSyncExternalStore`
+### Arquivos a editar
+- `src/components/SocialProofPopup.tsx`
+- `src/hooks/use-spots.ts`
 
-Substituir o hook por um singleton de módulo:
-- `state = { spots, lastTick }` em escopo de módulo.
-- `bootstrap()` roda uma única vez no primeiro `subscribe`: limpa chaves legadas, lê localStorage uma vez, aplica catch-up por tempo decorrido, registra listener de `nefertiti:buyer-shown`, `setInterval` global (1s) de fallback, e listener `storage` cross-tab que adota o menor valor.
-- `useSyncedSpots()` consome via `useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot)` → todos os componentes leem o MESMO snapshot no mesmo render.
-- Mantém `INITIAL_SPOTS=25`, `MIN_SPOTS=3`, `POPUP_CADENCE_MS=40_000`.
-- Preserva assinatura `{ spots, ready, initial }` para não quebrar consumidores.
+### Fora de escopo
+- WhatsApp prints, headline do hero, fotos das alunas — não tocados.
 
-## 2. `src/components/WhatsAppProof.tsx` — fotos únicas + sem corte
-
-- Importar 9 assets e mapear 1-para-1 (zero reuso): cada `Conversation.avatar` recebe sua própria imagem.
-- **Eliminar corte das mensagens**:
-  - Trocar `aspect-[9/17]` → `aspect-[9/19]` no `<Phone>` e no `<PhoneSkeleton>`.
-  - Trocar `text-[13.5px]` → `text-[12.5px]` e `space-y-2` → `space-y-1.5` nas bolhas.
-  - Adicionar `overflow-y-auto scrollbar-none` ao container de mensagens (substituindo o `overflow-hidden` atual) como rede de segurança.
-  - Aumentar `max-w-[min(280px,78vw)]` → `max-w-[min(290px,80vw)]` para folga em mobile.
-
-## 3. `src/components/AnimatedSpots.tsx` — sem mudança necessária
-
-Já consome `useSyncedSpots()` e a assinatura é mantida. Funciona automaticamente com o novo store.
-
-## Resultado esperado
-
-- WhatsApp: 9 conversas, cada uma com aluna visualmente diferente, idades de 23 a 51 anos; nenhuma mensagem cortada em mobile/desktop.
-- Vagas: TopCountdown, StickyBottomBar, AnimatedSpots e Offer leem o **mesmo** valor garantido pelo `useSyncExternalStore` — impossível haver discrepância entre seções.
-
-Aprove para sair do plan mode e aplicar as 3 edições.
+Aprove para aplicar.
