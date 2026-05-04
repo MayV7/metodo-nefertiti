@@ -14,14 +14,16 @@ import { useSyncExternalStore } from "react";
  *   freezes if the popup misses a tick.
  */
 
-const STORAGE_KEY = "nefertiti_spots_remaining_v3";
-const STORAGE_LAST = "nefertiti_spots_last_tick_v3";
+const STORAGE_KEY = "nefertiti_spots_remaining_v4";
+const STORAGE_LAST = "nefertiti_spots_last_tick_v4";
 const LEGACY_KEYS = [
   "nefertiti_spots_remaining",
   "nefertiti_spots_last_tick",
   "nefertiti_spots_epoch_v2",
   "nefertiti_spots_remaining_v2",
   "nefertiti_spots_last_tick_v2",
+  "nefertiti_spots_remaining_v3",
+  "nefertiti_spots_last_tick_v3",
 ];
 
 const INITIAL_SPOTS = 13;
