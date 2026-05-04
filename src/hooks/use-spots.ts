@@ -30,7 +30,8 @@ const LEGACY_KEYS = [
 
 const INITIAL_SPOTS = 13;
 const MIN_SPOTS = 3;
-const POPUP_CADENCE_MS = 40_000;
+// Popups still fire every ~40s (see SocialProofPopup), but the counter
+// decouples from popup cadence — see MIN_DECREMENT_GAP_MS below.
 // Spots should feel organic: not every popup decrements the counter, and
 // there's a minimum gap between decrements so the number doesn't tumble.
 const MIN_DECREMENT_GAP_MS = 110_000; // ~1m50s minimum between drops
