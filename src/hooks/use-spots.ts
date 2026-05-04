@@ -24,6 +24,8 @@ const LEGACY_KEYS = [
   "nefertiti_spots_last_tick_v2",
   "nefertiti_spots_remaining_v3",
   "nefertiti_spots_last_tick_v3",
+  "nefertiti_spots_remaining_v4",
+  "nefertiti_spots_last_tick_v4",
 ];
 
 const INITIAL_SPOTS = 13;
