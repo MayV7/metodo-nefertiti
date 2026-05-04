@@ -12,6 +12,7 @@ import { Header } from "@/components/Header";
 import { TopCountdown } from "@/components/TopCountdown";
 import { SocialProofPopup } from "@/components/SocialProofPopup";
 import { StickyBottomBar } from "@/components/StickyBottomBar";
+import { SpotsResetButton } from "@/components/SpotsResetButton";
 import { CTAButton } from "@/components/CTAButton";
 import { Reveal } from "@/components/Reveal";
 import { WhatsAppProof } from "@/components/WhatsAppProof";
@@ -79,6 +80,7 @@ function LandingPage() {
       <Header />
       <SocialProofPopup />
       <StickyBottomBar />
+      <SpotsResetButton />
 
       <Hero />
       <Pain />

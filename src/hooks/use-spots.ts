@@ -14,8 +14,8 @@ import { useSyncExternalStore } from "react";
  *   freezes if the popup misses a tick.
  */
 
-const STORAGE_KEY = "nefertiti_spots_remaining_v4";
-const STORAGE_LAST = "nefertiti_spots_last_tick_v4";
+const STORAGE_KEY = "nefertiti_spots_remaining_v5";
+const STORAGE_LAST = "nefertiti_spots_last_tick_v5";
 const LEGACY_KEYS = [
   "nefertiti_spots_remaining",
   "nefertiti_spots_last_tick",
@@ -24,11 +24,18 @@ const LEGACY_KEYS = [
   "nefertiti_spots_last_tick_v2",
   "nefertiti_spots_remaining_v3",
   "nefertiti_spots_last_tick_v3",
+  "nefertiti_spots_remaining_v4",
+  "nefertiti_spots_last_tick_v4",
 ];
 
 const INITIAL_SPOTS = 13;
 const MIN_SPOTS = 3;
-const POPUP_CADENCE_MS = 40_000;
+// Popups still fire every ~40s (see SocialProofPopup), but the counter
+// decouples from popup cadence — see MIN_DECREMENT_GAP_MS below.
+// Spots should feel organic: not every popup decrements the counter, and
+// there's a minimum gap between decrements so the number doesn't tumble.
+const MIN_DECREMENT_GAP_MS = 110_000; // ~1m50s minimum between drops
+const DECREMENT_PROBABILITY = 0.45;   // ~45% of eligible popups actually decrement
 
 type State = { spots: number; lastTick: number };
 
@@ -66,7 +73,20 @@ function setSpots(next: number, lastTick: number = state.lastTick) {
 
 function tick() {
   if (state.spots <= MIN_SPOTS) return;
-  setSpots(state.spots - 1, Date.now());
+  const now = Date.now();
+  // Enforce a minimum gap between decrements so vacancies feel natural.
+  if (state.lastTick && now - state.lastTick < MIN_DECREMENT_GAP_MS) return;
+  // Probabilistic decrement — not every popup drops a spot.
+  if (Math.random() > DECREMENT_PROBABILITY) return;
+  setSpots(state.spots - 1, now);
+}
+
+export function resetSpots() {
+  if (typeof window === "undefined") return;
+  state = { spots: INITIAL_SPOTS, lastTick: Date.now() };
+  cachedSnapshot = INITIAL_SPOTS;
+  persist();
+  emit();
 }
 
 function bootstrap() {
@@ -92,10 +112,17 @@ function bootstrap() {
 
   const now = Date.now();
   if (lastTick && stored > MIN_SPOTS) {
-    const elapsed = Math.floor((now - lastTick) / POPUP_CADENCE_MS);
-    if (elapsed > 0) {
-      stored = Math.max(MIN_SPOTS, stored - elapsed);
-      lastTick = lastTick + elapsed * POPUP_CADENCE_MS;
+    // Catch up organically: one possible decrement per MIN_DECREMENT_GAP_MS
+    // window elapsed, capped so we never drain too fast on long absences.
+    const windows = Math.floor((now - lastTick) / MIN_DECREMENT_GAP_MS);
+    const cappedWindows = Math.min(windows, 4);
+    let drops = 0;
+    for (let i = 0; i < cappedWindows; i++) {
+      if (Math.random() <= DECREMENT_PROBABILITY) drops++;
+    }
+    if (drops > 0) {
+      stored = Math.max(MIN_SPOTS, stored - drops);
+      lastTick = now;
     }
   } else if (!lastTick) {
     lastTick = now;
@@ -106,13 +133,16 @@ function bootstrap() {
   persist();
 
   window.addEventListener("nefertiti:buyer-shown", () => tick());
+  window.addEventListener("nefertiti:spots-reset", () => resetSpots());
 
+  // Wall-clock fallback: if no popup fires for too long, still try to tick
+  // (still gated by MIN_DECREMENT_GAP_MS + probability inside tick()).
   window.setInterval(() => {
     if (state.spots <= MIN_SPOTS) return;
-    if (Date.now() - state.lastTick >= POPUP_CADENCE_MS + 2500) {
+    if (Date.now() - state.lastTick >= MIN_DECREMENT_GAP_MS + 30_000) {
       tick();
     }
-  }, 1000);
+  }, 5000);
 
   window.addEventListener("storage", (e) => {
     if (e.key !== STORAGE_KEY || !e.newValue) return;
