@@ -80,6 +80,7 @@ function LandingPage() {
       <Header />
       <SocialProofPopup />
       <StickyBottomBar />
+      <SpotsResetButton />
 
       <Hero />
       <Pain />
