@@ -29,6 +29,10 @@ const LEGACY_KEYS = [
 const INITIAL_SPOTS = 13;
 const MIN_SPOTS = 3;
 const POPUP_CADENCE_MS = 40_000;
+// Spots should feel organic: not every popup decrements the counter, and
+// there's a minimum gap between decrements so the number doesn't tumble.
+const MIN_DECREMENT_GAP_MS = 110_000; // ~1m50s minimum between drops
+const DECREMENT_PROBABILITY = 0.45;   // ~45% of eligible popups actually decrement
 
 type State = { spots: number; lastTick: number };
 
