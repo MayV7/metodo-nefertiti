@@ -14,6 +14,8 @@ import { useSyncExternalStore } from "react";
  *   freezes if the popup misses a tick.
  */
 
+const STORAGE_KEY = "nefertiti_spots_remaining_v4";
+const STORAGE_LAST = "nefertiti_spots_last_tick_v4";
 const LEGACY_KEYS = [
   "nefertiti_spots_remaining",
   "nefertiti_spots_last_tick",
