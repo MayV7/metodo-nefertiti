@@ -70,7 +70,20 @@ function setSpots(next: number, lastTick: number = state.lastTick) {
 
 function tick() {
   if (state.spots <= MIN_SPOTS) return;
-  setSpots(state.spots - 1, Date.now());
+  const now = Date.now();
+  // Enforce a minimum gap between decrements so vacancies feel natural.
+  if (state.lastTick && now - state.lastTick < MIN_DECREMENT_GAP_MS) return;
+  // Probabilistic decrement — not every popup drops a spot.
+  if (Math.random() > DECREMENT_PROBABILITY) return;
+  setSpots(state.spots - 1, now);
+}
+
+export function resetSpots() {
+  if (typeof window === "undefined") return;
+  state = { spots: INITIAL_SPOTS, lastTick: Date.now() };
+  cachedSnapshot = INITIAL_SPOTS;
+  persist();
+  emit();
 }
 
 function bootstrap() {
@@ -96,10 +109,17 @@ function bootstrap() {
 
   const now = Date.now();
   if (lastTick && stored > MIN_SPOTS) {
-    const elapsed = Math.floor((now - lastTick) / POPUP_CADENCE_MS);
-    if (elapsed > 0) {
-      stored = Math.max(MIN_SPOTS, stored - elapsed);
-      lastTick = lastTick + elapsed * POPUP_CADENCE_MS;
+    // Catch up organically: one possible decrement per MIN_DECREMENT_GAP_MS
+    // window elapsed, capped so we never drain too fast on long absences.
+    const windows = Math.floor((now - lastTick) / MIN_DECREMENT_GAP_MS);
+    const cappedWindows = Math.min(windows, 4);
+    let drops = 0;
+    for (let i = 0; i < cappedWindows; i++) {
+      if (Math.random() <= DECREMENT_PROBABILITY) drops++;
+    }
+    if (drops > 0) {
+      stored = Math.max(MIN_SPOTS, stored - drops);
+      lastTick = now;
     }
   } else if (!lastTick) {
     lastTick = now;
@@ -110,13 +130,16 @@ function bootstrap() {
   persist();
 
   window.addEventListener("nefertiti:buyer-shown", () => tick());
+  window.addEventListener("nefertiti:spots-reset", () => resetSpots());
 
+  // Wall-clock fallback: if no popup fires for too long, still try to tick
+  // (still gated by MIN_DECREMENT_GAP_MS + probability inside tick()).
   window.setInterval(() => {
     if (state.spots <= MIN_SPOTS) return;
-    if (Date.now() - state.lastTick >= POPUP_CADENCE_MS + 2500) {
+    if (Date.now() - state.lastTick >= MIN_DECREMENT_GAP_MS + 30_000) {
       tick();
     }
-  }, 1000);
+  }, 5000);
 
   window.addEventListener("storage", (e) => {
     if (e.key !== STORAGE_KEY || !e.newValue) return;
