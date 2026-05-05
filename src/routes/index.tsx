@@ -114,55 +114,81 @@ function Hero() {
         style={{ backgroundImage: "radial-gradient(circle at 20% 10%, oklch(0.82 0.075 35 / 0.4), transparent 50%), radial-gradient(circle at 80% 70%, oklch(0.95 0.025 75 / 0.7), transparent 60%)" }} />
       <div className="container mx-auto px-4 relative">
         <Reveal>
-          <div className="flex justify-center mb-6">
+          <div className="flex justify-center mb-8 lg:mb-10">
             <img src={logo} alt="Método Nefertiti" width={200} height={200} fetchPriority="high" decoding="async" className="h-16 md:h-24 w-auto float-soft" />
           </div>
         </Reveal>
 
-        <div className="max-w-3xl mx-auto text-center">
-          <Reveal delay={0.2}>
-            <h1 className="text-foreground">
-              <span className="hero-headline block">
-                <span className="hero-power">Como 3.847 Mulheres</span>
-                <span className="block mt-3">Transformaram a Dor do Término na Arma Mais Poderosa Para Conquistar Homens de Alto Valor</span>
-                <span className="accent block mt-3">E Passaram de Rejeitadas a Irresistíveis</span>
-                <span className="block mt-3">Utilizando Este Método...</span>
-              </span>
-            </h1>
-          </Reveal>
-          <Reveal delay={0.32}>
-            <p className="mt-6 inline-flex items-center gap-2 text-[0.7rem] md:text-xs text-rose-gold-deep uppercase tracking-[0.4em] font-heading font-semibold">
-              <Sparkles className="h-3.5 w-3.5" />
-              Validado por Harvard · +3.847 mulheres
-              <Sparkles className="h-3.5 w-3.5" />
-            </p>
-          </Reveal>
-          <Reveal delay={0.4}>
-            <p className="hero-sub mt-6 max-w-2xl mx-auto">
-              O <strong>único sistema de reversão emocional</strong> que faz ex-parceiros se arrependerem de terem te perdido — e homens que antes te ignoravam <em>implorarem</em> por sua atenção.
-            </p>
-          </Reveal>
-          <Reveal delay={0.5}>
-            <div className="mt-8 flex flex-col items-center gap-3">
-              <CTAButton size="xl">👑 Quero meu acesso agora</CTAButton>
-              <p className="text-xs text-muted-foreground italic max-w-md">
-                Clique e garanta seu acesso imediato. Esta é a sua última chance. Vagas limitadas!
+        <div className="grid lg:grid-cols-[3fr_2fr] gap-10 lg:gap-14 items-center max-w-6xl mx-auto">
+          {/* COPY — 60% desktop */}
+          <div className="text-center lg:text-left">
+            <Reveal delay={0.15}>
+              <p className="inline-flex items-center gap-2 text-[0.7rem] md:text-xs text-rose-gold-deep uppercase tracking-[0.4em] font-heading font-semibold mb-5">
+                <Sparkles className="h-3.5 w-3.5" />
+                Validado por Harvard · +3.847 mulheres
+                <Sparkles className="h-3.5 w-3.5" />
               </p>
+            </Reveal>
+            <Reveal delay={0.2}>
+              <h1 className="text-foreground">
+                <span className="hero-headline block">
+                  <span className="hero-power">Como 3.847 Mulheres</span>
+                  <span className="block mt-3">Transformaram a Dor do Término na Arma Mais Poderosa Para Conquistar Homens de Alto Valor</span>
+                  <span className="accent block mt-3">E Passaram de Rejeitadas a Irresistíveis</span>
+                  <span className="block mt-3">em apenas 21 dias…</span>
+                </span>
+              </h1>
+            </Reveal>
+            <Reveal delay={0.4}>
+              <p className="hero-sub mt-6 max-w-2xl mx-auto lg:mx-0">
+                O <strong>único sistema de reversão emocional</strong> que faz ex-parceiros se arrependerem de terem te perdido — e homens que antes te ignoravam <em>implorarem</em> por sua atenção.
+              </p>
+            </Reveal>
+            <Reveal delay={0.5}>
+              <div className="mt-8 flex flex-col items-center lg:items-start gap-3">
+                <CTAButton size="xl">👑 Quero meu acesso agora</CTAButton>
+                <p className="text-xs text-muted-foreground italic max-w-md">
+                  Acesso imediato · Garantia incondicional de 7 dias · Restam apenas <AnimatedSpots className="text-rose-gold-deep font-bold" /> vagas neste lote.
+                </p>
+              </div>
+            </Reveal>
+            <Reveal delay={0.65}>
+              <ul className="mt-8 grid sm:grid-cols-3 gap-3 text-left max-w-2xl mx-auto lg:mx-0">
+                {[
+                  "Acesso imediato e vitalício",
+                  "Garantia de 7 dias — risco zero",
+                  "+3.847 mulheres transformadas",
+                ].map((t) => (
+                  <li key={t} className="flex items-start gap-2 text-sm font-medium text-foreground">
+                    <CheckCircle2 className="h-5 w-5 text-rose-gold-deep shrink-0 mt-0.5" />
+                    <span>{t}</span>
+                  </li>
+                ))}
+              </ul>
+            </Reveal>
+          </div>
+
+          {/* MOCKUP — 40% desktop */}
+          <Reveal delay={0.3}>
+            <div className="relative mx-auto max-w-sm lg:max-w-none">
+              <div className="absolute -inset-6 bg-rose-gold-gradient opacity-30 blur-3xl rounded-full pointer-events-none" />
+              <img
+                src={mockup}
+                alt="Método Nefertiti — acesso em todos os dispositivos"
+                width={800}
+                height={800}
+                fetchPriority="high"
+                decoding="async"
+                className="relative w-full h-auto float-soft drop-shadow-[0_20px_40px_rgba(0,0,0,0.25)]"
+              />
+              <div className="relative mt-4 flex items-center justify-center gap-2 text-[10px] md:text-xs text-rose-gold-deep uppercase tracking-[0.3em] font-heading font-semibold">
+                <Smartphone className="h-3.5 w-3.5" /> Celular
+                <span className="opacity-30">·</span>
+                <Tablet className="h-3.5 w-3.5" /> Tablet
+                <span className="opacity-30">·</span>
+                <Monitor className="h-3.5 w-3.5" /> Computador
+              </div>
             </div>
-          </Reveal>
-          <Reveal delay={0.65}>
-            <ul className="mt-10 grid sm:grid-cols-3 gap-3 text-left max-w-2xl mx-auto">
-              {[
-                "Acesso Imediato e Vitalício — sua transformação começa hoje",
-                "Garantia Incondicional de 7 Dias — seu risco é ZERO",
-                "+3.847 Mulheres Transformadas — junte-se ao exército de rainhas",
-              ].map((t) => (
-                <li key={t} className="flex items-start gap-2 text-sm font-medium text-foreground">
-                  <CheckCircle2 className="h-5 w-5 text-rose-gold-deep shrink-0 mt-0.5" />
-                  <span>{t}</span>
-                </li>
-              ))}
-            </ul>
           </Reveal>
         </div>
       </div>
