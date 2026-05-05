@@ -16,7 +16,7 @@ import alunaRenata from "@/assets/aluna-renata.webp";
 import alunaAmanda from "@/assets/aluna-amanda.webp";
 import alunaLarissa from "@/assets/aluna-larissa.webp";
 import alunaTatiane from "@/assets/aluna-tatiane.webp";
-import alunaIsabela from "@/assets/aluna-isabela.webp">;
+import alunaIsabela from "@/assets/aluna-isabela.webp";
 
 type Msg = {
   from: "aluna" | "marina";
