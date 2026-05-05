@@ -146,7 +146,7 @@ function Hero() {
             </Reveal>
             <Reveal delay={0.5}>
               <div className="mt-8 flex flex-col items-center lg:items-start gap-3">
-                <CTAButton size="xl">👑 Quero meu acesso agora</CTAButton>
+                <CTAButton size="xl" />
                 <p className="text-xs text-muted-foreground italic max-w-md">
                   Acesso imediato · Garantia incondicional de 7 dias · Restam apenas <AnimatedSpots className="text-rose-gold-deep font-bold" /> vagas neste lote.
                 </p>
@@ -262,7 +262,7 @@ function Pain() {
             <p className="text-lg text-foreground max-w-2xl mx-auto mb-8">
               Se você assentiu para pelo menos 3 dessas afirmações, você não está sozinha. E, mais importante: <strong>você está no lugar CERTO!</strong> O que vou compartilhar com você nas próximas linhas não vai apenas mudar a forma como você se vê, mas como o mundo inteiro — e principalmente os homens — te veem.
             </p>
-            <CTAButton size="xl">✨ Clique aqui para entrar para o <span className="font-display italic">Método Nefertiti</span></CTAButton>
+            <CTAButton size="xl" />
           </div>
         </Reveal>
       </div>
@@ -356,7 +356,7 @@ function FirstResults() {
 
         <Reveal delay={0.3}>
           <div className="text-center mt-14">
-            <CTAButton size="xl">Desperte sua Rainha Interior agora</CTAButton>
+            <CTAButton size="xl" />
           </div>
         </Reveal>
       </div>
@@ -482,7 +482,7 @@ function Discovery() {
               Hoje, <strong className="text-rose-gold-gradient">+4 anos depois</strong>, já ajudei +3.847 mulheres a fazerem a mesma transformação e ressignificarem suas vidas amorosas. Elas não apenas superaram o término — elas <strong>DOMINARAM</strong> a arte da atração. E agora é <span className="text-rose-gold-gradient font-bold">SUA vez</span>. Não amanhã. Não depois. <strong>AGORA</strong>.
             </p>
             <div className="mt-8">
-              <CTAButton size="xl">👑 Desperte sua Rainha Interior agora</CTAButton>
+              <CTAButton size="xl" />
             </div>
           </div>
         </Reveal>
@@ -642,7 +642,7 @@ function MoreProof() {
         </div>
         <Reveal delay={0.3}>
           <div className="text-center mt-12">
-            <CTAButton size="xl">Desperte seu poder Nefertiti</CTAButton>
+            <CTAButton size="xl" />
           </div>
         </Reveal>
       </div>
@@ -900,7 +900,7 @@ function Offer() {
               </p>
 
               <div className="mt-8">
-                <CTAButton size="xl">Entrar agora para o Método Nefertiti</CTAButton>
+                <CTAButton size="xl" />
               </div>
 
               <div className="mt-6 flex flex-wrap items-center justify-center gap-4 text-sm text-muted-foreground">
@@ -981,7 +981,7 @@ function Decision() {
               A escolha é sua. Mas lembre-se: <strong className="text-rose-gold-deep">apenas <AnimatedSpots className="font-bold" /> vagas restantes</strong> e este preço especial <strong>nunca mais</strong> será oferecido.
             </p>
             <div className="mt-8">
-              <CTAButton size="xl">Entrar agora para o Método Nefertiti</CTAButton>
+              <CTAButton size="xl" />
             </div>
           </div>
         </Reveal>
@@ -1141,7 +1141,7 @@ function PostGuaranteePrice() {
                 </div>
 
                 <div className="mt-6">
-                  <CTAButton size="xl">Quero garantir meu acesso agora</CTAButton>
+                  <CTAButton size="xl" />
                 </div>
 
                 <div className="mt-5 flex items-center justify-center gap-4 text-foreground/60 text-xs">
@@ -1264,7 +1264,7 @@ function FAQ() {
 
         <Reveal delay={0.3}>
           <div className="text-center mt-12">
-            <CTAButton size="xl">Entrar agora para o Método Nefertiti</CTAButton>
+            <CTAButton size="xl" />
           </div>
         </Reveal>
       </div>
@@ -1325,7 +1325,7 @@ function Scarcity() {
 
         <Reveal delay={0.3}>
           <div className="text-center mt-10">
-            <CTAButton size="xl">Entrar agora para o Método Nefertiti</CTAButton>
+            <CTAButton size="xl" />
           </div>
         </Reveal>
       </div>
@@ -1369,7 +1369,7 @@ function Objections() {
         </div>
         <Reveal delay={0.3}>
           <div className="text-center mt-12">
-            <CTAButton size="xl">Desperte sua Rainha Interior agora</CTAButton>
+            <CTAButton size="xl" />
           </div>
         </Reveal>
       </div>
