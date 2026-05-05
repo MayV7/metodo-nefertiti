@@ -84,8 +84,7 @@ function LandingPage() {
 
       <Hero />
       <Pain />
-      <FirstResults />
-      <WhatsAppProof />
+      <MarinaStory />
       <Discovery />
       <Triggers />
       <Method />
@@ -93,12 +92,13 @@ function LandingPage() {
       <Bonuses />
       <Devices />
       <Offer />
+      <FirstResults />
+      <WhatsAppProof />
       <MoreProof />
-      <Decision />
       <Guarantee />
+      <Decision />
       <PostGuaranteePrice />
       <FAQ />
-      <MarinaStory />
       <Scarcity />
       <Objections />
       <Footer />
