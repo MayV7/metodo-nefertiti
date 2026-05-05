@@ -853,15 +853,50 @@ function Offer() {
               </div>
             </div>
 
+            <div className="mt-10">
+              <p className="text-center font-heading uppercase tracking-[0.3em] text-rose-gold-deep text-xs mb-5">
+                Tudo o que você recebe hoje
+              </p>
+              <ul className="space-y-2.5 max-w-xl mx-auto text-sm md:text-base">
+                {[
+                  { item: "Método Nefertiti completo (6 módulos)", value: "R$ 1.497" },
+                  { item: "Bônus #1 — Protocolo de Reconquista em 21 dias", value: "R$ 397" },
+                  { item: "Bônus #2 — Scripts de Conversa Magnética", value: "R$ 297" },
+                  { item: "Bônus #3 — Diário da Rainha (PDF guiado)", value: "R$ 197" },
+                  { item: "Bônus #4 — Comunidade privada vitalícia", value: "R$ 497" },
+                  { item: "Acesso vitalício + atualizações futuras", value: "R$ 397" },
+                ].map((row) => (
+                  <li
+                    key={row.item}
+                    className="flex items-start justify-between gap-4 py-2 border-b border-rose-gold/15 last:border-b-0"
+                  >
+                    <span className="flex items-start gap-2 text-foreground">
+                      <CheckCircle2 className="h-4 w-4 text-rose-gold-deep shrink-0 mt-1" />
+                      {row.item}
+                    </span>
+                    <span className="font-heading font-semibold text-muted-foreground tabular-nums shrink-0">
+                      {row.value}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-5 flex items-center justify-between gap-4 max-w-xl mx-auto bg-muted/60 rounded-2xl px-5 py-4 border border-rose-gold/20">
+                <span className="font-heading uppercase tracking-wider text-foreground text-sm">Valor real</span>
+                <span className="font-display text-xl md:text-2xl font-bold text-foreground line-through opacity-70 tabular-nums">
+                  R$ 3.282
+                </span>
+              </div>
+            </div>
+
             <div className="mt-10 text-center">
               <p className="price-original">De R$ 997,00</p>
-              <p className="mt-3 font-heading text-xs md:text-sm uppercase tracking-[0.4em] text-rose-gold-deep">Por apenas</p>
+              <p className="mt-3 font-heading text-xs md:text-sm uppercase tracking-[0.4em] text-rose-gold-deep">Hoje, por apenas</p>
               <p className="mt-3 leading-none">
                 <span className="price-hero-prefix">12x</span>
                 <span className="price-hero">R$ 14<span className="price-hero-cents">,70</span></span>
               </p>
               <p className="price-sub mt-4 text-muted-foreground">
-                ou <strong className="text-foreground">R$ 147,00</strong> à vista no PIX
+                ou <strong className="text-foreground">R$ 147,00</strong> à vista no PIX — <span className="text-rose-gold-deep font-semibold">menos de R$ 0,50/dia</span> pela sua transformação
               </p>
 
               <div className="mt-8">
