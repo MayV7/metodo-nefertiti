@@ -36,15 +36,15 @@ import ogImage from "@/assets/og-nefertiti.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => {
-    const title = "Método Nefertiti — Desperte sua Rainha Interior em 21 Dias";
+    const title = "Método Nefertiti — Reconquiste sua Autoestima e Presença em 21 Dias";
     const description =
-      "Sistema de Reversão Psicológica validado por Harvard que já transformou +3.847 mulheres. Transforme a dor da rejeição em magnetismo irresistível e atraia homens de alto valor em 21 dias.";
+      "Programa de 21 dias inspirado em estudos comportamentais (referenciados em Harvard), com mais de 3.847 mulheres atendidas. Reconstrua sua autoestima, presença feminina e magnetismo natural — do seu jeito, no seu tempo.";
     const url = "https://pay.kiwify.com.br/iX5ySX9";
     return {
       meta: [
         { title },
         { name: "description", content: description },
-        { name: "keywords", content: "método nefertiti, reconquista, autoestima feminina, magnetismo, atração, superar término, rainha interior, marina nefertiti" },
+        { name: "keywords", content: "método nefertiti, autoestima feminina, presença, magnetismo natural, superar término, autoconhecimento, rainha interior, marina nefertiti" },
         { name: "author", content: "Marina — Método Nefertiti" },
         { name: "robots", content: "index, follow, max-image-preview:large" },
         { name: "theme-color", content: "#c98a73" },
@@ -125,7 +125,7 @@ function Hero() {
             <Reveal delay={0.15}>
               <p className="inline-flex items-center gap-2 text-[0.7rem] md:text-xs text-rose-gold-deep uppercase tracking-[0.4em] font-heading font-semibold mb-5">
                 <Sparkles className="h-3.5 w-3.5" />
-                Validado por Harvard · +3.847 mulheres
+                Inspirado em estudos comportamentais · +3.847 alunas
                 <Sparkles className="h-3.5 w-3.5" />
               </p>
             </Reveal>
@@ -133,15 +133,15 @@ function Hero() {
               <h1 className="text-foreground">
                 <span className="hero-headline block">
                   <span className="hero-power">Como 3.847 Mulheres</span>
-                  <span className="block mt-3">Transformaram a Dor do Término na Arma Mais Poderosa Para Conquistar Homens de Alto Valor</span>
-                  <span className="accent block mt-3">E Passaram de Rejeitadas a Irresistíveis</span>
+                  <span className="block mt-3">Transformaram a Dor do Término em Autoestima, Presença e Magnetismo Natural</span>
+                  <span className="accent block mt-3">E Voltaram a se Sentir Desejadas, Inteiras e no Comando</span>
                   <span className="block mt-3">em apenas 21 dias…</span>
                 </span>
               </h1>
             </Reveal>
             <Reveal delay={0.4}>
               <p className="hero-sub mt-6 max-w-2xl mx-auto lg:mx-0">
-                O <strong>único sistema de reversão emocional</strong> que faz ex-parceiros se arrependerem de terem te perdido — e homens que antes te ignoravam <em>implorarem</em> por sua atenção.
+                Um <strong>programa de transformação emocional</strong> que te ajuda a reconstruir presença, autoconfiança e magnetismo natural — para você se sentir desejada e voltar a escolher os relacionamentos que merece.
               </p>
             </Reveal>
             <Reveal delay={0.5}>
@@ -281,7 +281,7 @@ function FirstResults() {
   const testimonials = [
     {
       name: "Fernanda M.", age: 36, role: "Publicitária", photo: tFernanda,
-      text: "Em apenas 10 dias aplicando o Método Nefertiti, meu ex (que havia me bloqueado há 3 meses) apareceu na porta da minha casa com flores. Hoje estou com alguém 10x melhor!",
+      text: "Em apenas 10 dias aplicando o Método Nefertiti, meu ex (que havia me bloqueado há 3 meses) voltou a me procurar. Mas o mais importante: hoje estou com alguém que me valoriza de verdade.",
       highlight: "Desenvolveu poder de escolha total.",
     },
     {
@@ -430,7 +430,7 @@ function Discovery() {
               O <span className="text-rose-gold-gradient">"Efeito Inversão Psicológica"</span> — sua arma secreta
             </h2>
             <p className="mt-6 text-pearl/85 leading-relaxed">
-              Dra. Sophia me mostrou estudos da Universidade de Harvard que provavam: homens relatam <strong className="text-rose-gold-gradient">347% mais atração</strong> por mulheres que demonstram "disponibilidade seletiva" — estar presente, mas não necessitada. Não é sobre joguinhos; é sobre <strong>valor intrínseco</strong>.
+              Dra. Sophia me mostrou pesquisas comportamentais de referência (incluindo trabalhos divulgados por Harvard) sugerindo que homens relatam atração significativamente maior por mulheres que praticam o que ela chama de <strong className="text-rose-gold-gradient">"disponibilidade seletiva"</strong> — estar presente, mas não necessitada. Não é sobre joguinhos; é sobre <strong>valor intrínseco</strong>.
             </p>
             <p className="mt-4 text-pearl/85 leading-relaxed">
               E o que aconteceu depois que Marina aplicou esse conhecimento? A transformação foi <strong className="text-rose-gold-gradient">IMEDIATA e IRREVERSÍVEL</strong>:
@@ -953,7 +953,7 @@ function Decision() {
                 Continue vivendo a mesma dor, a mesma insegurança, a mesma sensação de que "nunca mais vai ser a mesma" — e ainda fique com aquele arrependimento por não ter entrado para o <span className="font-display italic">Método Nefertiti</span>.
               </p>
               <p className="mt-4 text-foreground/70 leading-relaxed text-[15px]">
-                Continue vendo outras mulheres conquistarem os homens que você deseja. Continue se sentindo invisível, rejeitada, sem valor — e ainda somado a tudo isso, um coração partido e uma ferida que não cicatriza. 😪
+                Continue vendo outras mulheres conquistarem os homens que você deseja. Continue se sentindo invisível e desvalorizada — e ainda somado a tudo isso, um coração partido e uma ferida que não cicatriza. 😪
               </p>
             </div>
           </Reveal>
