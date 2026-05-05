@@ -84,8 +84,7 @@ function LandingPage() {
 
       <Hero />
       <Pain />
-      <FirstResults />
-      <WhatsAppProof />
+      <MarinaStory />
       <Discovery />
       <Triggers />
       <Method />
@@ -93,12 +92,13 @@ function LandingPage() {
       <Bonuses />
       <Devices />
       <Offer />
+      <FirstResults />
+      <WhatsAppProof />
       <MoreProof />
-      <Decision />
       <Guarantee />
+      <Decision />
       <PostGuaranteePrice />
       <FAQ />
-      <MarinaStory />
       <Scarcity />
       <Objections />
       <Footer />
@@ -114,55 +114,81 @@ function Hero() {
         style={{ backgroundImage: "radial-gradient(circle at 20% 10%, oklch(0.82 0.075 35 / 0.4), transparent 50%), radial-gradient(circle at 80% 70%, oklch(0.95 0.025 75 / 0.7), transparent 60%)" }} />
       <div className="container mx-auto px-4 relative">
         <Reveal>
-          <div className="flex justify-center mb-6">
+          <div className="flex justify-center mb-8 lg:mb-10">
             <img src={logo} alt="Método Nefertiti" width={200} height={200} fetchPriority="high" decoding="async" className="h-16 md:h-24 w-auto float-soft" />
           </div>
         </Reveal>
 
-        <div className="max-w-3xl mx-auto text-center">
-          <Reveal delay={0.2}>
-            <h1 className="text-foreground">
-              <span className="hero-headline block">
-                <span className="hero-power">Como 3.847 Mulheres</span>
-                <span className="block mt-3">Transformaram a Dor do Término na Arma Mais Poderosa Para Conquistar Homens de Alto Valor</span>
-                <span className="accent block mt-3">E Passaram de Rejeitadas a Irresistíveis</span>
-                <span className="block mt-3">Utilizando Este Método...</span>
-              </span>
-            </h1>
-          </Reveal>
-          <Reveal delay={0.32}>
-            <p className="mt-6 inline-flex items-center gap-2 text-[0.7rem] md:text-xs text-rose-gold-deep uppercase tracking-[0.4em] font-heading font-semibold">
-              <Sparkles className="h-3.5 w-3.5" />
-              Validado por Harvard · +3.847 mulheres
-              <Sparkles className="h-3.5 w-3.5" />
-            </p>
-          </Reveal>
-          <Reveal delay={0.4}>
-            <p className="hero-sub mt-6 max-w-2xl mx-auto">
-              O <strong>único sistema de reversão emocional</strong> que faz ex-parceiros se arrependerem de terem te perdido — e homens que antes te ignoravam <em>implorarem</em> por sua atenção.
-            </p>
-          </Reveal>
-          <Reveal delay={0.5}>
-            <div className="mt-8 flex flex-col items-center gap-3">
-              <CTAButton size="xl">👑 Quero meu acesso agora</CTAButton>
-              <p className="text-xs text-muted-foreground italic max-w-md">
-                Clique e garanta seu acesso imediato. Esta é a sua última chance. Vagas limitadas!
+        <div className="grid lg:grid-cols-[3fr_2fr] gap-10 lg:gap-14 items-center max-w-6xl mx-auto">
+          {/* COPY — 60% desktop */}
+          <div className="text-center lg:text-left">
+            <Reveal delay={0.15}>
+              <p className="inline-flex items-center gap-2 text-[0.7rem] md:text-xs text-rose-gold-deep uppercase tracking-[0.4em] font-heading font-semibold mb-5">
+                <Sparkles className="h-3.5 w-3.5" />
+                Validado por Harvard · +3.847 mulheres
+                <Sparkles className="h-3.5 w-3.5" />
               </p>
+            </Reveal>
+            <Reveal delay={0.2}>
+              <h1 className="text-foreground">
+                <span className="hero-headline block">
+                  <span className="hero-power">Como 3.847 Mulheres</span>
+                  <span className="block mt-3">Transformaram a Dor do Término na Arma Mais Poderosa Para Conquistar Homens de Alto Valor</span>
+                  <span className="accent block mt-3">E Passaram de Rejeitadas a Irresistíveis</span>
+                  <span className="block mt-3">em apenas 21 dias…</span>
+                </span>
+              </h1>
+            </Reveal>
+            <Reveal delay={0.4}>
+              <p className="hero-sub mt-6 max-w-2xl mx-auto lg:mx-0">
+                O <strong>único sistema de reversão emocional</strong> que faz ex-parceiros se arrependerem de terem te perdido — e homens que antes te ignoravam <em>implorarem</em> por sua atenção.
+              </p>
+            </Reveal>
+            <Reveal delay={0.5}>
+              <div className="mt-8 flex flex-col items-center lg:items-start gap-3">
+                <CTAButton size="xl">👑 Quero meu acesso agora</CTAButton>
+                <p className="text-xs text-muted-foreground italic max-w-md">
+                  Acesso imediato · Garantia incondicional de 7 dias · Restam apenas <AnimatedSpots className="text-rose-gold-deep font-bold" /> vagas neste lote.
+                </p>
+              </div>
+            </Reveal>
+            <Reveal delay={0.65}>
+              <ul className="mt-8 grid sm:grid-cols-3 gap-3 text-left max-w-2xl mx-auto lg:mx-0">
+                {[
+                  "Acesso imediato e vitalício",
+                  "Garantia de 7 dias — risco zero",
+                  "+3.847 mulheres transformadas",
+                ].map((t) => (
+                  <li key={t} className="flex items-start gap-2 text-sm font-medium text-foreground">
+                    <CheckCircle2 className="h-5 w-5 text-rose-gold-deep shrink-0 mt-0.5" />
+                    <span>{t}</span>
+                  </li>
+                ))}
+              </ul>
+            </Reveal>
+          </div>
+
+          {/* MOCKUP — 40% desktop */}
+          <Reveal delay={0.3}>
+            <div className="relative mx-auto max-w-sm lg:max-w-none">
+              <div className="absolute -inset-6 bg-rose-gold-gradient opacity-30 blur-3xl rounded-full pointer-events-none" />
+              <img
+                src={mockup}
+                alt="Método Nefertiti — acesso em todos os dispositivos"
+                width={800}
+                height={800}
+                fetchPriority="high"
+                decoding="async"
+                className="relative w-full h-auto float-soft drop-shadow-[0_20px_40px_rgba(0,0,0,0.25)]"
+              />
+              <div className="relative mt-4 flex items-center justify-center gap-2 text-[10px] md:text-xs text-rose-gold-deep uppercase tracking-[0.3em] font-heading font-semibold">
+                <Smartphone className="h-3.5 w-3.5" /> Celular
+                <span className="opacity-30">·</span>
+                <Tablet className="h-3.5 w-3.5" /> Tablet
+                <span className="opacity-30">·</span>
+                <Monitor className="h-3.5 w-3.5" /> Computador
+              </div>
             </div>
-          </Reveal>
-          <Reveal delay={0.65}>
-            <ul className="mt-10 grid sm:grid-cols-3 gap-3 text-left max-w-2xl mx-auto">
-              {[
-                "Acesso Imediato e Vitalício — sua transformação começa hoje",
-                "Garantia Incondicional de 7 Dias — seu risco é ZERO",
-                "+3.847 Mulheres Transformadas — junte-se ao exército de rainhas",
-              ].map((t) => (
-                <li key={t} className="flex items-start gap-2 text-sm font-medium text-foreground">
-                  <CheckCircle2 className="h-5 w-5 text-rose-gold-deep shrink-0 mt-0.5" />
-                  <span>{t}</span>
-                </li>
-              ))}
-            </ul>
           </Reveal>
         </div>
       </div>
@@ -827,15 +853,50 @@ function Offer() {
               </div>
             </div>
 
+            <div className="mt-10">
+              <p className="text-center font-heading uppercase tracking-[0.3em] text-rose-gold-deep text-xs mb-5">
+                Tudo o que você recebe hoje
+              </p>
+              <ul className="space-y-2.5 max-w-xl mx-auto text-sm md:text-base">
+                {[
+                  { item: "Método Nefertiti completo (6 módulos)", value: "R$ 1.497" },
+                  { item: "Bônus #1 — Protocolo de Reconquista em 21 dias", value: "R$ 397" },
+                  { item: "Bônus #2 — Scripts de Conversa Magnética", value: "R$ 297" },
+                  { item: "Bônus #3 — Diário da Rainha (PDF guiado)", value: "R$ 197" },
+                  { item: "Bônus #4 — Comunidade privada vitalícia", value: "R$ 497" },
+                  { item: "Acesso vitalício + atualizações futuras", value: "R$ 397" },
+                ].map((row) => (
+                  <li
+                    key={row.item}
+                    className="flex items-start justify-between gap-4 py-2 border-b border-rose-gold/15 last:border-b-0"
+                  >
+                    <span className="flex items-start gap-2 text-foreground">
+                      <CheckCircle2 className="h-4 w-4 text-rose-gold-deep shrink-0 mt-1" />
+                      {row.item}
+                    </span>
+                    <span className="font-heading font-semibold text-muted-foreground tabular-nums shrink-0">
+                      {row.value}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-5 flex items-center justify-between gap-4 max-w-xl mx-auto bg-muted/60 rounded-2xl px-5 py-4 border border-rose-gold/20">
+                <span className="font-heading uppercase tracking-wider text-foreground text-sm">Valor real</span>
+                <span className="font-display text-xl md:text-2xl font-bold text-foreground line-through opacity-70 tabular-nums">
+                  R$ 3.282
+                </span>
+              </div>
+            </div>
+
             <div className="mt-10 text-center">
               <p className="price-original">De R$ 997,00</p>
-              <p className="mt-3 font-heading text-xs md:text-sm uppercase tracking-[0.4em] text-rose-gold-deep">Por apenas</p>
+              <p className="mt-3 font-heading text-xs md:text-sm uppercase tracking-[0.4em] text-rose-gold-deep">Hoje, por apenas</p>
               <p className="mt-3 leading-none">
                 <span className="price-hero-prefix">12x</span>
                 <span className="price-hero">R$ 14<span className="price-hero-cents">,70</span></span>
               </p>
               <p className="price-sub mt-4 text-muted-foreground">
-                ou <strong className="text-foreground">R$ 147,00</strong> à vista no PIX
+                ou <strong className="text-foreground">R$ 147,00</strong> à vista no PIX — <span className="text-rose-gold-deep font-semibold">menos de R$ 0,50/dia</span> pela sua transformação
               </p>
 
               <div className="mt-8">
