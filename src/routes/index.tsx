@@ -789,15 +789,24 @@ function Bonuses() {
         <div className="grid md:grid-cols-3 gap-6">
           {bonuses.map((b, i) => (
             <Reveal key={b.title} delay={i * 0.1}>
-              <div className="relative bg-card/10 backdrop-blur-md border border-rose-gold/30 rounded-3xl p-7 h-full">
+              <div className="relative bg-card/10 backdrop-blur-md border border-rose-gold/30 rounded-3xl p-7 h-full flex flex-col">
                 <div className="absolute -top-3 -right-3 bg-rose-gold-gradient text-pearl font-heading font-bold text-xs px-3 py-1.5 rounded-full shadow-glow">
                   BÔNUS #{i + 1}
                 </div>
-                <div className="h-14 w-14 rounded-2xl bg-rose-gold-gradient flex items-center justify-center shadow-glow mb-4">
-                  <Gift className="h-7 w-7 text-pearl" strokeWidth={2.2} />
+                {/* Mockup visual do bônus — capa estilizada */}
+                <div className="relative mx-auto mb-5 w-32 h-44 perspective">
+                  <div className="absolute inset-0 bg-rose-gold-gradient opacity-40 blur-2xl rounded-2xl" />
+                  <div className="relative h-full w-full rounded-xl bg-gradient-to-br from-rose-gold via-rose-gold-deep to-graphite border-2 border-rose-gold/60 shadow-glow flex flex-col items-center justify-center p-3 text-center transform rotate-[-3deg] hover:rotate-0 transition-transform">
+                    <Gift className="h-7 w-7 text-pearl mb-2" strokeWidth={2.2} />
+                    <p className="font-heading uppercase tracking-widest text-[0.55rem] text-pearl/80">Bônus #{i + 1}</p>
+                    <p className="font-display text-[0.7rem] font-bold text-pearl leading-tight mt-1">{b.title}</p>
+                    <span className="mt-2 inline-block bg-pearl text-rose-gold-deep font-heading font-bold text-[0.55rem] px-2 py-0.5 rounded-full uppercase tracking-wider">
+                      Grátis
+                    </span>
+                  </div>
                 </div>
-                <h3 className="font-display text-xl font-bold text-pearl">{b.title}</h3>
-                <ul className="mt-4 space-y-2">
+                <h3 className="font-display text-xl font-bold text-pearl text-center">{b.title}</h3>
+                <ul className="mt-4 space-y-2 flex-1">
                   {b.items.map((it) => (
                     <li key={it} className="flex items-start gap-2 text-sm text-pearl/85">
                       <CheckCircle2 className="h-4 w-4 text-rose-gold shrink-0 mt-0.5" /><span>{it}</span>
@@ -821,6 +830,33 @@ function Bonuses() {
             <p className="font-display text-3xl md:text-4xl font-bold text-pearl/70 mt-2 line-through decoration-pearl/80 decoration-[3px]">R$ 1.461,00</p>
             <p className="font-display text-4xl md:text-5xl font-bold text-pearl mt-3">GRÁTIS hoje</p>
             <p className="mt-2 text-pearl/95 font-heading">Seu presente — incluso gratuitamente na sua compra.</p>
+          </div>
+        </Reveal>
+
+        {/* SELO DE GARANTIA AMPLIADO — RISCO INVERTIDO */}
+        <Reveal delay={0.4}>
+          <div className="mt-14 max-w-3xl mx-auto bg-pearl/5 backdrop-blur-md border-2 border-rose-gold/40 rounded-3xl p-8 md:p-10 relative overflow-hidden">
+            <div className="absolute -top-12 -right-12 h-48 w-48 rounded-full bg-rose-gold-gradient opacity-20 blur-3xl pointer-events-none" />
+            <div className="grid md:grid-cols-[auto_1fr] gap-6 md:gap-8 items-center relative">
+              <div className="flex justify-center">
+                <div className="relative">
+                  <div className="h-32 w-32 rounded-full bg-rose-gold-gradient flex flex-col items-center justify-center shadow-glow border-4 border-pearl/30">
+                    <ShieldCheck className="h-10 w-10 text-pearl" strokeWidth={2.2} />
+                    <p className="font-display font-bold text-pearl text-xl leading-none mt-1">7</p>
+                    <p className="font-heading uppercase tracking-widest text-[0.55rem] text-pearl/95">dias</p>
+                  </div>
+                </div>
+              </div>
+              <div className="text-center md:text-left">
+                <p className="font-heading font-bold text-rose-gold uppercase tracking-widest text-xs">Risco invertido</p>
+                <h3 className="mt-2 font-display text-2xl md:text-3xl font-bold text-pearl leading-tight">
+                  Se o método não funcionar para você, <span className="text-rose-gold-gradient">eu devolvo cada centavo</span> — e você fica com os bônus.
+                </h3>
+                <p className="mt-4 text-pearl/85 leading-relaxed text-[15px]">
+                  Você tem <strong>7 dias inteiros</strong> para mergulhar no Método Nefertiti. Se em qualquer momento desse período você sentir que não é para você, basta enviar um e-mail. Sem perguntas. Sem burocracia. <span className="text-rose-gold-gradient font-bold">O risco é todo meu.</span>
+                </p>
+              </div>
+            </div>
           </div>
         </Reveal>
       </div>
