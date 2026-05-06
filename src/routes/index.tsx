@@ -123,25 +123,25 @@ function Hero() {
           {/* COPY — 60% desktop */}
           <div className="text-center lg:text-left">
             <Reveal delay={0.15}>
-              <p className="inline-flex items-center gap-2 text-[0.7rem] md:text-xs text-rose-gold-deep uppercase tracking-[0.4em] font-heading font-semibold mb-5">
+              <p className="inline-flex flex-wrap items-center justify-center lg:justify-start gap-2 text-[0.7rem] md:text-xs text-rose-gold-deep uppercase tracking-[0.35em] font-heading font-semibold mb-5">
                 <Sparkles className="h-3.5 w-3.5" />
-                Inspirado em estudos comportamentais · +3.847 alunas
+                <span>Para mulheres que amaram demais e foram esquecidas rápido demais</span>
                 <Sparkles className="h-3.5 w-3.5" />
               </p>
             </Reveal>
             <Reveal delay={0.2}>
               <h1 className="text-foreground">
                 <span className="hero-headline block">
-                  <span className="hero-power">Como 3.847 Mulheres</span>
-                  <span className="block mt-3">Transformaram a Dor do Término em Autoestima, Presença e Magnetismo Natural</span>
-                  <span className="accent block mt-3">E Voltaram a se Sentir Desejadas, Inteiras e no Comando</span>
-                  <span className="block mt-3">em apenas 21 dias…</span>
+                  <span className="block">Se ele te deixou</span>
+                  <span className="hero-power block mt-2">e levou junto a sua autoestima…</span>
+                  <span className="accent block mt-3">descubra o método em 21 dias que já reconstruiu a presença e o magnetismo de +3.847 mulheres</span>
+                  <span className="block mt-3 text-2xl md:text-3xl font-normal italic opacity-90">— sem perseguir, sem implorar, sem fingir que está bem.</span>
                 </span>
               </h1>
             </Reveal>
             <Reveal delay={0.4}>
               <p className="hero-sub mt-6 max-w-2xl mx-auto lg:mx-0">
-                Um <strong>programa de transformação emocional</strong> que te ajuda a reconstruir presença, autoconfiança e magnetismo natural — para você se sentir desejada e voltar a escolher os relacionamentos que merece.
+                Um <strong>protocolo emocional de 21 dias</strong> criado para mulheres que estão cansadas de chorar escondido e prontas para voltar a se sentir <strong>inteiras, desejadas e no comando</strong> — começando hoje, mesmo que ele já tenha seguido em frente.
               </p>
             </Reveal>
             <Reveal delay={0.5}>
