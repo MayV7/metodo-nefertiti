@@ -859,12 +859,10 @@ function Offer() {
               </p>
               <ul className="space-y-2.5 max-w-xl mx-auto text-sm md:text-base">
                 {[
-                  { item: "Método Nefertiti completo (6 módulos)", value: "R$ 1.497" },
-                  { item: "Bônus #1 — Protocolo de Reconquista em 21 dias", value: "R$ 397" },
-                  { item: "Bônus #2 — Scripts de Conversa Magnética", value: "R$ 297" },
-                  { item: "Bônus #3 — Diário da Rainha (PDF guiado)", value: "R$ 197" },
-                  { item: "Bônus #4 — Comunidade privada vitalícia", value: "R$ 497" },
-                  { item: "Acesso vitalício + atualizações futuras", value: "R$ 397" },
+                  { item: "Método Nefertiti completo (3 módulos)", value: "R$ 997" },
+                  { item: "Bônus #1 — Guia de Transformação Digital", value: "R$ 297" },
+                  { item: "Bônus #2 — Manual de Inteligência Emocional", value: "R$ 467" },
+                  { item: "Bônus #3 — Comunicação Feminina Avançada", value: "R$ 697" },
                 ].map((row) => (
                   <li
                     key={row.item}
@@ -883,7 +881,7 @@ function Offer() {
               <div className="mt-5 flex items-center justify-between gap-4 max-w-xl mx-auto bg-muted/60 rounded-2xl px-5 py-4 border border-rose-gold/20">
                 <span className="font-heading uppercase tracking-wider text-foreground text-sm">Valor real</span>
                 <span className="font-display text-xl md:text-2xl font-bold text-foreground line-through opacity-70 tabular-nums">
-                  R$ 3.282
+                  R$ 2.458
                 </span>
               </div>
             </div>
