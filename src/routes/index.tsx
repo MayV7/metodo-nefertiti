@@ -1321,28 +1321,36 @@ function PostGuaranteePrice() {
 function FAQ() {
   const faqs = [
     {
-      q: "Como acesso o material após a compra?",
-      a: "Imediatamente após a confirmação do pagamento, você receberá um e-mail com seus dados de acesso à área de membros. O acesso é instantâneo!",
+      q: "💰 R$ 14,70 parcelado parece pouco. Tem alguma pegadinha?",
+      a: "Nenhuma pegadinha. O preço cheio é R$ 997. Estamos rodando este lote especial de lançamento por 12x R$ 14,70 (ou R$ 147 à vista no PIX) justamente para que mulheres que mais precisam consigam entrar agora. Quando este lote esgotar, o valor volta para R$ 997. Você paga uma vez e tem acesso vitalício a tudo — método + 3 bônus + atualizações.",
     },
     {
-      q: "Qual é a garantia oferecida?",
-      a: "Oferecemos uma Tripla Garantia Blindada: 1) Resultados ou dinheiro de volta em 7 dias; 2) Satisfação total — 7 dias para avaliar o conteúdo; 3) Suporte VIP — acesso direto à equipe por 21 dias.",
+      q: "⏰ Não tenho tempo. Quanto preciso me dedicar por dia?",
+      a: "Apenas 15 a 20 minutos por dia, durante 21 dias. Foi desenhado exatamente para mulheres que trabalham, têm filhos, vida corrida. Você pode assistir no celular, no ônibus, na pausa do almoço. Se você tem tempo de scrollar Instagram chorando por causa dele, você tem tempo para reconstruir sua autoestima.",
     },
     {
-      q: "Este método é para mim?",
-      a: "Se você é uma mulher de 20 a 65 anos que passou por um término doloroso e quer recuperar seu poder de atração, este método foi feito especificamente para você.",
+      q: "👵 Tenho mais de 40 (ou 50). Ainda funciona pra mim?",
+      a: "Funciona — e em muitos casos funciona MELHOR. As alunas que mais relatam transformações profundas têm entre 38 e 58 anos. Magnetismo feminino não é beleza de pele, é presença. E presença se constrói em qualquer idade. Temos depoimentos reais de mulheres de 27 a 62 anos.",
     },
     {
-      q: "Que tipo de suporte está incluído?",
-      a: "Suporte VIP direto com Marina e equipe por 21 dias. Suas perguntas serão respondidas em até 48 horas.",
+      q: "🤔 Já tentei terapia, livros, conselhos de amigas e nada funcionou. Por que isso seria diferente?",
+      a: "Porque o Método Nefertiti não é teoria nem autoajuda genérica. É um protocolo prático de 21 dias com exercícios diários, gatilhos comportamentais e técnicas testadas em +3.847 mulheres. Você não vai apenas 'entender' o que fazer — vai aplicar passo a passo, com resultados visíveis a partir do 7º dia.",
     },
     {
-      q: "Em quanto tempo vejo os primeiros resultados?",
-      a: "Os primeiros sinais de transformação podem aparecer em 48 a 72 horas, com resultados completos relatados em 21 dias, aplicando exatamente como ensinado no Método Nefertiti.",
+      q: "😶 Tenho medo de ser julgada por comprar algo assim. É discreto?",
+      a: "100% discreto. A cobrança aparece como 'Kiwify' no seu cartão (sem nenhuma menção ao produto). O acesso é por área de membros privada com login e senha. Ninguém precisa saber — exceto quando começarem a perguntar o que está acontecendo com você. 😉",
     },
     {
-      q: "Como posso pagar?",
-      a: "Aceitamos cartão de crédito com parcelamento em até 12x ou à vista via PIX. Os detalhes completos estão na página de pagamento.",
+      q: "💔 Meu caso é diferente. Foi traição / casamento de 20 anos / ele já tem outra. Vai funcionar?",
+      a: "Sim. As alunas chegaram com as histórias mais variadas: traição, abandono após 25 anos juntos, ex com nova namorada, ex que ainda mora na mesma casa. O método trabalha a sua reconstrução interna — independente do que ele fez ou está fazendo. Quando você muda, tudo ao seu redor muda.",
+    },
+    {
+      q: "🛡️ E se eu comprar e não gostar?",
+      a: "Você tem 7 dias de garantia incondicional. Entra, assiste tudo, faz os exercícios. Se não sentir transformação real, basta enviar um e-mail e devolvemos cada centavo — e você ainda fica com os 3 bônus. O risco é todo nosso, não seu.",
+    },
+    {
+      q: "🚀 Como recebo o acesso?",
+      a: "Imediatamente após a confirmação do pagamento (cartão aprovado em segundos, PIX em até 5 minutos), você recebe um e-mail com login e senha da área de membros. Acesso vitalício — você assiste no seu ritmo, no seu tempo, quantas vezes quiser.",
     },
   ];
   return (
