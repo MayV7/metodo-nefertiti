@@ -85,6 +85,7 @@ function LandingPage() {
       <Hero />
       <Pain />
       <MarinaStory />
+      <ForWhom />
       <Discovery />
       <Triggers />
       <Method />
