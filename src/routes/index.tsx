@@ -85,6 +85,7 @@ function LandingPage() {
       <Hero />
       <Pain />
       <MarinaStory />
+      <ForWhom />
       <Discovery />
       <Triggers />
       <Method />
@@ -123,25 +124,25 @@ function Hero() {
           {/* COPY — 60% desktop */}
           <div className="text-center lg:text-left">
             <Reveal delay={0.15}>
-              <p className="inline-flex items-center gap-2 text-[0.7rem] md:text-xs text-rose-gold-deep uppercase tracking-[0.4em] font-heading font-semibold mb-5">
+              <p className="inline-flex flex-wrap items-center justify-center lg:justify-start gap-2 text-[0.7rem] md:text-xs text-rose-gold-deep uppercase tracking-[0.35em] font-heading font-semibold mb-5">
                 <Sparkles className="h-3.5 w-3.5" />
-                Inspirado em estudos comportamentais · +3.847 alunas
+                <span>Para mulheres que amaram demais e foram esquecidas rápido demais</span>
                 <Sparkles className="h-3.5 w-3.5" />
               </p>
             </Reveal>
             <Reveal delay={0.2}>
               <h1 className="text-foreground">
                 <span className="hero-headline block">
-                  <span className="hero-power">Como 3.847 Mulheres</span>
-                  <span className="block mt-3">Transformaram a Dor do Término em Autoestima, Presença e Magnetismo Natural</span>
-                  <span className="accent block mt-3">E Voltaram a se Sentir Desejadas, Inteiras e no Comando</span>
-                  <span className="block mt-3">em apenas 21 dias…</span>
+                  <span className="block">Se ele te deixou</span>
+                  <span className="hero-power block mt-2">e levou junto a sua autoestima…</span>
+                  <span className="accent block mt-3">descubra o método em 21 dias que já reconstruiu a presença e o magnetismo de +3.847 mulheres</span>
+                  <span className="block mt-3 text-2xl md:text-3xl font-normal italic opacity-90">— sem perseguir, sem implorar, sem fingir que está bem.</span>
                 </span>
               </h1>
             </Reveal>
             <Reveal delay={0.4}>
               <p className="hero-sub mt-6 max-w-2xl mx-auto lg:mx-0">
-                Um <strong>programa de transformação emocional</strong> que te ajuda a reconstruir presença, autoconfiança e magnetismo natural — para você se sentir desejada e voltar a escolher os relacionamentos que merece.
+                Um <strong>protocolo emocional de 21 dias</strong> criado para mulheres que estão cansadas de chorar escondido e prontas para voltar a se sentir <strong>inteiras, desejadas e no comando</strong> — começando hoje, mesmo que ele já tenha seguido em frente.
               </p>
             </Reveal>
             <Reveal delay={0.5}>
@@ -407,6 +408,86 @@ function MarinaStory() {
             </Reveal>
           </div>
         </div>
+      </div>
+    </section>
+  );
+}
+
+/* -------------------- FOR WHOM (filtro de qualificação) -------------------- */
+function ForWhom() {
+  const para = [
+    "Mulheres entre 25 e 60 anos que viveram um término doloroso e ainda carregam a dor.",
+    "Quem está cansada de chorar escondido fingindo que está bem nas redes sociais.",
+    "Quem já tentou conselhos de amigas, terapia, distrações — e nada devolveu sua autoestima.",
+    "Mulheres prontas para parar de implorar atenção e voltar a ser a escolhida, não a opção.",
+    "Quem quer reconstruir presença, magnetismo e poder de escolha — sem mudar quem é.",
+  ];
+  const naoPara = [
+    "Mulheres que querem manipular, vingar-se ou destruir o ex.",
+    "Quem busca uma 'fórmula mágica' que funciona sem aplicação consciente.",
+    "Quem não está disposta a investir 15 minutos por dia em si mesma por 21 dias.",
+    "Quem prefere continuar reclamando da situação a transformá-la de verdade.",
+  ];
+  return (
+    <section className="py-20 md:py-28 bg-background">
+      <div className="container mx-auto px-4 max-w-5xl">
+        <Reveal>
+          <div className="text-center mb-12">
+            <p className="font-heading font-bold text-rose-gold-deep tracking-widest uppercase text-sm">⚖️ Honestidade total</p>
+            <h2 className="mt-3 font-display text-3xl md:text-5xl font-bold text-foreground leading-tight">
+              O <span className="font-display italic text-rose-gold-gradient">Método Nefertiti</span> é para você?
+            </h2>
+            <p className="mt-4 text-muted-foreground max-w-2xl mx-auto">
+              Eu prefiro ser direta agora a te decepcionar depois. Leia com atenção — esta página não é para todo mundo.
+            </p>
+          </div>
+        </Reveal>
+
+        <div className="grid md:grid-cols-2 gap-6">
+          <Reveal delay={0.1}>
+            <div className="bg-rose-soft-gradient border-2 border-rose-gold/40 rounded-3xl p-7 md:p-9 h-full shadow-elegant">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="h-12 w-12 rounded-2xl bg-rose-gold-gradient flex items-center justify-center shadow-glow">
+                  <CheckCircle2 className="h-6 w-6 text-pearl" strokeWidth={2.4} />
+                </div>
+                <h3 className="font-display text-2xl font-bold text-foreground">É para você se…</h3>
+              </div>
+              <ul className="space-y-3">
+                {para.map((p) => (
+                  <li key={p} className="flex items-start gap-2.5 text-foreground/90 text-[15px] leading-relaxed">
+                    <CheckCircle2 className="h-5 w-5 text-rose-gold-deep shrink-0 mt-0.5" />
+                    <span>{p}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </Reveal>
+
+          <Reveal delay={0.2}>
+            <div className="bg-muted border border-border rounded-3xl p-7 md:p-9 h-full">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="h-12 w-12 rounded-2xl bg-foreground/10 flex items-center justify-center">
+                  <span className="font-display font-bold text-foreground/70 text-2xl leading-none">×</span>
+                </div>
+                <h3 className="font-display text-2xl font-bold text-foreground/80">NÃO é para você se…</h3>
+              </div>
+              <ul className="space-y-3">
+                {naoPara.map((p) => (
+                  <li key={p} className="flex items-start gap-2.5 text-foreground/70 text-[15px] leading-relaxed">
+                    <span className="text-foreground/40 font-display font-bold text-lg leading-none mt-0.5 shrink-0">×</span>
+                    <span>{p}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </Reveal>
+        </div>
+
+        <Reveal delay={0.3}>
+          <p className="mt-10 text-center text-foreground/80 max-w-2xl mx-auto leading-relaxed">
+            Se você se reconheceu na coluna da esquerda, <strong className="text-rose-gold-deep">esta pode ser a decisão mais importante que você toma este ano</strong>.
+          </p>
+        </Reveal>
       </div>
     </section>
   );
@@ -789,15 +870,24 @@ function Bonuses() {
         <div className="grid md:grid-cols-3 gap-6">
           {bonuses.map((b, i) => (
             <Reveal key={b.title} delay={i * 0.1}>
-              <div className="relative bg-card/10 backdrop-blur-md border border-rose-gold/30 rounded-3xl p-7 h-full">
+              <div className="relative bg-card/10 backdrop-blur-md border border-rose-gold/30 rounded-3xl p-7 h-full flex flex-col">
                 <div className="absolute -top-3 -right-3 bg-rose-gold-gradient text-pearl font-heading font-bold text-xs px-3 py-1.5 rounded-full shadow-glow">
                   BÔNUS #{i + 1}
                 </div>
-                <div className="h-14 w-14 rounded-2xl bg-rose-gold-gradient flex items-center justify-center shadow-glow mb-4">
-                  <Gift className="h-7 w-7 text-pearl" strokeWidth={2.2} />
+                {/* Mockup visual do bônus — capa estilizada */}
+                <div className="relative mx-auto mb-5 w-32 h-44 perspective">
+                  <div className="absolute inset-0 bg-rose-gold-gradient opacity-40 blur-2xl rounded-2xl" />
+                  <div className="relative h-full w-full rounded-xl bg-gradient-to-br from-rose-gold via-rose-gold-deep to-graphite border-2 border-rose-gold/60 shadow-glow flex flex-col items-center justify-center p-3 text-center transform rotate-[-3deg] hover:rotate-0 transition-transform">
+                    <Gift className="h-7 w-7 text-pearl mb-2" strokeWidth={2.2} />
+                    <p className="font-heading uppercase tracking-widest text-[0.55rem] text-pearl/80">Bônus #{i + 1}</p>
+                    <p className="font-display text-[0.7rem] font-bold text-pearl leading-tight mt-1">{b.title}</p>
+                    <span className="mt-2 inline-block bg-pearl text-rose-gold-deep font-heading font-bold text-[0.55rem] px-2 py-0.5 rounded-full uppercase tracking-wider">
+                      Grátis
+                    </span>
+                  </div>
                 </div>
-                <h3 className="font-display text-xl font-bold text-pearl">{b.title}</h3>
-                <ul className="mt-4 space-y-2">
+                <h3 className="font-display text-xl font-bold text-pearl text-center">{b.title}</h3>
+                <ul className="mt-4 space-y-2 flex-1">
                   {b.items.map((it) => (
                     <li key={it} className="flex items-start gap-2 text-sm text-pearl/85">
                       <CheckCircle2 className="h-4 w-4 text-rose-gold shrink-0 mt-0.5" /><span>{it}</span>
@@ -821,6 +911,33 @@ function Bonuses() {
             <p className="font-display text-3xl md:text-4xl font-bold text-pearl/70 mt-2 line-through decoration-pearl/80 decoration-[3px]">R$ 1.461,00</p>
             <p className="font-display text-4xl md:text-5xl font-bold text-pearl mt-3">GRÁTIS hoje</p>
             <p className="mt-2 text-pearl/95 font-heading">Seu presente — incluso gratuitamente na sua compra.</p>
+          </div>
+        </Reveal>
+
+        {/* SELO DE GARANTIA AMPLIADO — RISCO INVERTIDO */}
+        <Reveal delay={0.4}>
+          <div className="mt-14 max-w-3xl mx-auto bg-pearl/5 backdrop-blur-md border-2 border-rose-gold/40 rounded-3xl p-8 md:p-10 relative overflow-hidden">
+            <div className="absolute -top-12 -right-12 h-48 w-48 rounded-full bg-rose-gold-gradient opacity-20 blur-3xl pointer-events-none" />
+            <div className="grid md:grid-cols-[auto_1fr] gap-6 md:gap-8 items-center relative">
+              <div className="flex justify-center">
+                <div className="relative">
+                  <div className="h-32 w-32 rounded-full bg-rose-gold-gradient flex flex-col items-center justify-center shadow-glow border-4 border-pearl/30">
+                    <ShieldCheck className="h-10 w-10 text-pearl" strokeWidth={2.2} />
+                    <p className="font-display font-bold text-pearl text-xl leading-none mt-1">7</p>
+                    <p className="font-heading uppercase tracking-widest text-[0.55rem] text-pearl/95">dias</p>
+                  </div>
+                </div>
+              </div>
+              <div className="text-center md:text-left">
+                <p className="font-heading font-bold text-rose-gold uppercase tracking-widest text-xs">Risco invertido</p>
+                <h3 className="mt-2 font-display text-2xl md:text-3xl font-bold text-pearl leading-tight">
+                  Se o método não funcionar para você, <span className="text-rose-gold-gradient">eu devolvo cada centavo</span> — e você fica com os bônus.
+                </h3>
+                <p className="mt-4 text-pearl/85 leading-relaxed text-[15px]">
+                  Você tem <strong>7 dias inteiros</strong> para mergulhar no Método Nefertiti. Se em qualquer momento desse período você sentir que não é para você, basta enviar um e-mail. Sem perguntas. Sem burocracia. <span className="text-rose-gold-gradient font-bold">O risco é todo meu.</span>
+                </p>
+              </div>
+            </div>
           </div>
         </Reveal>
       </div>
@@ -1204,28 +1321,36 @@ function PostGuaranteePrice() {
 function FAQ() {
   const faqs = [
     {
-      q: "Como acesso o material após a compra?",
-      a: "Imediatamente após a confirmação do pagamento, você receberá um e-mail com seus dados de acesso à área de membros. O acesso é instantâneo!",
+      q: "💰 R$ 14,70 parcelado parece pouco. Tem alguma pegadinha?",
+      a: "Nenhuma pegadinha. O preço cheio é R$ 997. Estamos rodando este lote especial de lançamento por 12x R$ 14,70 (ou R$ 147 à vista no PIX) justamente para que mulheres que mais precisam consigam entrar agora. Quando este lote esgotar, o valor volta para R$ 997. Você paga uma vez e tem acesso vitalício a tudo — método + 3 bônus + atualizações.",
     },
     {
-      q: "Qual é a garantia oferecida?",
-      a: "Oferecemos uma Tripla Garantia Blindada: 1) Resultados ou dinheiro de volta em 7 dias; 2) Satisfação total — 7 dias para avaliar o conteúdo; 3) Suporte VIP — acesso direto à equipe por 21 dias.",
+      q: "⏰ Não tenho tempo. Quanto preciso me dedicar por dia?",
+      a: "Apenas 15 a 20 minutos por dia, durante 21 dias. Foi desenhado exatamente para mulheres que trabalham, têm filhos, vida corrida. Você pode assistir no celular, no ônibus, na pausa do almoço. Se você tem tempo de scrollar Instagram chorando por causa dele, você tem tempo para reconstruir sua autoestima.",
     },
     {
-      q: "Este método é para mim?",
-      a: "Se você é uma mulher de 20 a 65 anos que passou por um término doloroso e quer recuperar seu poder de atração, este método foi feito especificamente para você.",
+      q: "👵 Tenho mais de 40 (ou 50). Ainda funciona pra mim?",
+      a: "Funciona — e em muitos casos funciona MELHOR. As alunas que mais relatam transformações profundas têm entre 38 e 58 anos. Magnetismo feminino não é beleza de pele, é presença. E presença se constrói em qualquer idade. Temos depoimentos reais de mulheres de 27 a 62 anos.",
     },
     {
-      q: "Que tipo de suporte está incluído?",
-      a: "Suporte VIP direto com Marina e equipe por 21 dias. Suas perguntas serão respondidas em até 48 horas.",
+      q: "🤔 Já tentei terapia, livros, conselhos de amigas e nada funcionou. Por que isso seria diferente?",
+      a: "Porque o Método Nefertiti não é teoria nem autoajuda genérica. É um protocolo prático de 21 dias com exercícios diários, gatilhos comportamentais e técnicas testadas em +3.847 mulheres. Você não vai apenas 'entender' o que fazer — vai aplicar passo a passo, com resultados visíveis a partir do 7º dia.",
     },
     {
-      q: "Em quanto tempo vejo os primeiros resultados?",
-      a: "Os primeiros sinais de transformação podem aparecer em 48 a 72 horas, com resultados completos relatados em 21 dias, aplicando exatamente como ensinado no Método Nefertiti.",
+      q: "😶 Tenho medo de ser julgada por comprar algo assim. É discreto?",
+      a: "100% discreto. A cobrança aparece como 'Kiwify' no seu cartão (sem nenhuma menção ao produto). O acesso é por área de membros privada com login e senha. Ninguém precisa saber — exceto quando começarem a perguntar o que está acontecendo com você. 😉",
     },
     {
-      q: "Como posso pagar?",
-      a: "Aceitamos cartão de crédito com parcelamento em até 12x ou à vista via PIX. Os detalhes completos estão na página de pagamento.",
+      q: "💔 Meu caso é diferente. Foi traição / casamento de 20 anos / ele já tem outra. Vai funcionar?",
+      a: "Sim. As alunas chegaram com as histórias mais variadas: traição, abandono após 25 anos juntos, ex com nova namorada, ex que ainda mora na mesma casa. O método trabalha a sua reconstrução interna — independente do que ele fez ou está fazendo. Quando você muda, tudo ao seu redor muda.",
+    },
+    {
+      q: "🛡️ E se eu comprar e não gostar?",
+      a: "Você tem 7 dias de garantia incondicional. Entra, assiste tudo, faz os exercícios. Se não sentir transformação real, basta enviar um e-mail e devolvemos cada centavo — e você ainda fica com os 3 bônus. O risco é todo nosso, não seu.",
+    },
+    {
+      q: "🚀 Como recebo o acesso?",
+      a: "Imediatamente após a confirmação do pagamento (cartão aprovado em segundos, PIX em até 5 minutos), você recebe um e-mail com login e senha da área de membros. Acesso vitalício — você assiste no seu ritmo, no seu tempo, quantas vezes quiser.",
     },
   ];
   return (
