@@ -413,6 +413,86 @@ function MarinaStory() {
   );
 }
 
+/* -------------------- FOR WHOM (filtro de qualificação) -------------------- */
+function ForWhom() {
+  const para = [
+    "Mulheres entre 25 e 60 anos que viveram um término doloroso e ainda carregam a dor.",
+    "Quem está cansada de chorar escondido fingindo que está bem nas redes sociais.",
+    "Quem já tentou conselhos de amigas, terapia, distrações — e nada devolveu sua autoestima.",
+    "Mulheres prontas para parar de implorar atenção e voltar a ser a escolhida, não a opção.",
+    "Quem quer reconstruir presença, magnetismo e poder de escolha — sem mudar quem é.",
+  ];
+  const naoPara = [
+    "Mulheres que querem manipular, vingar-se ou destruir o ex.",
+    "Quem busca uma 'fórmula mágica' que funciona sem aplicação consciente.",
+    "Quem não está disposta a investir 15 minutos por dia em si mesma por 21 dias.",
+    "Quem prefere continuar reclamando da situação a transformá-la de verdade.",
+  ];
+  return (
+    <section className="py-20 md:py-28 bg-background">
+      <div className="container mx-auto px-4 max-w-5xl">
+        <Reveal>
+          <div className="text-center mb-12">
+            <p className="font-heading font-bold text-rose-gold-deep tracking-widest uppercase text-sm">⚖️ Honestidade total</p>
+            <h2 className="mt-3 font-display text-3xl md:text-5xl font-bold text-foreground leading-tight">
+              O <span className="font-display italic text-rose-gold-gradient">Método Nefertiti</span> é para você?
+            </h2>
+            <p className="mt-4 text-muted-foreground max-w-2xl mx-auto">
+              Eu prefiro ser direta agora a te decepcionar depois. Leia com atenção — esta página não é para todo mundo.
+            </p>
+          </div>
+        </Reveal>
+
+        <div className="grid md:grid-cols-2 gap-6">
+          <Reveal delay={0.1}>
+            <div className="bg-rose-soft-gradient border-2 border-rose-gold/40 rounded-3xl p-7 md:p-9 h-full shadow-elegant">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="h-12 w-12 rounded-2xl bg-rose-gold-gradient flex items-center justify-center shadow-glow">
+                  <CheckCircle2 className="h-6 w-6 text-pearl" strokeWidth={2.4} />
+                </div>
+                <h3 className="font-display text-2xl font-bold text-foreground">É para você se…</h3>
+              </div>
+              <ul className="space-y-3">
+                {para.map((p) => (
+                  <li key={p} className="flex items-start gap-2.5 text-foreground/90 text-[15px] leading-relaxed">
+                    <CheckCircle2 className="h-5 w-5 text-rose-gold-deep shrink-0 mt-0.5" />
+                    <span>{p}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </Reveal>
+
+          <Reveal delay={0.2}>
+            <div className="bg-muted border border-border rounded-3xl p-7 md:p-9 h-full">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="h-12 w-12 rounded-2xl bg-foreground/10 flex items-center justify-center">
+                  <span className="font-display font-bold text-foreground/70 text-2xl leading-none">×</span>
+                </div>
+                <h3 className="font-display text-2xl font-bold text-foreground/80">NÃO é para você se…</h3>
+              </div>
+              <ul className="space-y-3">
+                {naoPara.map((p) => (
+                  <li key={p} className="flex items-start gap-2.5 text-foreground/70 text-[15px] leading-relaxed">
+                    <span className="text-foreground/40 font-display font-bold text-lg leading-none mt-0.5 shrink-0">×</span>
+                    <span>{p}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </Reveal>
+        </div>
+
+        <Reveal delay={0.3}>
+          <p className="mt-10 text-center text-foreground/80 max-w-2xl mx-auto leading-relaxed">
+            Se você se reconheceu na coluna da esquerda, <strong className="text-rose-gold-deep">esta pode ser a decisão mais importante que você toma este ano</strong>.
+          </p>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
 /* -------------------- DISCOVERY -------------------- */
 function Discovery() {
   const milestones = [
