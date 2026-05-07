@@ -1093,11 +1093,31 @@ function Decision() {
         </div>
 
         <Reveal delay={0.3}>
-          <div className="mt-12 text-center">
-            <p className="text-lg text-foreground max-w-2xl mx-auto">
-              A escolha é sua. Mas lembre-se: <strong className="text-rose-gold-deep">apenas <AnimatedSpots className="font-bold" /> vagas restantes</strong> e este preço especial <strong>nunca mais</strong> será oferecido.
+          <div className="mt-12 max-w-2xl mx-auto bg-card rounded-3xl p-7 md:p-9 border-2 border-rose-gold/40 shadow-elegant text-center">
+            <p className="font-heading uppercase tracking-[0.3em] text-[0.7rem] text-rose-gold-deep mb-4">
+              Ancoragem de valor
             </p>
-            <div className="mt-8">
+            <div className="space-y-2.5 text-left max-w-md mx-auto text-sm">
+              <div className="flex justify-between border-b border-rose-gold/15 pb-2">
+                <span className="text-foreground/80">Valor justo de tudo</span>
+                <span className="font-heading font-semibold text-foreground/70 line-through tabular-nums">R$ 2.458</span>
+              </div>
+              <div className="flex justify-between border-b border-rose-gold/15 pb-2">
+                <span className="text-foreground/80">Preço cheio do método</span>
+                <span className="font-heading font-semibold text-foreground/70 line-through tabular-nums">R$ 997</span>
+              </div>
+              <div className="flex justify-between pt-1">
+                <span className="font-heading uppercase tracking-wider text-rose-gold-deep text-xs mt-1">Hoje, neste lote</span>
+                <span className="font-display text-2xl md:text-3xl font-bold text-rose-gold-gradient tabular-nums">R$ 147</span>
+              </div>
+            </div>
+            <p className="mt-5 text-foreground/85 text-sm md:text-base">
+              Ou <strong>12x R$ 14,70</strong> no cartão · <span className="text-rose-gold-deep font-semibold">menos de R$ 0,50/dia</span> pela mulher que você vai se tornar.
+            </p>
+            <p className="mt-5 text-foreground/85">
+              Restam apenas <strong className="text-rose-gold-deep"><AnimatedSpots className="font-bold" /> vagas</strong> — e este preço <strong>nunca mais</strong> será oferecido.
+            </p>
+            <div className="mt-7">
               <CTAButton size="xl" />
             </div>
           </div>
