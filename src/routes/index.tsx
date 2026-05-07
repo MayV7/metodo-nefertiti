@@ -1326,7 +1326,7 @@ function FAQ() {
     },
     {
       q: "⏰ Não tenho tempo. Quanto preciso me dedicar por dia?",
-      a: "Apenas 15 a 20 minutos por dia, durante 21 dias. Foi desenhado exatamente para mulheres que trabalham, têm filhos, vida corrida. Você pode assistir no celular, no ônibus, na pausa do almoço. Se você tem tempo de scrollar Instagram chorando por causa dele, você tem tempo para reconstruir sua autoestima.",
+      a: "Apenas 15 a 20 minutos por dia, durante 21 dias. Foi desenhado exatamente para mulheres que trabalham, têm filhos, vida corrida. Você pode ler os ebooks no celular, no ônibus, na pausa do almoço. Se você tem tempo de scrollar Instagram chorando por causa dele, você tem tempo para reconstruir sua autoestima.",
     },
     {
       q: "👵 Tenho mais de 40 (ou 50). Ainda funciona pra mim?",
@@ -1346,11 +1346,11 @@ function FAQ() {
     },
     {
       q: "🛡️ E se eu comprar e não gostar?",
-      a: "Você tem 7 dias de garantia incondicional. Entra, assiste tudo, faz os exercícios. Se não sentir transformação real, basta enviar um e-mail e devolvemos cada centavo — e você ainda fica com os 3 bônus. O risco é todo nosso, não seu.",
+      a: "Você tem 7 dias de garantia incondicional. Entra, lê todo o conteúdo dos ebooks, aplica os exercícios. Se não sentir transformação real, basta enviar um e-mail e devolvemos cada centavo — e você ainda fica com os 3 bônus. O risco é todo nosso, não seu.",
     },
     {
       q: "🚀 Como recebo o acesso?",
-      a: "Imediatamente após a confirmação do pagamento (cartão aprovado em segundos, PIX em até 5 minutos), você recebe um e-mail com login e senha da área de membros. Acesso vitalício — você assiste no seu ritmo, no seu tempo, quantas vezes quiser.",
+      a: "Imediatamente após a confirmação do pagamento (cartão aprovado em segundos, PIX em até 5 minutos), você recebe um e-mail com login e senha da área de membros. Acesso vitalício — você consome o conteúdo dos ebooks no seu ritmo, no seu tempo, quantas vezes quiser.",
     },
   ];
   return (
