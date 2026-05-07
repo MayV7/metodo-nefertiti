@@ -180,7 +180,9 @@ function Hero() {
                 height={800}
                 fetchPriority="high"
                 decoding="async"
-                className="relative w-full h-auto float-soft drop-shadow-[0_20px_40px_rgba(0,0,0,0.25)]"
+                loading="eager"
+                sizes="(max-width: 1024px) 70vw, 40vw"
+                className="relative w-full h-auto max-w-[320px] sm:max-w-sm lg:max-w-none mx-auto float-soft drop-shadow-[0_20px_40px_rgba(0,0,0,0.25)]"
               />
               <div className="relative mt-4 flex items-center justify-center gap-2 text-[10px] md:text-xs text-rose-gold-deep uppercase tracking-[0.3em] font-heading font-semibold">
                 <Smartphone className="h-3.5 w-3.5" /> Celular
