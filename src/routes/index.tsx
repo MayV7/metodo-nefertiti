@@ -89,6 +89,7 @@ function LandingPage() {
       <Discovery />
       <Triggers />
       <Method />
+      <Timeline21 />
       <Modules />
       <Bonuses />
       <Devices />
@@ -97,11 +98,14 @@ function LandingPage() {
       <WhatsAppProof />
       <MoreProof />
       <Guarantee />
+      <CostComparison />
       <Decision />
+      <BigObjection />
       <PostGuaranteePrice />
       <FAQ />
       <Scarcity />
       <Objections />
+      <PSClose />
       <Footer />
     </div>
   );
@@ -145,8 +149,25 @@ function Hero() {
                 Um <strong>protocolo emocional de 21 dias</strong> criado para mulheres que estão cansadas de chorar escondido e prontas para voltar a se sentir <strong>inteiras, desejadas e no comando</strong> — começando hoje, mesmo que ele já tenha seguido em frente.
               </p>
             </Reveal>
+            <Reveal delay={0.45}>
+              <div className="mt-6 inline-flex flex-wrap items-center justify-center lg:justify-start gap-x-4 gap-y-2 rounded-2xl border border-rose-gold/25 bg-card/70 backdrop-blur px-4 py-3 shadow-card-soft">
+                <span className="inline-flex items-center gap-1.5 text-xs md:text-sm font-heading font-semibold text-foreground">
+                  <Star className="h-4 w-4 text-rose-gold-deep fill-rose-gold-deep" />
+                  <span className="text-rose-gold-deep">4.9/5</span>
+                  <span className="text-foreground/70">avaliação das alunas</span>
+                </span>
+                <span className="opacity-30">·</span>
+                <span className="text-xs md:text-sm font-heading font-semibold text-foreground">
+                  +<span className="text-rose-gold-deep">3.847</span> mulheres
+                </span>
+                <span className="opacity-30">·</span>
+                <span className="text-xs md:text-sm font-heading font-semibold text-foreground">
+                  <span className="text-rose-gold-deep">7 anos</span> de método
+                </span>
+              </div>
+            </Reveal>
             <Reveal delay={0.5}>
-              <div className="mt-8 flex flex-col items-center lg:items-start gap-3">
+              <div className="mt-6 flex flex-col items-center lg:items-start gap-3">
                 <CTAButton size="xl" />
                 <p className="text-xs text-muted-foreground italic max-w-md">
                   Acesso imediato · Garantia incondicional de 7 dias · Restam apenas <AnimatedSpots className="text-rose-gold-deep font-bold" /> vagas neste lote.
@@ -1515,6 +1536,210 @@ function Objections() {
         <Reveal delay={0.3}>
           <div className="text-center mt-12">
             <CTAButton size="xl" />
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
+/* -------------------- TIMELINE 21 DIAS -------------------- */
+function Timeline21() {
+  const weeks = [
+    {
+      tag: "Semana 1 · Dias 1-7",
+      title: "Reset emocional",
+      desc: "Você corta o ciclo da ansiedade, do choro escondido e da checagem de redes. Aprende a respirar, dormir e voltar a se enxergar no espelho sem aquela aperto no peito.",
+      proof: "→ A maioria das alunas relata o primeiro 'alívio real' entre o 4º e o 7º dia.",
+    },
+    {
+      tag: "Semana 2 · Dias 8-14",
+      title: "Reconstrução da presença",
+      desc: "Você instala os gatilhos de magnetismo: postura, voz, olhar, silêncio estratégico. Começa a perceber pessoas (homens e mulheres) reagindo diferente a você na rua, no trabalho, no celular.",
+      proof: "→ Aqui costumam aparecer os primeiros 'oi' inesperados — inclusive dele.",
+    },
+    {
+      tag: "Semana 3 · Dias 15-21",
+      title: "Magnetismo Nefertiti",
+      desc: "Você consolida a mulher nova: escolhe, não corre atrás. Aprende a responder (ou não responder) sem ansiedade. Sai do lugar de quem implora e entra no lugar de quem é desejada.",
+      proof: "→ No fim do 21º dia, você é outra mulher — e isso é irreversível.",
+    },
+  ];
+  return (
+    <section className="py-20 md:py-28 bg-background">
+      <div className="container mx-auto px-4 max-w-5xl">
+        <Reveal>
+          <div className="text-center mb-12">
+            <p className="font-heading font-bold text-rose-gold-deep tracking-widest uppercase text-sm">
+              📅 Como funciona em 21 dias
+            </p>
+            <h2 className="mt-3 font-display text-3xl md:text-5xl font-bold text-foreground leading-tight">
+              O caminho da mulher quebrada à <span className="text-rose-gold-gradient">Rainha Nefertiti</span>
+            </h2>
+            <p className="mt-4 text-foreground/75 max-w-2xl mx-auto">
+              Sem fórmula mágica. Um protocolo de 21 dias dividido em 3 semanas com objetivos claros para cada etapa da sua reconstrução.
+            </p>
+          </div>
+        </Reveal>
+        <div className="grid md:grid-cols-3 gap-5">
+          {weeks.map((w, i) => (
+            <Reveal key={w.title} delay={i * 0.1}>
+              <div className="relative bg-card rounded-3xl p-7 border border-rose-gold/25 shadow-card-soft h-full flex flex-col">
+                <span className="absolute -top-3 left-7 bg-rose-gold-gradient text-pearl text-[10px] font-heading font-bold uppercase tracking-widest px-3 py-1 rounded-full shadow-glow">
+                  {w.tag}
+                </span>
+                <div className="mt-3 flex items-center gap-3">
+                  <span className="font-display text-4xl font-bold text-rose-gold-gradient">0{i + 1}</span>
+                  <h3 className="font-display text-xl font-bold text-foreground leading-tight">{w.title}</h3>
+                </div>
+                <p className="mt-4 text-foreground/80 text-[15px] leading-relaxed">{w.desc}</p>
+                <p className="mt-4 text-rose-gold-deep text-sm font-heading font-semibold italic">{w.proof}</p>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* -------------------- COST COMPARISON -------------------- */
+function CostComparison() {
+  const rows = [
+    { label: "Terapia tradicional (3 meses)", cost: "R$ 1.200", note: "1 sessão/semana · R$ 100 a R$ 300/sessão" },
+    { label: "Livros e cursos avulsos", cost: "R$ 480", note: "média de 4 livros + 1 curso de autoajuda" },
+    { label: "Tempo perdido em sofrimento", cost: "Inestimável", note: "noites em claro, energia, oportunidades" },
+    { label: "Aceitar migalhas de quem não te valoriza", cost: "Sua dignidade", note: "o preço mais alto que existe" },
+  ];
+  return (
+    <section className="py-20 md:py-28 bg-muted">
+      <div className="container mx-auto px-4 max-w-4xl">
+        <Reveal>
+          <div className="text-center mb-10">
+            <p className="font-heading font-bold text-rose-gold-deep tracking-widest uppercase text-sm">
+              💰 Investimento vs. Custo da inação
+            </p>
+            <h2 className="mt-3 font-display text-3xl md:text-5xl font-bold text-foreground leading-tight">
+              Quanto custa <span className="text-rose-gold-gradient">continuar onde está</span>?
+            </h2>
+            <p className="mt-4 text-foreground/75 max-w-2xl mx-auto">
+              Faça as contas com calma. Compare o que você já gastou (e ainda vai gastar) com o investimento único do Método.
+            </p>
+          </div>
+        </Reveal>
+        <Reveal delay={0.15}>
+          <div className="bg-card rounded-3xl border border-rose-gold/25 shadow-card-soft overflow-hidden">
+            <ul className="divide-y divide-rose-gold/15">
+              {rows.map((r) => (
+                <li key={r.label} className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 px-5 py-4 md:px-7 md:py-5">
+                  <div className="min-w-0">
+                    <p className="font-heading font-semibold text-foreground text-[15px] leading-tight">{r.label}</p>
+                    <p className="text-foreground/60 text-xs mt-0.5">{r.note}</p>
+                  </div>
+                  <span className="font-display text-xl md:text-2xl font-bold text-foreground/70 tabular-nums shrink-0">
+                    {r.cost}
+                  </span>
+                </li>
+              ))}
+              <li className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 px-5 py-5 md:px-7 md:py-6 bg-rose-soft-gradient">
+                <div className="min-w-0">
+                  <p className="font-heading font-bold text-rose-gold-deep uppercase tracking-widest text-xs">Método Nefertiti — hoje</p>
+                  <p className="font-display text-lg font-bold text-foreground mt-1">Tudo, de uma vez, para sempre</p>
+                </div>
+                <span className="font-display text-3xl md:text-4xl font-bold text-rose-gold-gradient tabular-nums shrink-0">
+                  R$ 147
+                </span>
+              </li>
+            </ul>
+          </div>
+        </Reveal>
+        <Reveal delay={0.25}>
+          <p className="mt-8 text-center text-foreground/80 max-w-2xl mx-auto leading-relaxed">
+            <strong>Menos de R$ 0,50 por dia</strong> pelo método que pode encerrar anos de sofrimento. A pergunta não é "quanto custa entrar". É: <span className="text-rose-gold-deep font-bold">quanto está custando ficar de fora?</span>
+          </p>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
+/* -------------------- BIG OBJECTION -------------------- */
+function BigObjection() {
+  return (
+    <section className="py-20 md:py-28 bg-rose-soft-gradient">
+      <div className="container mx-auto px-4 max-w-3xl">
+        <Reveal>
+          <div className="text-center mb-8">
+            <p className="font-heading font-bold text-rose-gold-deep tracking-widest uppercase text-sm">
+              ⏳ A última objeção
+            </p>
+            <h2 className="mt-3 font-display text-3xl md:text-5xl font-bold text-foreground leading-tight">
+              "Mas Marina… <span className="text-rose-gold-gradient">e se eu não tiver tempo</span>?"
+            </h2>
+          </div>
+        </Reveal>
+        <Reveal delay={0.15}>
+          <div className="bg-card rounded-3xl border-2 border-rose-gold/30 shadow-elegant p-7 md:p-10 space-y-5 text-foreground/85 leading-relaxed">
+            <p>
+              Se essa é a sua dúvida final, eu te respondo com toda honestidade: <strong>15 a 20 minutos por dia.</strong> Só. É o tempo que você gasta scrollando o Instagram dele, da nova, das amigas felizes — chorando escondida no banheiro do trabalho.
+            </p>
+            <p>
+              É o tempo de uma fila de banco, de uma viagem de Uber, de um intervalo entre uma reunião e outra. <strong>Você tem esse tempo.</strong> A pergunta é: você quer continuar gastando ele com a dor, ou começar a investir ele na mulher que você vai ser daqui a 21 dias?
+            </p>
+            <p className="font-display italic text-lg md:text-xl text-rose-gold-deep border-l-4 border-rose-gold pl-5">
+              Não existe "depois". Existe agora ou nunca.
+            </p>
+            <p>
+              Daqui a 21 dias, ou você terá uma autoestima reconstruída e a presença de uma rainha — ou estará exatamente no mesmo lugar onde está agora, com 21 dias a menos de vida.
+            </p>
+            <div className="text-center pt-2">
+              <CTAButton size="xl" />
+            </div>
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
+/* -------------------- P.S. CLOSING -------------------- */
+function PSClose() {
+  return (
+    <section className="py-20 md:py-28 bg-background">
+      <div className="container mx-auto px-4 max-w-3xl">
+        <Reveal>
+          <div className="bg-card rounded-3xl border border-rose-gold/25 shadow-card-soft p-7 md:p-10">
+            <p className="font-heading text-foreground/85 leading-relaxed">
+              Querida,
+            </p>
+            <p className="mt-4 text-foreground/85 leading-relaxed">
+              Se você chegou até aqui, é porque alguma coisa dentro de você já decidiu. A sua intuição reconheceu este método como a virada que estava esperando — e a única coisa que separa você da Rainha que existe aí dentro são <strong>dois cliques no botão abaixo</strong>.
+            </p>
+            <p className="mt-6 font-display italic text-rose-gold-deep">
+              Com amor e verdade,
+            </p>
+            <p className="font-display text-2xl text-rose-gold-gradient font-bold">
+              Marina · Método Nefertiti
+            </p>
+
+            <div className="mt-8 space-y-4 border-t border-rose-gold/20 pt-6">
+              <p className="text-foreground/85 leading-relaxed text-[15px]">
+                <strong className="text-rose-gold-deep">P.S.</strong> Por <strong>R$ 14,70 parcelado</strong> (menos que um delivery), você leva o método completo + 3 bônus + acesso vitalício. Quando este lote esgotar, o preço volta para <span className="line-through">R$ 997</span>. Não vai ser oferecido de novo por este valor.
+              </p>
+              <p className="text-foreground/85 leading-relaxed text-[15px]">
+                <strong className="text-rose-gold-deep">P.P.S.</strong> Você tem <strong>7 dias de garantia incondicional</strong>. Entra, lê tudo, aplica os exercícios. Se não sentir transformação real, peça reembolso e fica com os 3 bônus de presente. <strong>O risco é meu, não seu.</strong>
+              </p>
+              <p className="text-foreground/85 leading-relaxed text-[15px]">
+                <strong className="text-rose-gold-deep">P.P.P.S.</strong> Restam apenas <AnimatedSpots className="text-rose-gold-deep font-bold" /> vagas neste lote. Quando fechar, fecha de verdade — abrimos lista de espera sem data definida. Não deixe para amanhã o poder que pode ser seu hoje.
+              </p>
+            </div>
+
+            <div className="text-center mt-8">
+              <CTAButton size="xl" />
+              <p className="text-xs text-muted-foreground italic mt-3">
+                Acesso imediato · Garantia de 7 dias · Pagamento 100% seguro
+              </p>
+            </div>
           </div>
         </Reveal>
       </div>
