@@ -89,6 +89,7 @@ function LandingPage() {
       <Discovery />
       <Triggers />
       <Method />
+      <Timeline21 />
       <Modules />
       <Bonuses />
       <Devices />
@@ -97,11 +98,14 @@ function LandingPage() {
       <WhatsAppProof />
       <MoreProof />
       <Guarantee />
+      <CostComparison />
       <Decision />
+      <BigObjection />
       <PostGuaranteePrice />
       <FAQ />
       <Scarcity />
       <Objections />
+      <PSClose />
       <Footer />
     </div>
   );
