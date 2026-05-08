@@ -145,8 +145,25 @@ function Hero() {
                 Um <strong>protocolo emocional de 21 dias</strong> criado para mulheres que estão cansadas de chorar escondido e prontas para voltar a se sentir <strong>inteiras, desejadas e no comando</strong> — começando hoje, mesmo que ele já tenha seguido em frente.
               </p>
             </Reveal>
+            <Reveal delay={0.45}>
+              <div className="mt-6 inline-flex flex-wrap items-center justify-center lg:justify-start gap-x-4 gap-y-2 rounded-2xl border border-rose-gold/25 bg-card/70 backdrop-blur px-4 py-3 shadow-card-soft">
+                <span className="inline-flex items-center gap-1.5 text-xs md:text-sm font-heading font-semibold text-foreground">
+                  <Star className="h-4 w-4 text-rose-gold-deep fill-rose-gold-deep" />
+                  <span className="text-rose-gold-deep">4.9/5</span>
+                  <span className="text-foreground/70">avaliação das alunas</span>
+                </span>
+                <span className="opacity-30">·</span>
+                <span className="text-xs md:text-sm font-heading font-semibold text-foreground">
+                  +<span className="text-rose-gold-deep">3.847</span> mulheres
+                </span>
+                <span className="opacity-30">·</span>
+                <span className="text-xs md:text-sm font-heading font-semibold text-foreground">
+                  <span className="text-rose-gold-deep">7 anos</span> de método
+                </span>
+              </div>
+            </Reveal>
             <Reveal delay={0.5}>
-              <div className="mt-8 flex flex-col items-center lg:items-start gap-3">
+              <div className="mt-6 flex flex-col items-center lg:items-start gap-3">
                 <CTAButton size="xl" />
                 <p className="text-xs text-muted-foreground italic max-w-md">
                   Acesso imediato · Garantia incondicional de 7 dias · Restam apenas <AnimatedSpots className="text-rose-gold-deep font-bold" /> vagas neste lote.
